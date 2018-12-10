@@ -4,7 +4,7 @@
 <html>
 <head>
 <title>${course.courseName}详情</title>
-	<script src="http://vod.baofengcloud.com/html/script/bfcloud.js?v=2"></script>
+
 <script type="text/javascript">
 	var isok = ${isok};
 	var currentprice=${course.currentPrice};
@@ -31,7 +31,7 @@
 								<img src="${ctx}/static/inxweb/img/default-img.gif" alt="${course.courseName}" class="dis c-v-pic" />
 							</c:otherwise>
 						</c:choose>
-	
+
 						<a href="javascript:void(0)" onclick="vedioClick(${freeVideoId})" title="${course.courseName}" class="v-play-btn">
 							<em class="icon30">&nbsp;</em>
 						</a>
@@ -52,7 +52,7 @@
 						<section class="c-attr-mt c-attr-undis">
 							<span class="c-fff fsize14">主讲： <c:forEach items="${teacherList }" var="tea">
 									<%-- <a href="${ctx}/front/teacher/${tea.id }">${tea.name }</a>&nbsp;&nbsp;&nbsp; --%>
-									${tea.name }&nbsp;&nbsp;&nbsp; 
+									${tea.name }&nbsp;&nbsp;&nbsp;
                       			</c:forEach>
 							</span>
 						</section>
@@ -155,17 +155,17 @@
 													<c:forEach items="${parentKpointList }" var="parentKpoint" varStatus="index">
 														<c:if test="${parentKpoint.kpointType==0 }"><!-- 文件目录 -->
 															<li class="lh-menu-stair">
-																<a href="javascript: void(0)" title="${parentKpoint.name }" 
+																<a href="javascript: void(0)" title="${parentKpoint.name }"
 																	<c:if test="${index.first==true}">class="current-1"</c:if>
 																>
 																	<span class="fr"><em class="icon14 m-tree-icon">&nbsp;</em></span><em class="lh-menu-i-1 icon24 mr5"><font>${folderIndex }</font></em>${parentKpoint.name }</a>
-																<ol class="lh-menu-ol"  
+																<ol class="lh-menu-ol"
 																	<c:if test="${index.first==true}">style="display: block;"</c:if>
 																	<c:if test="${index.first==false}">style="display: none;"</c:if>
 																>
 																	<c:forEach items="${parentKpoint.kpointList}" var="sonKpoint">
 																		<li class="lh-menu-second ml30"><a href="javascript:void(0)" <%-- onclick="playVideo('${sonKpoint.videoUrl }',this)" --%> onclick="getPlayerHtml(${sonKpoint.kpointId },${sonKpoint.free },this)" title="">
-																				<span class="fr"> 
+																				<span class="fr">
 																					<c:if test="${sonKpoint.free==1 }">
 																						<tt class="free-icon vam mr10">免费试听</tt>
 																					</c:if>
@@ -185,7 +185,7 @@
 															<li class="lh-menu-stair">
 																<ul class="lh-menu-ol no-parent-node">
 																	<li class="lh-menu-second"><a title="" <%-- onclick="playVideo('${parentKpoint.videoUrl }',this)" --%> onclick="getPlayerHtml(${parentKpoint.kpointId },${parentKpoint.free },this)" href="javascript:void(0)">
-																			<span class="fr"> 
+																			<span class="fr">
 																				<c:if test="${parentKpoint.free==1 }">
 																					<tt class="free-icon vam mr10">免费试听</tt>
 																				</c:if>

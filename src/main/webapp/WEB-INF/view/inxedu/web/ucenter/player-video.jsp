@@ -6,7 +6,7 @@
 <!--[if IE 8]>         <html class="lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html> <!--<![endif]-->
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>播放大厅-${websitemap.web.company}-${websitemap.web.title}</title>
@@ -20,7 +20,7 @@
 <link rel="stylesheet" type="text/css" href="${ctx}/static/inxweb/css/web.css">
 <link href="${ctx}/static/inxweb/css/mw_320_768.css" rel="stylesheet" type="text/css" media="screen and (min-width: 320px) and (max-width: 768px)">
 <!--[if lt IE 9]><script src="js/html5.js"></script><![endif]-->
-<script src="http://vod.baofengcloud.com/html/script/bfcloud.js?v=2"></script>
+
 </head>
 <body>
 	<div class="of" style="background-color: #f0f0f0">
@@ -53,7 +53,7 @@
 					</div>
 				</div>
 				<!-- /学习进度条 结束-->
-				
+
 					<div class="p-h-video of">
 						<section class="p-h-video-box" id="videoPlay">
 							<!-- <script src='http://p.bokecc.com/player?vid=28410965A68FCF5B9C33DC5901307461&siteid=F9C3434C51509878&autoStart=true&width=100%&height=100%&playerid=51A2AD3118ACAD37&playertype=1' type='text/javascript'></script> -->
@@ -80,8 +80,8 @@
 									<c:if test="${isFavorites==false }">
 										<span class="ml10 vam"><em class="icon18 scIcon"></em><a class="c-fff vam" title="收藏" onclick="favorites(${course.courseId},this)" href="javascript:void(0)">收藏</a></span>
 									</c:if>
-									
-									
+
+
 								</aside>
 							</section>
 							<section class="p-h-r-title mt10">
@@ -95,7 +95,7 @@
 								<section class="p-h-r-menu mt10">
 									<div class="lh-menu-wrap" id="courseKpointMenu">
 
-									</div>	
+									</div>
 								</section>
 								<!-- /课程目录 -->
 								<section class="undis note_html">
@@ -183,7 +183,7 @@
 												</section>
 											</li>
 										</c:forEach>
-										
+
 									</ol>
 								</section>
 							</c:if>
@@ -203,7 +203,7 @@
 		</section>
 	</div>
 	</div>
-	
+
 
 	<!-- 公共底引入 -->
 	<jsp:include page="/WEB-INF/layouts/web/footer.jsp" />
@@ -216,7 +216,7 @@
 	<script src="/static/inxweb/comment/comment.js" type="text/javascript"></script><!-- 评论js -->
 	<script type="text/javascript" src="${ctx }/kindeditor/kindeditor-all.js"></script>
 	<script type="text/javascript" src="${ctx}/static/inxweb/play/playVideo.js"></script>
-	
+
 	<script>
 	//评论课程id
 	var otherId = '${course.courseId}';

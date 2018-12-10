@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="CourseStudyhistoryMapper">
 
@@ -13,7 +13,7 @@
 		<result property="kpointName" column="KPOINT_NAME" />
 		<result property="databack" column="DATABACK" />
 		<result property="updateTime" column="UPDATE_TIME" />
-		
+
 		<result property="userShowName" column="userShowName" />
 		<result property="userEmail" column="userEmail" />
 		<result property="userImg" column="userImg" />
@@ -114,7 +114,8 @@
 	<select id="getCourseStudyhistoryListByCouId" resultMap="CourseStudyhistoryResult" parameterType="long">
 		select
 		distinct(edu_course_studyhistory.USER_ID),
-		edu_user.SHOW_NAME as userShowName,edu_user.EMAIL as userEmail,edu_user.PIC_IMG as userImg
+		edu_user.SHOW_NAME as userShowName,edu_user.EMAIL as userEmail,edu_user.PIC_IMG as userImg,
+		edu_course_studyhistory.UPDATE_TIME
 		from edu_course_studyhistory
         left join edu_user on edu_user.USER_ID = edu_course_studyhistory.USER_ID
 		where
@@ -122,7 +123,7 @@
 	    order by edu_course_studyhistory.UPDATE_TIME desc
         limit 8
 	</select>
-	
+
 	<!-- 查看 课程下的学习记录 总人数-->
 	<select id="getCourseStudyhistoryCountByCouId" resultType="int" parameterType="long">
 		select
@@ -131,5 +132,5 @@
 		where
 	    edu_course_studyhistory.COURSE_ID = #{value}
 	</select>
-	
+
 </mapper>
