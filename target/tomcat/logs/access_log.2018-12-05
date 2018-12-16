@@ -1,6 +1,0 @@
-127.0.0.1 - - [05/Dec/2018:21:07:18 +0900] "GET /static/common/jerichotab/images/jerichoclose.gif HTTP/1.1" 200 1220 http-bio-80-exec-2 32
-127.0.0.1 - - [05/Dec/2018:21:07:18 +0900] "GET /static/common/jerichotab/images/smallloader.gif HTTP/1.1" 200 1079 http-bio-80-exec-4 29
-127.0.0.1 - - [05/Dec/2018:21:07:18 +0900] "GET /static/common/jerichotab/images/jerichotab.gif HTTP/1.1" 200 1674 http-bio-80-exec-7 34
-127.0.0.1 - - [05/Dec/2018:21:07:18 +0900] "GET /admin/sysuser/userlist?tabPageId=jerichotabiframe_0 HTTP/1.1" 302 - http-bio-80-exec-10 67
-127.0.0.1 - - [05/Dec/2018:21:07:18 +0900] "GET /admin HTTP/1.1" 200 2827 http-bio-80-exec-10 33
-127.0.0.1 - - [05/Dec/2018:21:07:18 +0900] "GET /ran/random HTTP/1.1" 200 254 http-bio-80-exec-10 11
