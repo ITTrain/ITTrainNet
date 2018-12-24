@@ -1,4 +1,4 @@
-<%@ page import="com.inxedu.os.common.listener.MySessionListener" %>
+<%@ page import="com.ittedu.os.common.listener.MySessionListener" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <%@ include file="/base.jsp"%>
 <!DOCTYPE html>

@@ -8,7 +8,7 @@
 		<setting name="logPrefix" value="dao." />
 	</settings>
 
-	
+
 
 	<typeAliases>
 		<!-- 所有用到的实体类无需填写 -->
@@ -17,7 +17,7 @@
 	<!-- Mapper.xml无需挨个引入，全部命名规范：以Mapper.xml结尾会自动引入 如：publicMapper.xm -->
 
 	<plugins>
-		<plugin interceptor="com.inxedu.os.common.intercepter.PageInterceptor">
+		<plugin interceptor="com.ittedu.os.common.intercepter.PageInterceptor">
 
 		</plugin>
 

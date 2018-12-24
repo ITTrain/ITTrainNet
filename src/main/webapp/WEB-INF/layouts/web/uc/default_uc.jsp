@@ -10,7 +10,7 @@
 <!--[if gt IE 8]><!-->
 <html>
 <!--<![endif]-->
-<head> 
+<head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=9, IE=8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -58,7 +58,7 @@
 	<jsp:include page="/WEB-INF/layouts/web/footer.jsp"></jsp:include>
 	<!-- 公共尾引入，结束 -->
 	</div>
-	
+
 	<!-- 统计代码 -->
 	${tongjiemap.censusCode.censusCodeString}
 </body>

@@ -2,10 +2,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.inxedu.os</groupId>
-    <artifactId>inxedu</artifactId>
+    <groupId>com.ittedu.os</groupId>
+    <artifactId>ittedu</artifactId>
     <version>1.0</version>
-    <name>inxedu</name>
+    <name>ittedu</name>
     <packaging>war</packaging>
 
     <properties>
@@ -17,7 +17,7 @@
     </properties>
 
     <build>
-        <finalName>inxedu</finalName>
+        <finalName>ittedu</finalName>
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
@@ -87,7 +87,7 @@
                     <!-- 压缩后保存文件后缀 无后缀 -->
                     <nosuffix>true</nosuffix>
                     <!-- 源目录，即需压缩的根目录 -->
-                    <sourceDirectory>${basedir}/target/inxedu</sourceDirectory>
+                    <sourceDirectory>${basedir}/target/ittedu</sourceDirectory>
                     <!-- 压缩js和css文件 -->
                     <includes>
                         <include>**/*.js</include>
@@ -99,7 +99,7 @@
                         <exclude>**/*.min.css</exclude>
                     </excludes>
                     <!-- 压缩后输出文件目录 -->
-                    <outputDirectory>${basedir}/target/inxedu</outputDirectory>
+                    <outputDirectory>${basedir}/target/ittedu</outputDirectory>
                 </configuration>
             </plugin>
         </plugins>
@@ -108,11 +108,11 @@
     <!--  依赖的jar包 -->
     <dependencies>
         <dependency>
-            <groupId>com.inxedu.os</groupId>
-            <artifactId>inxedu-jar</artifactId>
+            <groupId>com.ittedu.os</groupId>
+            <artifactId>ittedu-jar</artifactId>
             <version>1.0</version>
             <scope>system</scope>
-            <systemPath>${basedir}/src/main/webapp/WEB-INF/lib/inxedu-jar.jar</systemPath>
+            <systemPath>${basedir}/src/main/webapp/WEB-INF/lib/ittedu-jar.jar</systemPath>
         </dependency>
         <!-- spring beans-->
         <dependency>

@@ -1,5 +1,5 @@
 <%@page language="java" pageEncoding="UTF-8"%>
-<%@page import="com.inxedu.os.common.constants.CommonConstants"%>
+<%@page import="com.ittedu.os.common.constants.CommonConstants"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
@@ -14,7 +14,7 @@
 
 	//内容编辑器上传图片路径
 	static String keuploadSimpleUrl = uploadServerUrl+"/image/keupload?";
-	//图片上传路径 
+	//图片上传路径
 	static String uploadSimpleUrl = uploadServerUrl+"/image/gok4?";
 	%>
 

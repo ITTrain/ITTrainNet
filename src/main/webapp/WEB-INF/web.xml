@@ -45,7 +45,7 @@
 
 	<!--在线人数监听-->
 	<listener>
-		<listener-class>com.inxedu.os.common.listener.MySessionListener</listener-class>
+		<listener-class>com.ittedu.os.common.listener.MySessionListener</listener-class>
 	</listener>
 
 	<servlet>
