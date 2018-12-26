@@ -1,26 +1,27 @@
-package com.ittedu.os.common.util.inxeduvideo;
+package com.ittedu.os.common.util.itteduvideo;
 
-import sun.misc.BASE64Encoder;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 
 import javax.crypto.Mac;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
 
-public class InxeduVideo {
-	  
-    private static final String MAC_NAME = "HmacSHA1";    
-    private static final String ENCODING = "UTF-8";    
-      
+import sun.misc.BASE64Encoder;
+
+public class ItteduVideo {
+
+    private static final String MAC_NAME = "HmacSHA1";
+    private static final String ENCODING = "UTF-8";
+
     public static byte[] HmacSHA1Encrypt(String encryptText, String encryptKey) throws Exception
-    {           
-        byte[] data=encryptKey.getBytes();  
+    {
+        byte[] data=encryptKey.getBytes();
         SecretKey secretKey = new SecretKeySpec(data, MAC_NAME);
         Mac mac = Mac.getInstance(MAC_NAME);
         mac.init(secretKey);
-          
-        byte[] text = encryptText.getBytes();    
+
+        byte[] text = encryptText.getBytes();
         return mac.doFinal(text);
     }
 

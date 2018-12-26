@@ -27,7 +27,7 @@ import java.util.*;
 
 /**
  * 前台学员
- * @author www.inxedu.com
+ * @author www.ittedu.com
  *
  */
 @Service("userService")

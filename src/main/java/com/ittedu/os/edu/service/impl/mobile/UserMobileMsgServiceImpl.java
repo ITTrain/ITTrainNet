@@ -20,7 +20,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
 @Service("userMobileMsgService")
 public class UserMobileMsgServiceImpl implements UserMobileMsgService {

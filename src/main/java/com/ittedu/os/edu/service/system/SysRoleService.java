@@ -6,7 +6,7 @@ import com.ittedu.os.edu.entity.system.SysRole;
 
 /**
  * 后台用户角色权限
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
 public interface SysRoleService {
 	/**

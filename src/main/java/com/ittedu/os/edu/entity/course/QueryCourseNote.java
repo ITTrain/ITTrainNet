@@ -9,16 +9,16 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 /**
- * 
- * @ClassName com.inxedu.os.edu.entity.course.QueryCourseNote
+ *
+ * @ClassName com.ittedu.os.edu.entity.course.QueryCourseNote
  * @description
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
 public class QueryCourseNote implements Serializable {
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = -6304788895712532361L;
 	private Long id;// id
@@ -36,7 +36,7 @@ public class QueryCourseNote implements Serializable {
 	private String shortContent;
 	private Long courseId;//课程id
 	private String courseName;//课程名字
-	
+
 	public String getShortContent(){
 		//去除html
 		shortContent=WebUtils.replaceTagHTML(content);

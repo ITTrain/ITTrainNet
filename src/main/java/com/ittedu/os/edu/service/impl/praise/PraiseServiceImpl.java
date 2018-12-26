@@ -18,7 +18,7 @@ import java.util.Map;
 
 /**
  * 点赞服务接口实现
- *@author www.inxedu.com
+ *@author www.ittedu.com
  */
 @Service("praiseService")
 public class PraiseServiceImpl implements PraiseService {

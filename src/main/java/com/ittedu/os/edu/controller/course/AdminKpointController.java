@@ -32,7 +32,7 @@ import com.ittedu.os.edu.service.website.WebsiteProfileService;
 
 /**
  * CourseKpoint 课程章节 管理
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
 @Controller
 @RequestMapping("/admin")
@@ -187,9 +187,9 @@ public class AdminKpointController extends BaseController {
     		//上传视频名
     		String filename=request.getParameter("filename");
     		filename=URLEncoder.encode(filename,"UTF-8");
-    		String infoStr="description="+"inxedu_upload_"+filename//视频描述
+    		String infoStr="description="+"ittedu_upload_"+filename//视频描述
 					+"&tag=null"//视频标签 	可选
-					+"&title="+"inxedu_upload_"+filename//视频标题
+					+"&title="+"ittedu_upload_"+filename//视频标题
 					+"&userid="+(String)ccConfigMap.get("ccappID")//用户ID 	必选
 					+"&time="+System.currentTimeMillis()/1000L//当前时间的 Unix  时间戳
 					;

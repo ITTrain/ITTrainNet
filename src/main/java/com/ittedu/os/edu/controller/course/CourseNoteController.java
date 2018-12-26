@@ -22,7 +22,7 @@ import com.ittedu.os.edu.entity.course.CourseNote;
 import com.ittedu.os.edu.service.course.CourseNoteService;
 /**
  * CourseNote 课程笔记 Controller
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
 @Controller
 public class CourseNoteController extends BaseController{

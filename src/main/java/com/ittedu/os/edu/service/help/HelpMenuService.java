@@ -8,7 +8,7 @@ import com.ittedu.os.edu.entity.help.HelpMenu;
 
 /**
  * 帮助菜单
- * @author http://www.inxedu.com
+ * @author http://www.ittedu.com
  */
 public interface HelpMenuService {
 	/**

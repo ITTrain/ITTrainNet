@@ -32,7 +32,7 @@ import java.util.*;
 
 /**
  * 邮件
- * @author www.inxedu.com
+ * @author www.ittedu.com
  *
  */
 @Controller

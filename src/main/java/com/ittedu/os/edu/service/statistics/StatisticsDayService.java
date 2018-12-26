@@ -9,7 +9,7 @@ import com.ittedu.os.edu.entity.statistics.StatisticsDay;
 
 /**
  * StatisticsDay管理接口
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
 public interface StatisticsDayService {
 

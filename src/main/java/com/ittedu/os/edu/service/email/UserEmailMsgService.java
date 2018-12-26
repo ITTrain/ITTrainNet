@@ -8,7 +8,7 @@ import com.ittedu.os.common.entity.PageEntity;
 import com.ittedu.os.edu.entity.email.UserEmailMsg;
 
 /**
- * @author http://www.inxedu.com
+ * @author http://www.ittedu.com
  */
 public interface UserEmailMsgService {
 	/**

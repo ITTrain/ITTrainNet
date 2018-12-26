@@ -7,7 +7,7 @@ import java.io.Serializable;
 
 /**
  * 推荐分类
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
 @Data
 @EqualsAndHashCode(callSuper = false)

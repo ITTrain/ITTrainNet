@@ -28,9 +28,9 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">
-      <library name="Maven: com.inxedu.os:inxedu-jar:1.0">
+      <library name="Maven: com.ittedu.os:ittedu-jar:1.0">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/src/main/webapp/WEB-INF/lib/inxedu-jar.jar!/" />
+          <root url="jar://$MODULE_DIR$/src/main/webapp/WEB-INF/lib/ittedu-jar.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

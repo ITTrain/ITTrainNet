@@ -28,7 +28,7 @@ import com.ittedu.os.edu.service.website.WebsiteImagesService;
 
 /**
  * 前台文章资讯
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
 @Controller
 @RequestMapping("/front")

@@ -23,7 +23,7 @@ import com.ittedu.os.edu.service.teacher.TeacherService;
 
 
 /**
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
 @Controller
 @RequestMapping("/webapp")

@@ -14,7 +14,7 @@ import java.util.Map;
 
 /**
  * CourseKpoint 课程章节 管理接口
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
 @Service("courseKpointService")
 public class CourseKpointServiceImpl implements CourseKpointService {

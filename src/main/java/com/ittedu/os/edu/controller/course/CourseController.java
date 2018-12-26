@@ -40,7 +40,7 @@ import com.ittedu.os.edu.service.subject.SubjectService;
 import com.ittedu.os.edu.service.teacher.TeacherService;
 /**
  * 前台 Course管理接口
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
 @Controller
 public class CourseController extends BaseController {

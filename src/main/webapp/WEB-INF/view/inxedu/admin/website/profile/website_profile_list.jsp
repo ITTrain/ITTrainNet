@@ -73,7 +73,7 @@
 								<button type="button" class="ui-state-default ui-corner-all" onclick="window.location.href='${ctx}/admin/websiteProfile/find/cc'"
 									id="web">CC视频配置</button>
 								&nbsp;&nbsp;&nbsp;
-								<button type="button" class="ui-state-default ui-corner-all" onclick="window.location.href='${ctx}/admin/websiteProfile/find/inxeduVideo'"
+								<button type="button" class="ui-state-default ui-corner-all" onclick="window.location.href='${ctx}/admin/websiteProfile/find/itteduVideo'"
 										id="web">因酷云视频配置</button>
 								&nbsp;&nbsp;&nbsp;
 								<button type="button" class="ui-state-default ui-corner-all" onclick="window.location.href='${ctx}/admin/websiteProfile/find/logo'"
@@ -204,19 +204,19 @@
 							</tr>
 						</tbody>
 					</c:if>
-					<c:if test="${type=='inxeduVideo'}">
+					<c:if test="${type=='itteduVideo'}">
 						<tbody align="center">
 						<tr class="odd">
 							<td>因酷云UserId</td>
-							<td>${webSiteMap.inxeduVideo.UserId}</td>
+							<td>${webSiteMap.itteduVideo.UserId}</td>
 						</tr>
 						<tr class="">
 							<td>因酷云SecretKey</td>
-							<td>${webSiteMap.inxeduVideo.SecretKey}</td>
+							<td>${webSiteMap.itteduVideo.SecretKey}</td>
 						</tr>
 						<tr class="odd">
 							<td>因酷云AccessKey</td>
-							<td>${webSiteMap.inxeduVideo.AccessKey}</td>
+							<td>${webSiteMap.itteduVideo.AccessKey}</td>
 						</tr>
 						</tbody>
 					</c:if>

@@ -11,7 +11,7 @@ import com.ittedu.os.edu.dao.common.CommentDao;
 import com.ittedu.os.edu.entity.common.Comment;
 /**
  * 评论dao层实现
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
 @Repository("commentDao")
 public class CommentDaoImpl extends GenericDaoImpl implements CommentDao{

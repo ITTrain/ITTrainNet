@@ -7,7 +7,7 @@ import java.util.List;
 
 
 /**
- * @author http://www.inxedu.com
+ * @author http://www.ittedu.com
  */
 public interface UserEmailMsgDao {
 	/**

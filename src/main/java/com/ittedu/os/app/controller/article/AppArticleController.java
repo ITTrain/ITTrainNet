@@ -22,7 +22,7 @@ import com.ittedu.os.edu.entity.article.QueryArticle;
 import com.ittedu.os.edu.service.article.ArticleService;
 
 /**
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
 @Controller
 @RequestMapping("/webapp")

@@ -7,7 +7,7 @@ import java.util.Date;
 
 /**
  * 角色
- * author www.inxedu.com
+ * author www.ittedu.com
  */
 @Data
 public class SysRole implements Serializable{

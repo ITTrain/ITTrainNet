@@ -8,7 +8,7 @@ import java.util.Date;
 
 /**
  * 用户邮件消息
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
 @Data
 @EqualsAndHashCode(callSuper=false)

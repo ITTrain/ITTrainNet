@@ -7,7 +7,7 @@ import java.io.Serializable;
 
 /**
  * 网站配置实体
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
 @Data
 @EqualsAndHashCode(callSuper = false)

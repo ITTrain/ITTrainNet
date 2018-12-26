@@ -7,7 +7,7 @@ import java.io.Serializable;
 
 /**
  * 缓存管理
- * @author www.inxedu.com
+ * @author www.ittedu.com
  *
  */
 @Data

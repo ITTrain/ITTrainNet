@@ -4,7 +4,7 @@ import com.ittedu.os.common.util.PropertyUtil;
 
 /**
  * @description cache缓存相关常量
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
 public class CacheConstans {
 	public static PropertyUtil webPropertyUtil = PropertyUtil.getInstance("memtimes");

@@ -1,23 +1,24 @@
 package com.ittedu.os.edu.entity.course;
 
-import com.ittedu.os.common.util.StringUtils;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-
 import java.io.Serializable;
 import java.util.Date;
 
+import com.ittedu.os.common.util.StringUtils;
+
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
 /**
- * 
- * @ClassName com.inxedu.os.inxedu.entity.course.CourseStudyhistory
+ *
+ * @ClassName com.ittedu.os.ittedu.entity.course.CourseStudyhistory
  * @description 记录播放记录
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
 public class CourseStudyhistory implements Serializable {
 	/**
-     * 
+     *
      */
     private static final long serialVersionUID = 5434482371608343070L;
     private Long id;
@@ -31,7 +32,7 @@ public class CourseStudyhistory implements Serializable {
     private java.util.Date updateTime;//更新时间
     private String logo;	//图片
     private String teacherName;	//教师名称
-    
+
     private String userShowName;//用户名
     private String userEmail;//用户邮箱
     private String userImg;//用户头像

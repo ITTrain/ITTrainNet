@@ -7,7 +7,7 @@ import com.ittedu.os.edu.entity.website.WebsiteProfile;
 
 /**
  * 网站配置
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
 public interface WebsiteProfileDao {
 	/**

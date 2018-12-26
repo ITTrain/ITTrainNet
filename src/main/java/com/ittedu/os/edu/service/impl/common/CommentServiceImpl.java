@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Map;
 /**
  * 评论模块server实现
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
 @Service("commentService")
 public class CommentServiceImpl implements CommentService {

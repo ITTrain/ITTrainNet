@@ -8,7 +8,7 @@ import com.ittedu.os.edu.entity.kpoint.CourseKpointDto;
 
 /**
  * CourseKpoint 课程章节 管理接口
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
 public interface CourseKpointService {
 

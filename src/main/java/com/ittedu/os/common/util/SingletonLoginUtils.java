@@ -8,7 +8,7 @@ import com.ittedu.os.edu.entity.system.SysUser;
 import com.ittedu.os.edu.entity.user.User;
 
 /**
- * @author www.inxedu.com
+ * @author www.ittedu.com
  *
  */
 public class SingletonLoginUtils {

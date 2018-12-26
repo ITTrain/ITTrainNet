@@ -9,7 +9,7 @@ import java.util.Date;
 
 /**
  * 后台系统用户实体
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
 
 

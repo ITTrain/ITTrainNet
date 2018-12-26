@@ -18,7 +18,7 @@ import com.ittedu.os.edu.entity.subject.Subject;
 import com.ittedu.os.edu.service.subject.SubjectService;
 
 /**
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
 @Controller
 @RequestMapping("/webapp")

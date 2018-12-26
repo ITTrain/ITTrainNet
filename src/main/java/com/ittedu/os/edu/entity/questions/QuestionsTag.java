@@ -8,7 +8,7 @@ import lombok.EqualsAndHashCode;
 
 /**
  * 问答标签
- *@author www.inxedu.com
+ *@author www.ittedu.com
  */
 @Data
 @EqualsAndHashCode(callSuper = false)

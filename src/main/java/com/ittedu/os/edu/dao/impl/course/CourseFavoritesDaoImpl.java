@@ -14,7 +14,7 @@ import com.ittedu.os.edu.entity.course.FavouriteCourseDTO;
 /**
  *
  * CourseFavorites
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
  @Repository("courseFavoritesDao")
 public class CourseFavoritesDaoImpl extends GenericDaoImpl implements CourseFavoritesDao {

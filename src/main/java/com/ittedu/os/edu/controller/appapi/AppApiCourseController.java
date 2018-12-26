@@ -8,7 +8,7 @@ import com.ittedu.os.common.controller.BaseController;
 
 /**
  * app接口 Controller
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
 @Controller
 @RequestMapping("/admin")

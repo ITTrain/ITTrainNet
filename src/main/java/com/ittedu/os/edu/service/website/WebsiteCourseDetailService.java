@@ -10,7 +10,7 @@ import com.ittedu.os.edu.entity.website.WebsiteCourseDetailDTO;
 
 /**
  * 课程推荐关联接口
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
 public interface WebsiteCourseDetailService {
 	/**

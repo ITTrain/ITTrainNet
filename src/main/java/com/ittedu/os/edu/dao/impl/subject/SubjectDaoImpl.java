@@ -12,7 +12,7 @@ import com.ittedu.os.edu.entity.subject.Subject;
 
 /**
  * Subject对象操作实现类
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
 @Repository("subjectDao")
 public class SubjectDaoImpl extends GenericDaoImpl implements SubjectDao {

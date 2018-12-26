@@ -22,7 +22,7 @@ import com.ittedu.os.edu.service.course.CourseStudyhistoryService;
 
 /**
  * CourseStudyhistory 用户课程学习记录 Controller
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
 @Controller
 public class CourseStudyhistoryController extends BaseController{

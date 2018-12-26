@@ -17,7 +17,7 @@ import com.ittedu.os.edu.entity.website.WebsiteImages;
 import com.ittedu.os.edu.service.website.WebsiteImagesService;
 
 /**
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
 @Controller
 @RequestMapping("/webapp")

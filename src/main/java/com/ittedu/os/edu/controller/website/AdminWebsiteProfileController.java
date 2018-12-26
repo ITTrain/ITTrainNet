@@ -1,14 +1,10 @@
 package com.ittedu.os.edu.controller.website;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
-import com.ittedu.os.common.controller.BaseController;
-import com.ittedu.os.common.util.ObjectUtils;
-import com.ittedu.os.common.util.StringUtils;
-import com.ittedu.os.edu.constants.enums.WebSiteProfileType;
-import com.ittedu.os.edu.entity.website.WebsiteProfile;
-import com.ittedu.os.edu.service.website.WebsiteProfileService;
+import java.io.File;
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,14 +16,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.servlet.http.HttpServletRequest;
-import java.io.File;
-import java.util.HashMap;
-import java.util.Map;
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+import com.ittedu.os.common.controller.BaseController;
+import com.ittedu.os.common.util.ObjectUtils;
+import com.ittedu.os.common.util.StringUtils;
+import com.ittedu.os.edu.constants.enums.WebSiteProfileType;
+import com.ittedu.os.edu.entity.website.WebsiteProfile;
+import com.ittedu.os.edu.service.website.WebsiteProfileService;
 
 /**
  * 网站配置管理
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
 @Controller
 @RequestMapping("/admin")
@@ -102,7 +103,7 @@ public class AdminWebsiteProfileController extends BaseController {
 					map.put("ccappKEY", request.getParameter("ccappKEY"));
 				}
 				// 因酷云视频
-				if (type.equals(WebSiteProfileType.inxeduVideo.toString())) {
+				if (type.equals(WebSiteProfileType.itteduVideo.toString())) {
 					map.put("UserId", request.getParameter("UserId"));
 					map.put("SecretKey", request.getParameter("SecretKey"));
 					map.put("AccessKey", request.getParameter("AccessKey"));
@@ -193,6 +194,6 @@ public class AdminWebsiteProfileController extends BaseController {
 		}
 		return "redirect:/admin/websiteProfile/online";
 	}
-	
+
 
 }

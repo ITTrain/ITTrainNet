@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>404-INXEDU 在线教育平台-中国在线教育平台第一品牌</title>
+<title>404-ITTEDU 在线教育平台-中国在线教育平台第一品牌</title>
 <style type="text/css">
 	* {margin: 0;padding: 0;}
 	body {background-color: #fff;}

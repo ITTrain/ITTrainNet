@@ -16,7 +16,7 @@ import java.util.List;
 
 /**
  * @description 系统消息
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
 @Service("msgSystemService")
 public class MsgSystemServiceImpl implements MsgSystemService {

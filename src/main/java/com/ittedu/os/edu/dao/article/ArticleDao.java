@@ -10,7 +10,7 @@ import java.util.Map;
 
 /**
  * 文章DAO层接口
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
 public interface ArticleDao {
 	

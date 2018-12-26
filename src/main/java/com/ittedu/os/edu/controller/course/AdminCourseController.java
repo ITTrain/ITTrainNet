@@ -37,7 +37,7 @@ import com.ittedu.os.edu.service.website.WebsiteCourseService;
 
 /**
  * 后台课程管理
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
 @Controller
 @RequestMapping("/admin")

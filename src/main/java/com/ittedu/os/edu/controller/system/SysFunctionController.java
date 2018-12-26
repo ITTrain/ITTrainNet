@@ -20,7 +20,7 @@ import java.util.Map;
 
 /**
  * 系统权限
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
 @Controller
 @RequestMapping("/admin/sysfunctioin")

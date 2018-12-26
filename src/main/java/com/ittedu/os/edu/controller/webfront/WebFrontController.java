@@ -1,14 +1,33 @@
 package com.ittedu.os.edu.controller.webfront;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
+
 import com.asual.lesscss.LessEngine;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.ittedu.os.common.cache.EHCacheUtil;
+import com.ittedu.os.common.constants.CacheConstans;
 import com.ittedu.os.common.controller.BaseController;
 import com.ittedu.os.common.util.ObjectUtils;
 import com.ittedu.os.common.util.StringUtils;
-import com.ittedu.os.common.constants.CacheConstans;
 import com.ittedu.os.edu.entity.common.Comment;
 import com.ittedu.os.edu.entity.course.CourseDto;
 import com.ittedu.os.edu.entity.course.CourseStudyhistory;
@@ -26,27 +45,9 @@ import com.ittedu.os.edu.service.help.HelpMenuService;
 import com.ittedu.os.edu.service.teacher.TeacherService;
 import com.ittedu.os.edu.service.website.WebsiteImagesService;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
-
-import javax.servlet.http.HttpServletRequest;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 /**
  * 前台 controller
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
 @Controller
 public class WebFrontController extends BaseController {
@@ -65,7 +66,7 @@ public class WebFrontController extends BaseController {
 	private CourseStudyhistoryService courseStudyhistoryService;
 	@Autowired
 	private HelpMenuService helpMenuService;
-	
+
 	/**
 	 * 首页获取网站首页数据
 	 */
@@ -77,7 +78,7 @@ public class WebFrontController extends BaseController {
 			Map<String, List<WebsiteImages>> websiteImages = websiteImagesService.queryImagesByType();
 			model.addAttribute("websiteImages", websiteImages);
 			//不同的主题显示不同的颜色
-			String cacheColor=(String)EHCacheUtil.get("inxedu_index_theme_color");
+			String cacheColor=(String)EHCacheUtil.get("ittedu_index_theme_color");
 			if(StringUtils.isNotEmpty(cacheColor)){
 				if("blue".equals(cacheColor)){
 					List<WebsiteImages> websiteImagesList = websiteImages.get("type_16");
@@ -97,7 +98,7 @@ public class WebFrontController extends BaseController {
 				model.addAttribute("websiteImagesList", websiteImagesList);
 			}
 			model.addAttribute("theme_color", cacheColor);
-			
+
 			// 查询排序最高的4位老师
 			List<Teacher> teacherList=(List<Teacher>)EHCacheUtil.get(CacheConstans.INDEX_TEACHER_RECOMMEND);
 			if(teacherList==null||teacherList.size()==0){
@@ -107,7 +108,7 @@ public class WebFrontController extends BaseController {
 				EHCacheUtil.set(CacheConstans.INDEX_TEACHER_RECOMMEND, teacherList,CacheConstans.RECOMMEND_COURSE_TIME);//缓存一小时
 			}
 			model.addAttribute("teacherList", teacherList);
-			
+
 			//课程互动
 			Comment comment = new Comment();
 			comment.setLimitNumber(10);
@@ -154,7 +155,7 @@ public class WebFrontController extends BaseController {
 		}
 		return getViewPath("/web/front/ajax-student-dynamic");//页面
 	}
-		
+
 	// 首页精品课程、最新课程、全部课程
 	@RequestMapping("/index/ajax/bna")
 	public String queryCourse(HttpServletRequest request) {
@@ -183,10 +184,10 @@ public class WebFrontController extends BaseController {
 	public ModelAndView passWordRecovery(){
 		return new ModelAndView(getViewPath("/web/user/password-recovery"));
 	}
-	
-	/** 
+
+	/**
 	 * 修改主题色
-	 * 
+	 *
 	 */
     @RequestMapping("/theme/ajax/update")
     @ResponseBody
@@ -196,7 +197,7 @@ public class WebFrontController extends BaseController {
 		json = this.setJson(true, color, "");
 		return json;
     }
-    
+
     public void changeColor(HttpServletRequest request,String colorfalg){
     	String color="#ea562e";
     	if (colorfalg.equals("blue")) {
@@ -204,11 +205,11 @@ public class WebFrontController extends BaseController {
 		}else if (colorfalg.equals("green")) {
     		color="#68cb9b";
 		}
-    	
+
     	//放入缓存
-    	EHCacheUtil.set("inxedu_index_theme_color",colorfalg,21600);//缓存六小时
+    	EHCacheUtil.set("ittedu_index_theme_color",colorfalg,21600);//缓存六小时
     	//获得项目根目录
-    	String strDirPath = request.getSession().getServletContext().getRealPath("/");     	
+    	String strDirPath = request.getSession().getServletContext().getRealPath("/");
     	//读取字符串
     	StringBuffer sb = new StringBuffer();
     	//当前读取行数
@@ -239,13 +240,13 @@ public class WebFrontController extends BaseController {
 			fw.close();
 		} catch (Exception e) {
 			e.printStackTrace();
-			
+
 		}
     }
-    
-    /** 
+
+    /**
 	 * 根据用户key 获得登录用户（用于小组登录）
-	 * 
+	 *
 	 */
     @RequestMapping("/user/ajax/logined")
     @ResponseBody
@@ -266,14 +267,14 @@ public class WebFrontController extends BaseController {
 			webLoginUser.setRealname(user.getUserName());
 			webLoginUser.setAvatar(user.getPicImg());
 			webLoginUser.setUserInfo("这个人很懒，他还没有签名");
-			
+
 			JsonParser jsonParser = new JsonParser();
 	        JsonObject jsonObject  = jsonParser.parse(new Gson().toJson(webLoginUser)).getAsJsonObject();
 			json = this.setJson(true, "", jsonObject.toString());
 		}else{
 			json = this.setJson(false, "", "");
 		}
-		
+
 		return json;
     }
 

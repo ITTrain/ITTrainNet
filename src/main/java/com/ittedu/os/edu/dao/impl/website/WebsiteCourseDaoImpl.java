@@ -11,7 +11,7 @@ import com.ittedu.os.edu.entity.website.WebsiteCourse;
 
 /**
  * 推荐课程分类
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
  @Repository("websiteCourseDao")
 public class WebsiteCourseDaoImpl extends GenericDaoImpl implements WebsiteCourseDao {

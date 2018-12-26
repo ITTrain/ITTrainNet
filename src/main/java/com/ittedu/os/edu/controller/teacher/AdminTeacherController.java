@@ -28,7 +28,7 @@ import java.util.List;
 
 /**
  * ho后台管理
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
 @Controller
 @RequestMapping("/admin")

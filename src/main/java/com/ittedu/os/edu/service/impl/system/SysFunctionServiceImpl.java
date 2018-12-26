@@ -13,7 +13,7 @@ import java.util.Map;
 
 /**
  * 后台系统权限
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
 @Service("sysFunctionService")
 public class SysFunctionServiceImpl implements SysFunctionService{

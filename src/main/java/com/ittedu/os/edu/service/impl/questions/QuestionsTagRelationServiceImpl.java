@@ -11,7 +11,7 @@ import com.ittedu.os.edu.service.questions.QuestionsTagRelationService;
 
 /**
 * 问答和 问答标签的 关联表service层接口实现
-* @author www.inxedu.com
+* @author www.ittedu.com
 */
 @Service("questionsTagRelationService")
 public class QuestionsTagRelationServiceImpl implements QuestionsTagRelationService {

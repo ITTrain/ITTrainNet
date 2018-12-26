@@ -14,7 +14,7 @@ import com.ittedu.os.common.dao.GenericDaoImpl;
 
 /**
  *广告图Dao层实现
- *@author www.inxedu.com
+ *@author www.ittedu.com
  */
 @Repository("websiteImagesDao")
 public class WebsiteImagesDaoImpl extends GenericDaoImpl implements WebsiteImagesDao {

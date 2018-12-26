@@ -9,7 +9,7 @@ import com.ittedu.os.edu.entity.letter.MsgSystem;
 
 /**
  * @description 站内信发件箱的Dao
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
 public interface MsgSystemDao {
     /**

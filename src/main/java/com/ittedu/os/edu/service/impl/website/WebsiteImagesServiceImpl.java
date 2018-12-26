@@ -18,7 +18,7 @@ import com.ittedu.os.edu.service.website.WebsiteImagesService;
 
 /**
  * 广告图service 实现
- * @author www.inxedu.com
+ * @author www.ittedu.com
  *
  */
 @Service("websiteImagesService")

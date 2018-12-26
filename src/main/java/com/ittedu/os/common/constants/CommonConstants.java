@@ -4,7 +4,7 @@ import com.ittedu.os.common.util.PropertyUtil;
 
 /**
  * 常量
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
 public class CommonConstants {
 

@@ -19,7 +19,7 @@ import java.util.Map;
 
 /**
  * Course 课程service接口实现
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
 @Service("courseService")
 public class CourseServiceImpl implements CourseService {

@@ -24,7 +24,7 @@ import com.ittedu.os.common.util.DateUtils;
 import com.ittedu.os.common.util.FileUploadUtils;
 
 /**
- * @author www.inxedu.com
+ * @author www.ittedu.com
  *
  */
 @Controller

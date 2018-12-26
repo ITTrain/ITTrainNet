@@ -8,7 +8,7 @@ import com.ittedu.os.edu.entity.course.QueryCourseNote;
 
 /**
  * CourseNoteService 课程笔记 管理接口
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
 public interface CourseNoteService {
 

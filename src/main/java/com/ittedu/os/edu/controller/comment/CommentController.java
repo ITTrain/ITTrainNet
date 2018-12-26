@@ -23,7 +23,7 @@ import com.ittedu.os.edu.service.comment.CommentService;
 
 /**
  * 前台评论模块
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
 @Controller
 @RequestMapping("/web/comment")

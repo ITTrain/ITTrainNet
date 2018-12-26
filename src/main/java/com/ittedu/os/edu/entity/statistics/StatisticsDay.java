@@ -6,7 +6,7 @@ import lombok.EqualsAndHashCode;
 import java.io.Serializable;
 
 /**
- * @author www.inxedu.com
+ * @author www.ittedu.com
  *
  */
 @Data

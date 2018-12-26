@@ -6,7 +6,7 @@ import com.ittedu.os.common.entity.PageEntity;
 import com.ittedu.os.edu.entity.user.UserLoginLog;
 
 /**
- * @author www.inxedu.com
+ * @author www.ittedu.com
  *
  */
 public interface UserLoginLogDao {

@@ -14,7 +14,7 @@ import com.ittedu.os.edu.entity.statistics.StatisticsDay;
 /**
  *
  * StatisticsDay
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
  @Repository("statisticsDayDao")
 public class StatisticsDayDaoImpl extends GenericDaoImpl implements StatisticsDayDao{

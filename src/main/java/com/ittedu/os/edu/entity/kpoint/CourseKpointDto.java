@@ -4,7 +4,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 /**
- * @author www.inxedu.com
+ * @author www.ittedu.com
  *
  */
 @Data

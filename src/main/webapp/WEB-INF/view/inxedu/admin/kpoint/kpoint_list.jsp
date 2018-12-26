@@ -200,7 +200,7 @@
 										<td style="text-align: left;">
 											<select id="courseKpointVideoType" name="courseKpoint.videoType" >
 												<%--<option value="">--请选择--</option>--%>
-												<option value="INXEDUVIDEO">因酷云</option>
+												<option value="ITTEDUVIDEO">酷云</option>
 												<%--<option value="baofeng">暴风</option>--%>
 												<option value="IFRAME">其他</option>
 												<option value="CC">CC视频</option>

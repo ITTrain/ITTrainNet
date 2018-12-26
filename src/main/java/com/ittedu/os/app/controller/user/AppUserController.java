@@ -37,7 +37,7 @@ import com.ittedu.os.edu.service.user.UserService;
 import com.ittedu.os.edu.service.website.WebsiteProfileService;
 
 /**
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
 @Controller
 @RequestMapping("/webapp")

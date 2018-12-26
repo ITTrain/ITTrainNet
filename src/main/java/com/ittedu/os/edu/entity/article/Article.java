@@ -8,7 +8,7 @@ import lombok.Data;
 
 /**
  * 文章资讯
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
 @Data
 public class Article implements Serializable{

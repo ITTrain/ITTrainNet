@@ -22,7 +22,7 @@ import java.util.List;
 
 /**
  * 推荐模块课程分类
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
 @Controller
 @RequestMapping("/admin")

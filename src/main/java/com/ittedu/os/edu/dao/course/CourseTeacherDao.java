@@ -4,7 +4,7 @@ package com.ittedu.os.edu.dao.course;
 
 /**
  * CourseTeacher管理接口
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
 public interface CourseTeacherDao {
 

@@ -28,7 +28,7 @@ import com.ittedu.os.edu.service.article.ArticleService;
 
 /**
  * 文章后台管理
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
 @Controller
 @RequestMapping("/admin/article")

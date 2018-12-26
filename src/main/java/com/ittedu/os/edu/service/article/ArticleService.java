@@ -9,7 +9,7 @@ import com.ittedu.os.edu.entity.article.ArticleContent;
 import com.ittedu.os.edu.entity.article.QueryArticle;
 
 /**
- * @author www.inxedu.com
+ * @author www.ittedu.com
  * 文章service接口
  */
 public interface ArticleService {

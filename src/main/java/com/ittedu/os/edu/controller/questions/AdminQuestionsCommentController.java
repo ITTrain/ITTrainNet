@@ -26,7 +26,7 @@ import com.ittedu.os.edu.service.questions.QuestionsService;
 
 /**
  * 问答评论后台 Controller
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
 @Controller
 @RequestMapping("/admin")

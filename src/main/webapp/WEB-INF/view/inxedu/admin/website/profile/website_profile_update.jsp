@@ -90,20 +90,20 @@
 						<span class="field_desc"></span>
 					</p>
 				</c:if>
-				<c:if test="${type=='inxeduVideo'}">
+				<c:if test="${type=='itteduVideo'}">
 					<p>
 						<label ><font color="red">*</font>&nbsp;因酷云UserId</label>
-						<input type="text" name="UserId" value="${webSiteMap.inxeduVideo.UserId}" style="width: 15%" class="sf" />
+						<input type="text" name="UserId" value="${webSiteMap.itteduVideo.UserId}" style="width: 15%" class="sf" />
 						<span class="field_desc"></span>
 					</p>
 					<p>
 						<label ><font color="red">*</font>&nbsp;因酷云SecretKey</label>
-						<input type="text" name="SecretKey" value="${webSiteMap.inxeduVideo.SecretKey}" style="width: 15%" class="sf" />
+						<input type="text" name="SecretKey" value="${webSiteMap.itteduVideo.SecretKey}" style="width: 15%" class="sf" />
 						<span class="field_desc"></span>
 					</p>
 					<p>
 						<label ><font color="red">*</font>&nbsp;因酷云AccessKey</label>
-						<input type="text" name="AccessKey" value="${webSiteMap.inxeduVideo.AccessKey}" style="width: 15%" class="sf" />
+						<input type="text" name="AccessKey" value="${webSiteMap.itteduVideo.AccessKey}" style="width: 15%" class="sf" />
 						<span class="field_desc"></span>
 					</p>
 				</c:if>

@@ -6,7 +6,7 @@ import com.ittedu.os.common.entity.PageEntity;
 import com.ittedu.os.edu.entity.questions.Questions;
 /**
  * questions管理接口
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
 public interface QuestionsDao {
 

@@ -7,7 +7,7 @@ import java.io.Serializable;
 
 /**
  * 导航
- * @author www.inxedu.com
+ * @author www.ittedu.com
  *
  */
 @Data

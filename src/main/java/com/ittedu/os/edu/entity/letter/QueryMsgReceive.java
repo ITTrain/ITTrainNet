@@ -10,7 +10,7 @@ import com.ittedu.os.edu.entity.user.User;
 
 /**
  * 查询站内信接收
- * @author www.inxedu.com
+ * @author www.ittedu.com
  *
  */
 @Data

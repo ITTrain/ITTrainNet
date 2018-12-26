@@ -10,7 +10,7 @@ import java.util.List;
 
 /**
  * 多线程批量发送短信
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
 public class SmsBatchThread implements Runnable{
     private String content;

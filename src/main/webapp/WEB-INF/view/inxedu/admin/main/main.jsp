@@ -132,7 +132,7 @@
             		 $("#ui-sMenu>div h3").removeClass("ui-state-active ui-corner-top").addClass("ui-state-default ui-corner-all");
             		 $("#ui-sMenu>div .ui-icon").removeClass("ui-icon-triangle-1-s").addClass("ui-icon-triangle-1-e");
             		 $("#ui-sMenu>div div").slideUp("fast");
-	            		 
+
 	                 _oT.removeClass("ui-state-default ui-corner-all").addClass("ui-state-active ui-corner-top");
 	                 _oTi.removeClass("ui-icon-triangle-1-e").addClass("ui-icon-triangle-1-s");
 	                 _oC.slideDown("fast");
@@ -173,7 +173,7 @@
 				<div id="top">
 					<!-- Logo -->
 					<div class="logo">
-						<a href="http://demo1.inxedu.com/" target="_blank" title="因酷在线教育软件 - 在线教育整体解决方案提供商" class="tooltip">
+						<a href="http://demo1.ittedu.com/" target="_blank" title="因酷在线教育软件 - 在线教育整体解决方案提供商" class="tooltip">
 							<img src="${ctx}/static/admin/assets/logo.png" height="60" alt="因酷在线教育软件 - 在线教育整体解决方案提供商" />
 						</a>
 					</div>
@@ -250,7 +250,7 @@
 	<div id="footer">
 		<p class="mid">${websitemap.web.copyright}</p>
 		<p class="mid">
-			Powered By <a target="_blank" href="http://demo1.inxedu.com/" style="color: #666;">${websitemap.web.company}</a>
+			Powered By <a target="_blank" href="http://demo1.ittedu.com/" style="color: #666;">${websitemap.web.company}</a>
 		</p>
 	</div>
 		<script type="text/javascript">

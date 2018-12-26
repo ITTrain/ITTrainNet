@@ -12,7 +12,7 @@ import java.util.List;
 
 /**
  * 学员登录日志
- * @author www.inxedu.com
+ * @author www.ittedu.com
  *
  */
 @Service("userLoginLogService")

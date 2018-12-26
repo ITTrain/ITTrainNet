@@ -11,7 +11,7 @@ import com.ittedu.os.edu.entity.course.FavouriteCourseDTO;
 
 /**
  * 课程收藏管理接口
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
 public interface CourseFavoritesDao {
 	/**

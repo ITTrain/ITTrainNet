@@ -7,7 +7,7 @@ import com.ittedu.os.edu.entity.website.WebsiteCourse;
 
 /**
  * WebsiteCourse管理接口
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
 public interface WebsiteCourseDao {
 

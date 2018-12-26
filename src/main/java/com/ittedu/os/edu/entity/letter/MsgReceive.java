@@ -8,7 +8,7 @@ import java.util.Date;
 
 /**
  * 站内信接收者
- * @author www.inxedu.com
+ * @author www.ittedu.com
  *
  */
 @Data

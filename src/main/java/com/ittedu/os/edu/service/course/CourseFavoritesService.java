@@ -9,7 +9,7 @@ import com.ittedu.os.edu.entity.course.FavouriteCourseDTO;
 
 /**
  * CourseFavorites 课程收藏 管理接口
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
 public interface CourseFavoritesService {
 	/**

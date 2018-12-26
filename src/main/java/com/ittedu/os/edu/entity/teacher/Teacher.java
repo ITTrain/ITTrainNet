@@ -7,7 +7,7 @@ import java.io.Serializable;
 
 /**
  * 讲师实体
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
 @Data
 @EqualsAndHashCode(callSuper = false)

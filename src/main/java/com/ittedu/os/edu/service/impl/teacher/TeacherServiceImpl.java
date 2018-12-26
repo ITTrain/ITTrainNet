@@ -14,7 +14,7 @@ import com.ittedu.os.edu.service.teacher.TeacherService;
 
 /**
  * Teacher管理接口
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
 @Service("teacherService")
 public class TeacherServiceImpl implements TeacherService {

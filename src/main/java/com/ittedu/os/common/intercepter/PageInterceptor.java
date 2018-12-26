@@ -31,7 +31,7 @@ import com.ittedu.os.common.util.ObjectUtils;
         args = {MappedStatement.class, Object.class, RowBounds.class, ResultHandler.class}
 )})
 /**
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
 public class PageInterceptor implements Interceptor {
     public PageInterceptor() {

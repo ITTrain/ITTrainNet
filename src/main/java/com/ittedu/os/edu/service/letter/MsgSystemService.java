@@ -1,17 +1,17 @@
 package com.ittedu.os.edu.service.letter;
 
-import com.ittedu.os.common.entity.PageEntity;
-import com.ittedu.os.edu.entity.letter.MsgSystem;
-
 import java.util.Date;
 import java.util.List;
 
+import com.ittedu.os.common.entity.PageEntity;
+import com.ittedu.os.edu.entity.letter.MsgSystem;
+
 /**
- * @author : xiaokun
- * @ClassName com.inxedu.os.sns.service.letter.MsgSenderService
+ * @author :
+ * @ClassName com.ittedu.os.sns.service.letter.MsgSenderService
  * @description 站内信的发件箱service
  * @Create Date : 2014-1-26 下午1:53:44
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
 public interface MsgSystemService {
 

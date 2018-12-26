@@ -7,7 +7,7 @@ import com.ittedu.os.edu.entity.website.WebsiteCourse;
 
 /**
  * 推荐课程分类管理接口
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
 public interface WebsiteCourseService {
 

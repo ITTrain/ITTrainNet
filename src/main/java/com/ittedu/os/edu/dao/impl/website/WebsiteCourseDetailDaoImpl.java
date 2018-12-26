@@ -16,7 +16,7 @@ import com.ittedu.os.common.dao.GenericDaoImpl;
 /**
  *
  * 推荐课程关联Dao层
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
  @Repository("websiteCourseDetailDao")
 public class WebsiteCourseDetailDaoImpl extends GenericDaoImpl implements WebsiteCourseDetailDao {

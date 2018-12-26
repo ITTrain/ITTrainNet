@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.ittedu.os.common.controller.BaseController;
 import com.ittedu.os.common.util.ObjectUtils;
 import com.ittedu.os.common.util.StringUtils;
-import com.ittedu.os.common.util.inxeduvideo.InxeduVideo;
+import com.ittedu.os.common.util.itteduvideo.ItteduVideo;
 import com.ittedu.os.edu.constants.enums.WebSiteProfileType;
 import com.ittedu.os.edu.entity.course.Course;
 import com.ittedu.os.edu.entity.kpoint.CourseKpoint;
@@ -27,7 +27,7 @@ import com.ittedu.os.edu.service.website.WebsiteProfileService;
 
 /**
  * CourseKpoint 课程章节管理
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
 @Controller
 public class CourseKpointController extends BaseController {
@@ -77,15 +77,15 @@ public class CourseKpointController extends BaseController {
 				String videourl = courseKpoint.getVideoUrl();
 				// 播放类型
 				String videotype = courseKpoint.getVideoType();
-				//查询inxeduVideo的key
-				if(courseKpoint.getVideoType().equalsIgnoreCase(WebSiteProfileType.inxeduVideo.toString())){
-					Map<String,Object> map=(Map<String,Object>)websiteProfileService.getWebsiteProfileByType(WebSiteProfileType.inxeduVideo.toString()).get(WebSiteProfileType.inxeduVideo.toString());
+				//查询itteduVideo的key
+				if(courseKpoint.getVideoType().equalsIgnoreCase(WebSiteProfileType.itteduVideo.toString())){
+					Map<String,Object> map=(Map<String,Object>)websiteProfileService.getWebsiteProfileByType(WebSiteProfileType.itteduVideo.toString()).get(WebSiteProfileType.itteduVideo.toString());
 					String play_url = "http://vod.baofengcloud.com/" + map.get("UserId") + "/player/cloud.swf";
 					String url = "servicetype=1&uid="+map.get("UserId")+"&fid="+videourl;
 					play_url += "?" + url;
 					//如果因酷云的key不为空则按加密播放如果为空则不加密
 					if(StringUtils.isNotEmpty(map.get("SecretKey").toString())&&StringUtils.isNotEmpty(map.get("AccessKey").toString())){
-						String token = InxeduVideo.createPlayToken(videourl,map.get("SecretKey").toString(),map.get("AccessKey").toString());
+						String token = ItteduVideo.createPlayToken(videourl,map.get("SecretKey").toString(),map.get("AccessKey").toString());
 						play_url += "&tk=" + token;
 					}
 					play_url += "&auto=" + 1;

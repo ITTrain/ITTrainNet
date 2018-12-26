@@ -7,7 +7,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * @author www.inxedu.com
+ * @author www.ittedu.com
  * 文章查询条件
  */
 @Data

@@ -15,7 +15,7 @@ import com.ittedu.os.common.dao.GenericDaoImpl;
 
 /**
  * 教师dao层
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
 @Repository("teacherDao")
 public class TeacherDaoImpl extends GenericDaoImpl implements TeacherDao {

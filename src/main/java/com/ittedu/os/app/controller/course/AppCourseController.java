@@ -23,7 +23,7 @@ import com.ittedu.os.edu.entity.course.QueryCourse;
 import com.ittedu.os.edu.service.course.CourseService;
 
 /**
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
 @Controller
 @RequestMapping("/webapp")

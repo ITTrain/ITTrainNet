@@ -7,7 +7,7 @@ import com.ittedu.os.common.entity.PageEntity;
 import com.ittedu.os.edu.entity.common.Comment;
 /**
  *  评论模块service接口
- *  @author www.inxedu.com
+ *  @author www.ittedu.com
  */
 public interface CommentService {
 	/**

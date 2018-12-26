@@ -27,7 +27,7 @@ import com.ittedu.os.edu.service.user.UserService;
 
 /**
  * @description 站内信的实现
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
 @Service("msgReceiveService")
 public class MsgReceiveServiceImpl implements MsgReceiveService {

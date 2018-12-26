@@ -10,7 +10,7 @@ import com.ittedu.os.edu.entity.website.WebsiteImages;
 
 /**
  *广告图dao层接口
- *@author www.inxedu.com
+ *@author www.ittedu.com
  */
 public interface WebsiteImagesDao {
 	/**

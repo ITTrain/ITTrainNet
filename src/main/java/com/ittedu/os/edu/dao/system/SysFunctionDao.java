@@ -7,7 +7,7 @@ import com.ittedu.os.edu.entity.system.SysFunction;
 
 /**
  * 后台系统权限
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
 public interface SysFunctionDao {
 	

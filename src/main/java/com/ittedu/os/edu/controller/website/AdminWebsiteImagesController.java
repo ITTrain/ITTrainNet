@@ -26,7 +26,7 @@ import java.util.Map;
 
 /**
  *广告图管理
- *@author www.inxedu.com
+ *@author www.ittedu.com
  */
 @Controller
 @RequestMapping("/admin")

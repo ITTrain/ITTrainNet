@@ -7,7 +7,7 @@ import java.io.Serializable;
 
 /**
  * banner广告图管理
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
 @Data
 @EqualsAndHashCode(callSuper=false)

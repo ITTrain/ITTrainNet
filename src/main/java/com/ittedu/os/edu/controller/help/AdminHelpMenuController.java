@@ -22,7 +22,7 @@ import java.util.Map;
 
 /**
  * AdminHelpMenuController帮助中心
- * @author http://www.inxedu.com
+ * @author http://www.ittedu.com
  */
 @Controller
 @RequestMapping("/admin")

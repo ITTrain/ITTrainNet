@@ -12,7 +12,7 @@ import java.util.List;
 /**
  *
  * CourseStudyhistory 管理接口实现
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
  @Repository("courseStudyhistoryDao")
 public class CourseStudyhistoryDaoImpl extends GenericDaoImpl implements CourseStudyhistoryDao{

@@ -23,7 +23,7 @@ import com.ittedu.os.edu.service.system.SysFunctionService;
 
 /**
  * 后台用户登录与权限拦截器
- *@author www.inxedu.com
+ *@author www.ittedu.com
  */
 public class IntercepterAdmin extends HandlerInterceptorAdapter{
 	@Autowired

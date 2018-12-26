@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 import com.ittedu.os.common.dao.GenericDaoImpl;
 
 /**
- * @author www.inxedu.com
+ * @author www.ittedu.com
  *
  */
 @Repository("questionsDao")

@@ -13,7 +13,7 @@ import java.util.Map;
 
 /**
  * 专业service实现
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
 @Service("questionsTagService")
 public class QuestionsTagServiceImpl implements QuestionsTagService {

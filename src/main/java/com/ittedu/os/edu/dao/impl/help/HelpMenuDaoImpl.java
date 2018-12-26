@@ -10,7 +10,7 @@ import java.util.List;
 
 /**
  * 帮助菜单
- * @author http://www.inxedu.com
+ * @author http://www.ittedu.com
  */
 @Repository("helpMenuDao")
 public class HelpMenuDaoImpl extends GenericDaoImpl implements HelpMenuDao {

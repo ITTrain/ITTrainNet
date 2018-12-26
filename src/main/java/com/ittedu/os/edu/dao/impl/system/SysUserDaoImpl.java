@@ -13,7 +13,7 @@ import java.util.Map;
 
 /**
  * 后台用户
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
 @Repository("sysUserDao")
 public class SysUserDaoImpl extends GenericDaoImpl implements SysUserDao{

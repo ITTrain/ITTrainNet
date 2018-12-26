@@ -26,7 +26,7 @@ import com.ittedu.os.edu.service.subject.SubjectService;
 
 /**
  * 专业 Controller
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
 @Controller
 @RequestMapping("/admin")

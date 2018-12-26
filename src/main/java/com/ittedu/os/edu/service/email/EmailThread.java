@@ -12,7 +12,7 @@ import lombok.Getter;
 
 
 /**
- * @author http://www.inxedu.com
+ * @author http://www.ittedu.com
  */
 public class EmailThread implements Runnable{
     //发送邮件service

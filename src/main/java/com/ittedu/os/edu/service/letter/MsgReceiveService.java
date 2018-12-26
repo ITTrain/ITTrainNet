@@ -10,7 +10,7 @@ import java.util.Map;
 
 /**
  * 站内信接收
- * @author www.inxedu.com
+ * @author www.ittedu.com
  *
  */
 public interface MsgReceiveService {

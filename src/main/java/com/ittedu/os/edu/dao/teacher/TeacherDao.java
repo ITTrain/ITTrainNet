@@ -10,7 +10,7 @@ import com.ittedu.os.edu.entity.teacher.Teacher;
 
 /**
  * 教师dao层接口
- * @author www.inxedu.com
+ * @author www.ittedu.com
  */
 public interface TeacherDao {
 
