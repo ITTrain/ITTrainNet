@@ -87,14 +87,24 @@
      </bean>
 
 	<!-- Spring MVC 内置处理json配置  添加jackson-mapper-asl-1.*.*.jar jackson-core-asl-1.*.*.jar这两个包实现-->
-		 <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+<!--20181230 Spring3→5升级对应  Start-->
+<!-- 	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
 		 <property name="messageConverters">
 		  <list>
 		   <bean
 		    class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter" />
 		  </list>
 		 </property>
+	</bean> -->
+	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+		 <property name="messageConverters">
+		  <list>
+		   <bean
+		    class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter" />
+		  </list>
+		 </property>
 	</bean>
+<!--20181230 Spring3→5升级对应  End-->
 	 <!-- 将Controller抛出的异常转到特定View, 保持SiteMesh的装饰效果 -->
      <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
            <property name="exceptionMappings">

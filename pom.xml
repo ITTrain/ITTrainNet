@@ -3,21 +3,24 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.ittedu.os</groupId>
-    <artifactId>ittedu</artifactId>
+    <artifactId>ITTrainNet</artifactId>
     <version>1.0</version>
-    <name>ittedu</name>
+    <name>ITTrainNet</name>
     <packaging>war</packaging>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring.version>3.2.12.RELEASE</spring.version>
+<!--20181230 Spring3→5升级对应  Start-->
+        <!-- <spring.version>3.2.12.RELEASE</spring.version> -->
+        <spring.version>5.0.0.RELEASE</spring.version>
+<!--20181230 Spring3→5升级对应  End-->
         <mybatis.version>3.2.7</mybatis.version>
         <aspectj.version>1.7.3</aspectj.version>
-        <jdk.version>1.7</jdk.version>
+        <jdk.version>1.8</jdk.version>
     </properties>
 
     <build>
-        <finalName>ittedu</finalName>
+        <finalName>ITTrainNet</finalName>
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
@@ -27,7 +30,7 @@
         <plugins>
 
             <!-- tomcat plugin -->
-            <plugin>
+<!--             <plugin>
                 <groupId>org.apache.tomcat.maven</groupId>
                 <artifactId>tomcat7-maven-plugin</artifactId>
                 <version>2.2</version>
@@ -40,6 +43,23 @@
                     <contextReloadable>true</contextReloadable>
                     <warSourceDirectory>src/main/webapp</warSourceDirectory>
                     <contextReloadable>false</contextReloadable>
+                </configuration>
+            </plugin> -->
+           <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat8-maven-plugin</artifactId>
+                <version>3.0-r1756463</version>
+                <configuration>
+                    <url>http://127.0.0.1:8080/manager</url>
+<!--                     <username>tomcat</username>
+                    <password>tomcat</password> -->
+                    <server>tomcat8</server>
+                    <path>/</path>
+                    <port>8080</port>
+                    <uriEncoding>UTF-8</uriEncoding>
+                    <contextReloadable>true</contextReloadable>
+                    <warSourceDirectory>src/main/webapp</warSourceDirectory>
+                    <contextReloadable>false</contextReloadable> <!---->
                 </configuration>
             </plugin>
             <!-- maven-assembly-plugin -->
@@ -56,8 +76,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.1</version>
                 <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                     <encoding>UTF8</encoding>
                 </configuration>
             </plugin>
@@ -104,6 +124,36 @@
             </plugin>
         </plugins>
     </build>
+
+    <pluginRepositories>
+      <pluginRepository>
+        <id>alfresco-public</id>
+        <url>https://artifacts.alfresco.com/nexus/content/groups/public</url>
+      </pluginRepository>
+      <pluginRepository>
+        <id>alfresco-public-snapshots</id>
+        <url>https://artifacts.alfresco.com/nexus/content/groups/public-snapshots</url>
+        <snapshots>
+          <enabled>true</enabled>
+          <updatePolicy>daily</updatePolicy>
+        </snapshots>
+      </pluginRepository>
+      <pluginRepository>
+        <id>beardedgeeks-releases</id>
+        <url>http://beardedgeeks.googlecode.com/svn/repository/releases</url>
+      </pluginRepository>
+      <pluginRepository>
+        <id>apache.snapshots</id>
+        <name>Apache Snapshots</name>
+        <url>http://repository.apache.org/content/groups/snapshots-group/</url>
+        <releases>
+            <enabled>false</enabled>
+        </releases>
+        <snapshots>
+            <enabled>true</enabled>
+        </snapshots>
+    </pluginRepository>
+  </pluginRepositories>
 
     <!--  依赖的jar包 -->
     <dependencies>
@@ -205,8 +255,8 @@
         <!-- j2ee web spec -->
         <dependency>
             <groupId>javax.servlet</groupId>
-            <artifactId>servlet-api</artifactId>
-            <version>2.5</version>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.0.1</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -329,9 +379,10 @@
             <artifactId>commons-configuration</artifactId>
             <version>1.10</version>
         </dependency>
+<!--20181230 Spring3→5升级对应  Start-->
         <!-- javamelody-->
-
-        <dependency>
+<!--
+         <dependency>
             <groupId>org.codehaus.jackson</groupId>
             <artifactId>jackson-core-asl</artifactId>
             <version>1.8.4</version>
@@ -341,6 +392,23 @@
             <artifactId>jackson-mapper-asl</artifactId>
             <version>1.8.4</version>
         </dependency>
+ -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>2.9.5</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>2.9.5</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.9.5</version>
+        </dependency>
+<!--20181230 Spring3→5升级对应  End-->
         <!-- memcached -->
         <dependency>
             <groupId>net.spy</groupId>

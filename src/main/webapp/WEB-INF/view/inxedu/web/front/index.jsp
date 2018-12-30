@@ -7,7 +7,7 @@
 <script>
 	var theme_color = '${theme_color}';
 </script>
-</head> 
+</head>
 <body>
 	<div class="i-slide">
 		<section>
@@ -43,7 +43,7 @@
 				</header>
 				<article class="comm-course-list">
 					<ul class="of" id="weinituijian">
-						
+
 					</ul>
 					<div class="clear"></div>
 				</article>
@@ -102,7 +102,7 @@
 												</c:if>
 											</div>
 											<section class="hLh20 of">
-												<span class="fr"><tt class="c-ccc f-fG"><fmt:formatDate value="${comment.addTime }" pattern="yyyy/MM/dd HH:mm" /></tt></span> 
+												<span class="fr"><tt class="c-ccc f-fG"><fmt:formatDate value="${comment.addTime }" pattern="yyyy/MM/dd HH:mm" /></tt></span>
 												<span class="fsize16 c-666">
 												 	<c:if test="${empty comment.userName }">
 														${comment.email}
@@ -110,7 +110,7 @@
 													<c:if test="${not empty comment.userName }">
 														${comment.userName}
 													</c:if>
-												</span> 
+												</span>
 											    <span class="fsize14 c-999 ml5 f-fA">评论课程：</span>
 											</section>
 											<section class="hLh20 of mt10">
