@@ -194,7 +194,8 @@
 		</div>
 		<!-- /网校名师 结束 -->
 	</div>
-	<div class="tip-new-warp">
+	<!-- 20190102 tang 首页提示弹窗屏蔽  Start -->
+<%-- 	<div class="tip-new-warp">
 		<div class="tip-new-info">
 			<div class="tip-new-in-bg">
 				<img src="${ctx}/static/inxweb/img/kyb-tip-bg.jpg">
@@ -207,8 +208,8 @@
 				</div>
 				<div class="tip-new-in-nr-bottom">
 					<div class="tip-new-in-b-txt f-fM fsize16 c-333">
-						开源版本切勿商用哦！别辜负了我们善良的初衷，不然因酷小伙伴可是要暴躁的哟。更多功能欢迎购买商业版。
-						<p class="f-fM fsize16 c-333 disFw">——因酷教育软件</p>
+						2019頑張れ!
+						<p class="f-fM fsize16 c-333 disFw">——ITT教育软件</p>
 					</div>
 					<div class="tip-new-in-b-btn">
 						<a href="http://www.ittedu.com" title="选购商业版" target="_blank">选购商业版</a>
@@ -216,7 +217,8 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> --%>
+	<!-- 20190102 tang 首页提示弹窗屏蔽  End -->
 	<script type="text/javascript" src="${ctx}/static/inxweb/js/swiper-2.1.0.js"></script>
 	<script type="text/javascript" src="${ctx}/static/inxweb/front/index.js"></script>
 	<script type="text/javascript" src="${ctx}/static/inxweb/front/index_theme_color.js"></script><!-- 换肤 -->
