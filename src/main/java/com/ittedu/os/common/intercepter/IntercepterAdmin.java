@@ -14,6 +14,7 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 import com.google.gson.Gson;
 import com.ittedu.os.common.cache.EHCacheUtil;
 import com.ittedu.os.common.constants.CacheConstans;
+import com.ittedu.os.common.constants.CommonConstants;
 import com.ittedu.os.common.util.ObjectUtils;
 import com.ittedu.os.common.util.SingletonLoginUtils;
 import com.ittedu.os.common.util.WebUtils;
@@ -50,13 +51,15 @@ public class IntercepterAdmin extends HandlerInterceptorAdapter{
 	}
 
 	@SuppressWarnings("unchecked")
-
 	public boolean preHandle(HttpServletRequest request,
 			HttpServletResponse response, Object handler) throws Exception {
 		//获取登录的用户
 		SysUser sysUser = SingletonLoginUtils.getLoginSysUser(request);
 		if(sysUser==null){
-			response.sendRedirect("/admin");//跳转登录页面
+			//20190106 tang 拦截地址中工程名称追加 Start
+			//response.sendRedirect("/admin");//跳转登录页面
+			response.sendRedirect("/"+CommonConstants.projectName+"/admin");//跳转登录页面
+			//20190106 tang 拦截地址中工程名称追加 End
 			return false;
 		}
 		//访问的路径
