@@ -13,7 +13,7 @@
 						</c:when>
 						<c:otherwise>
 
-							<a href="${uf.functionUrl}" data-href="${uf.functionUrl}"  title="${uf.functionName}" class="tooltip">${uf.functionName}</a>
+							<a href="${ctx}${uf.functionUrl}" data-href="${ctx}${uf.functionUrl}"  title="${uf.functionName}" class="tooltip">${uf.functionName}</a>
 						</c:otherwise>
 					</c:choose>
 				</h3>
@@ -29,7 +29,7 @@
 									</c:when>
 									<c:otherwise>
 										<dt>
-											<a  href="${cuf.functionUrl}" title="${cuf.functionName}" data-href="${cuf.functionUrl}" title="${cuf.functionName}">${cuf.functionName}</a>
+											<a  href="${ctx}${cuf.functionUrl}" title="${cuf.functionName}" data-href="${ctx}${cuf.functionUrl}" title="${cuf.functionName}">${cuf.functionName}</a>
 										</dt>
 									</c:otherwise>
 								</c:choose>
@@ -43,7 +43,7 @@
 											</c:when>
 											<c:otherwise>
 												<dd>
-													<a href="${ccuf.functionUrl}" data-href="${ccuf.functionUrl}" title="${ccuf.functionName}">${ccuf.functionName}</a>
+													<a href="${ctx}${ccuf.functionUrl}" data-href="${ctx}${ccuf.functionUrl}" title="${ccuf.functionName}">${ccuf.functionName}</a>
 												</dd>
 											</c:otherwise>
 										</c:choose>
@@ -64,7 +64,7 @@
 							<a href="javascript:void(0)" title="${uf.functionName}" class="tooltip">${uf.functionName}</a>
 						</c:when>
 						<c:otherwise>
-							<a href="${uf.functionUrl}"  data-href="${uf.functionUrl}"  title="${uf.functionName}" class="tooltip">${uf.functionName}</a>
+							<a href="${ctx}${uf.functionUrl}"  data-href="${ctx}${uf.functionUrl}"  title="${uf.functionName}" class="tooltip">${uf.functionName}</a>
 						</c:otherwise>
 					</c:choose>
 				</h3>
@@ -80,7 +80,7 @@
 									</c:when>
 									<c:otherwise>
 										<dt>
-											<a href="${cuf.functionUrl}" data-href="${cuf.functionUrl}"  title="${cuf.functionName}">${cuf.functionName}</a>
+											<a href="${ctx}${cuf.functionUrl}" data-href="${ctx}${cuf.functionUrl}"  title="${cuf.functionName}">${cuf.functionName}</a>
 										</dt>
 									</c:otherwise>
 								</c:choose>
@@ -94,7 +94,7 @@
 											</c:when>
 											<c:otherwise>
 												<dd>
-													<a  href="${ccuf.functionUrl}" data-href="${ccuf.functionUrl}" title="${ccuf.functionName}">${ccuf.functionName}</a>
+													<a  href="${ctx}${ccuf.functionUrl}" data-href="${ctx}${ccuf.functionUrl}" title="${ccuf.functionName}">${ccuf.functionName}</a>
 												</dd>
 											</c:otherwise>
 										</c:choose>
