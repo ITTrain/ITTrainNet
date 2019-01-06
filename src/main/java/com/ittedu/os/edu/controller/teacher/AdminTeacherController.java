@@ -1,15 +1,9 @@
 package com.ittedu.os.edu.controller.teacher;
 
-import com.ittedu.os.common.controller.BaseController;
-import com.ittedu.os.common.entity.PageEntity;
-import com.ittedu.os.common.util.ObjectUtils;
-import com.ittedu.os.common.util.WebUtils;
-import com.ittedu.os.edu.entity.subject.QuerySubject;
-import com.ittedu.os.edu.entity.subject.Subject;
-import com.ittedu.os.edu.entity.teacher.QueryTeacher;
-import com.ittedu.os.edu.entity.teacher.Teacher;
-import com.ittedu.os.edu.service.subject.SubjectService;
-import com.ittedu.os.edu.service.teacher.TeacherService;
+import java.util.Date;
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,9 +16,17 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.servlet.http.HttpServletRequest;
-import java.util.Date;
-import java.util.List;
+import com.ittedu.os.common.constants.CommonConstants;
+import com.ittedu.os.common.controller.BaseController;
+import com.ittedu.os.common.entity.PageEntity;
+import com.ittedu.os.common.util.ObjectUtils;
+import com.ittedu.os.common.util.WebUtils;
+import com.ittedu.os.edu.entity.subject.QuerySubject;
+import com.ittedu.os.edu.entity.subject.Subject;
+import com.ittedu.os.edu.entity.teacher.QueryTeacher;
+import com.ittedu.os.edu.entity.teacher.Teacher;
+import com.ittedu.os.edu.service.subject.SubjectService;
+import com.ittedu.os.edu.service.teacher.TeacherService;
 
 /**
  * ho后台管理
@@ -35,7 +37,7 @@ import java.util.List;
 public class AdminTeacherController extends BaseController {
     //log日志
     private static final Logger logger = LoggerFactory.getLogger(AdminTeacherController.class);
-    
+
     // 绑定变量名字和属性，参数封装进类
     @InitBinder("teacher")
     public void initBinderTeacher(WebDataBinder binder) {
@@ -45,13 +47,13 @@ public class AdminTeacherController extends BaseController {
     public void initBinderQueryTeacher(WebDataBinder binder) {
     	binder.setFieldDefaultPrefix("queryTeacher.");
     }
-    
+
     //教师 service
     @Autowired
     private TeacherService teacherService;
     @Autowired
     private SubjectService subjectService;
-    
+
     /** 到教师添加页面 */
     @RequestMapping("/teacher/toadd")
     public ModelAndView toAddTeacher(HttpServletRequest request) {
@@ -67,7 +69,7 @@ public class AdminTeacherController extends BaseController {
 		}
         return model;
     }
-    
+
     /** 添加教师 */
     @RequestMapping("/teacher/add")
     public String addTeacher(HttpServletRequest request, @ModelAttribute("teacher") Teacher teacher) {
@@ -149,7 +151,7 @@ public class AdminTeacherController extends BaseController {
     	ModelAndView model = new ModelAndView();
     	try {
     		model.setViewName("redirect:/admin/teacher/list");
-    		
+
             if (ObjectUtils.isNotNull(teacher)) {
                 teacher.setUpdateTime(new Date());
                 teacherService.updateTeacher(teacher);
@@ -171,7 +173,10 @@ public class AdminTeacherController extends BaseController {
     public ModelAndView deleteTeacher(HttpServletRequest request, @PathVariable("id") Integer id) {
     	ModelAndView model = new ModelAndView();
     	try {
-    		model.setViewName("redirect:/admin/teacher/list");
+    		//20190106 tang 教师删除功能修正  Start
+//    		model.setViewName("redirect:/admin/teacher/list");
+    		model.setViewName("redirect:"+"/"+CommonConstants.projectName+"/admin/teacher/list");
+    		//20190106 tang 教师删除功能修正  End
             if (ObjectUtils.isNotNull(id)) {
                 teacherService.deleteTeacherById(id);// 刪除讲师
             }
@@ -190,7 +195,7 @@ public class AdminTeacherController extends BaseController {
      * 挑选讲师列表
      */
     @RequestMapping("/teacher/selectlist/{type}")
-    public ModelAndView queryselectTeacherList(HttpServletRequest request,@ModelAttribute("page") PageEntity page, @ModelAttribute("queryTeacher") QueryTeacher queryTeacher,@PathVariable("type") String type) {      
+    public ModelAndView queryselectTeacherList(HttpServletRequest request,@ModelAttribute("page") PageEntity page, @ModelAttribute("queryTeacher") QueryTeacher queryTeacher,@PathVariable("type") String type) {
     	ModelAndView model = new ModelAndView();
     	try {
     		model.setViewName(getViewPath("/admin/teacher/select_teacher_list"));// 选择讲师列表页面

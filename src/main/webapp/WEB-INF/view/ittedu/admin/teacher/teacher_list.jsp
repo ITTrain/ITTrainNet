@@ -15,11 +15,18 @@
  * 删除老师
  * @param tcId 老师ID
  */
-function deleteTeacher(tcId){
+//20190106 tang 教师删除功能修正  Start
+//function deleteTeacher(tcId){
+//	if(confirm('确认要删除该讲师？')){
+//		document.location='/admin/teacher/delete/'+tcId;
+//	}
+//}
+function deleteTeacher(tcId,ctx){
 	if(confirm('确认要删除该讲师？')){
-		document.location='/admin/teacher/delete/'+tcId;
+		document.location=ctx+'/admin/teacher/delete/'+tcId;
 	}
 }
+//20190106 tang 教师删除功能修正  End
 $(function(){
 	/**加载时间控件*/
 	$("#beginCreateTime,#endCreateTime").datetimepicker({
@@ -89,7 +96,10 @@ $(function(){
 						</td>
 						<td align="center">${tc.sort}</td>
 						<td align="center">
-							<button onclick="deleteTeacher(${tc.id})" class="ui-state-default ui-corner-all" type="button">删除</button>
+							<!-- 20190106 tang 教师删除功能修正  Start -->
+						<%--<button onclick="deleteTeacher(${tc.id})" class="ui-state-default ui-corner-all" type="button">删除</button> --%>
+							<button onclick="deleteTeacher(${tc.id},'${ctx}')" class="ui-state-default ui-corner-all" type="button">删除</button>
+							<!-- 20190106 tang 教师删除功能修正  Start -->
 							<button onclick="window.location.href='${ctx}/admin/teacher/toUpdate/${tc.id}'" class="ui-state-default ui-corner-all" type="button">修改</button>
 						</td>
 					</tr>
