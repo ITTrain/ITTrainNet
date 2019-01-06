@@ -83,7 +83,7 @@ public class CourseKpointController extends BaseController {
 					String play_url = "http://vod.baofengcloud.com/" + map.get("UserId") + "/player/cloud.swf";
 					String url = "servicetype=1&uid="+map.get("UserId")+"&fid="+videourl;
 					play_url += "?" + url;
-					//如果因酷云的key不为空则按加密播放如果为空则不加密
+					//如果酷云的key不为空则按加密播放如果为空则不加密
 					if(StringUtils.isNotEmpty(map.get("SecretKey").toString())&&StringUtils.isNotEmpty(map.get("AccessKey").toString())){
 						String token = ItteduVideo.createPlayToken(videourl,map.get("SecretKey").toString(),map.get("AccessKey").toString());
 						play_url += "&tk=" + token;

@@ -74,7 +74,7 @@
 									id="web">CC视频配置</button>
 								&nbsp;&nbsp;&nbsp;
 								<button type="button" class="ui-state-default ui-corner-all" onclick="window.location.href='${ctx}/admin/websiteProfile/find/itteduVideo'"
-										id="web">因酷云视频配置</button>
+										id="web">ITT云视频配置</button>
 								&nbsp;&nbsp;&nbsp;
 								<button type="button" class="ui-state-default ui-corner-all" onclick="window.location.href='${ctx}/admin/websiteProfile/find/logo'"
 									id="logo">logo</button>
@@ -207,15 +207,15 @@
 					<c:if test="${type=='itteduVideo'}">
 						<tbody align="center">
 						<tr class="odd">
-							<td>因酷云UserId</td>
+							<td>ITT云UserId</td>
 							<td>${webSiteMap.itteduVideo.UserId}</td>
 						</tr>
 						<tr class="">
-							<td>因酷云SecretKey</td>
+							<td>ITT云SecretKey</td>
 							<td>${webSiteMap.itteduVideo.SecretKey}</td>
 						</tr>
 						<tr class="odd">
-							<td>因酷云AccessKey</td>
+							<td>ITT云AccessKey</td>
 							<td>${webSiteMap.itteduVideo.AccessKey}</td>
 						</tr>
 						</tbody>

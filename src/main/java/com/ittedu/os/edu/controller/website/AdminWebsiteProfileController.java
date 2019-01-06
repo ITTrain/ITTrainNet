@@ -102,7 +102,7 @@ public class AdminWebsiteProfileController extends BaseController {
 					map.put("ccappID", request.getParameter("ccappID"));
 					map.put("ccappKEY", request.getParameter("ccappKEY"));
 				}
-				// 因酷云视频
+				// 酷云视频
 				if (type.equals(WebSiteProfileType.itteduVideo.toString())) {
 					map.put("UserId", request.getParameter("UserId"));
 					map.put("SecretKey", request.getParameter("SecretKey"));

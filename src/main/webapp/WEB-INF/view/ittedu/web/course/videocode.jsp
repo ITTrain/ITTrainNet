@@ -15,7 +15,7 @@
 	<c:when test="${videotype=='CC'}"> <%-- cc视频 --%>
         <script src='http://p.bokecc.com/player?vid=${videourl}&siteid=${ccwebsitemap.cc.ccappID}&autoStart=true&width=100%&height=100%&playerid=51A2AD3118ACAD37&playertype=1' type='text/javascript'></script>
 	</c:when>
-	<c:when test="${videotype=='ITTEDUVIDEO'}"> <%-- 因酷云--%>
+	<c:when test="${videotype=='ITTEDUVIDEO'}"> <%-- ITT云--%>
 		<div id="videoareaname" style="width: 100%;height: 100%"></div>
 		<script>
 			var vodparam = "${videourl}";
@@ -28,7 +28,8 @@
 		</script>
 	</c:when>
 	<c:when test="${videotype=='uploadVideo'}">
-		<script type="text/javascript" src="/static/common/ckplayer/ckplayer.js" charset="utf-8"></script>
+<!-- 20190105 tang 本地视频播放  Start -->
+<!-- 	<script type="text/javascript" src="/static/common/ckplayer/ckplayer.js" charset="utf-8"></script>
 		<div id="videoareaname" style="width: 100%;height: 100%"></div>
 		<script type="text/javascript">
             var flashvars={
@@ -38,7 +39,19 @@
             };
             var video=['${ctx}${videourl}->video/mp4'];
             CKobject.embed('/static/common/ckplayer/ckplayer.swf','videoareaname','ckplayer_a1','100%','100%',false,flashvars,video);
+		</script> -->
+		<script type="text/javascript" src="${ctx}/static/common/ckplayer/ckplayer.js" charset="utf-8"></script>
+		<div id="videoareaname" style="width: 100%;height: 100%"></div>
+		<script type="text/javascript">
+            var flashvars={
+                f:'${ctx}${videourl}',
+                c:0,
+                loaded:'loadedHandler'
+            };
+            var video=['${ctx}${videourl}->video/mp4'];
+            CKobject.embed('${ctx}/static/common/ckplayer/ckplayer.swf','videoareaname','ckplayer_a1','100%','100%',false,flashvars,video);
 		</script>
+<!-- 20190105 tang 本地视频播放  End -->
 	</c:when>
 	<c:otherwise>
 		<!-- 错误类型的 先用iframe承接 -->

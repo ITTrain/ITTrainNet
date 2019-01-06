@@ -153,7 +153,7 @@
 			<div id="" class="not-warp-in">
 				<div class="fsize12 f-fM p-txt" id="scroll_begin">
 					<tt class="fsize14 f-fM vam">【温馨提示】</tt>
-					<tt class="fsize14 f-fM vam">开源版本切勿商用哦！别辜负了我们善良的初衷，不然因酷小伙伴可是要暴躁的哟。更多功能欢迎购买商业版。</tt>
+					<tt class="fsize14 f-fM vam">好好学习，天天向上。</tt>
 				</div>
 				<div class="fsize12 f-fM p-txt" id="scroll_end"></div>
 			</div>
@@ -173,8 +173,8 @@
 				<div id="top">
 					<!-- Logo -->
 					<div class="logo">
-						<a href="http://demo1.ittedu.com/" target="_blank" title="因酷在线教育软件 - 在线教育整体解决方案提供商" class="tooltip">
-							<img src="${ctx}/static/admin/assets/logo.png" height="60" alt="因酷在线教育软件 - 在线教育整体解决方案提供商" />
+						<a href="http://demo1.ittedu.com/" target="_blank" title="ITT在线教育软件 - 在线教育整体解决方案提供商" class="tooltip">
+							<img src="${ctx}/static/admin/assets/logo.png" height="60" alt="ITT在线教育软件 - 在线教育整体解决方案提供商" />
 						</a>
 					</div>
 					<!-- End of Logo -->

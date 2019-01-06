@@ -92,17 +92,17 @@
 				</c:if>
 				<c:if test="${type=='itteduVideo'}">
 					<p>
-						<label ><font color="red">*</font>&nbsp;因酷云UserId</label>
+						<label ><font color="red">*</font>&nbsp;ITT云UserId</label>
 						<input type="text" name="UserId" value="${webSiteMap.itteduVideo.UserId}" style="width: 15%" class="sf" />
 						<span class="field_desc"></span>
 					</p>
 					<p>
-						<label ><font color="red">*</font>&nbsp;因酷云SecretKey</label>
+						<label ><font color="red">*</font>&nbsp;ITT云SecretKey</label>
 						<input type="text" name="SecretKey" value="${webSiteMap.itteduVideo.SecretKey}" style="width: 15%" class="sf" />
 						<span class="field_desc"></span>
 					</p>
 					<p>
-						<label ><font color="red">*</font>&nbsp;因酷云AccessKey</label>
+						<label ><font color="red">*</font>&nbsp;ITT云AccessKey</label>
 						<input type="text" name="AccessKey" value="${webSiteMap.itteduVideo.AccessKey}" style="width: 15%" class="sf" />
 						<span class="field_desc"></span>
 					</p>
