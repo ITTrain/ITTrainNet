@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="PraiseMapper">
 	<resultMap type="Praise" id="PraiseResult">
@@ -9,13 +9,13 @@
 		<result property="type" column="TYPE"/>
 		<result property="addTime" column="ADD_TIME"/>
 	</resultMap>
-	
+
 	<sql id="edu_praise_column">
-		edu_praise.ID,
-		edu_praise.USER_ID,
-		edu_praise.TARGET_ID,
-		edu_praise.TYPE,
-		edu_praise.ADD_TIME
+		EDU_PRAISE.ID,
+		EDU_PRAISE.USER_ID,
+		EDU_PRAISE.TARGET_ID,
+		EDU_PRAISE.TYPE,
+		EDU_PRAISE.ADD_TIME
 	</sql>
 	<sql id="edu_praise_property">
 		#{id},
@@ -24,27 +24,27 @@
 		#{type},
 		#{addTime}
 	</sql>
-	
+
 	<!-- 添加 -->
 	<insert id="addPraise" parameterType="Praise" useGeneratedKeys="true" keyProperty="id" keyColumn="ID">
-		INSERT INTO edu_praise(<include refid="edu_praise_column"/>) VALUE(<include refid="edu_praise_property"/>)
+		INSERT INTO EDU_PRAISE(<include refid="edu_praise_column"/>) VALUE(<include refid="edu_praise_property"/>)
 	</insert>
-	
+
 	<!-- 查询 -->
 	<select id="queryPraiseCount" parameterType="Praise" resultType="int">
 		select IFNULL(count(1),0)
-		from edu_praise 
+		from EDU_PRAISE
 		<where>
 			<if test="userId!=null and userId!=0">
-				and edu_praise.USER_ID=#{userId}
+				and EDU_PRAISE.USER_ID=#{userId}
 			</if>
 			<if test="targetId!=null and targetId!=0">
-				and edu_praise.TARGET_ID=#{targetId}
+				and EDU_PRAISE.TARGET_ID=#{targetId}
 			</if>
 			<if test="type!=0">
-				and edu_praise.TYPE=#{type}
+				and EDU_PRAISE.TYPE=#{type}
 			</if>
 		</where>
 	</select>
-	
+
 </mapper>

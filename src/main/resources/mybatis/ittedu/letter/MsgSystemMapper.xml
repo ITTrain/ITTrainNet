@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="MsgSystemMapper">
 
@@ -12,11 +12,11 @@
 	</resultMap>
 
 	<sql id="edu_msg_system_columns">
-		edu_msg_system.id,
-		edu_msg_system.add_Time,
-		edu_msg_system.update_time,
-		edu_msg_system.content,
-		edu_msg_system.status
+		EDU_MSG_SYSTEM.id,
+		EDU_MSG_SYSTEM.add_Time,
+		EDU_MSG_SYSTEM.update_time,
+		EDU_MSG_SYSTEM.content,
+		EDU_MSG_SYSTEM.status
 	</sql>
 
 	<sql id="edu_msg_system_properties">
@@ -29,7 +29,7 @@
 	<!-- 添加站内信发件箱 -->
 	<insert id="addMsgSystem" parameterType="java.util.HashMap"
 		useGeneratedKeys="true" keyColumn="id" keyProperty="id">
-		INSERT INTO edu_msg_system (
+		INSERT INTO EDU_MSG_SYSTEM (
 		<include refid="edu_msg_system_columns" />
 		) VALUES (
 		<include refid="edu_msg_system_properties" />
@@ -42,23 +42,23 @@
 		select
 		<include refid="edu_msg_system_columns" />
 		from
-		edu_msg_system
+		EDU_MSG_SYSTEM
 		<where>
 			<if test="e.content!=null and e.content!=''">
-				and edu_msg_system.content LIKE
+				and EDU_MSG_SYSTEM.content LIKE
 				CONCAT('%',#{e.content},'%')
 			</if>
 			<if test="e.addTime != null and e.addTime != ''">
-				<![CDATA[and edu_msg_system.add_time >#{e.addTime}]]>
+				<![CDATA[and EDU_MSG_SYSTEM.add_time >#{e.addTime}]]>
 			</if>
 			<if test="e.endTime!=null and e.endTime!=''">
-				<![CDATA[and edu_msg_system.add_time <#{e.endTime}]]>
+				<![CDATA[and EDU_MSG_SYSTEM.add_time <#{e.endTime}]]>
 			</if>
 			<if test="e.status != -1">
-				and edu_msg_system.status = #{e.status}
+				and EDU_MSG_SYSTEM.status = #{e.status}
 			</if>
 		</where>
-		order by edu_msg_system.id desc
+		order by EDU_MSG_SYSTEM.id desc
 		<include refid="publicMapper.pageEnd" />
 	</select>
 
@@ -67,46 +67,46 @@
 		select
 		<include refid="edu_msg_system_columns" />
 		from
-		edu_msg_system
+		EDU_MSG_SYSTEM
 		<where>
 			<if test="e.content!=null and e.content!=''">
-				and edu_msg_system.content LIKE
+				and EDU_MSG_SYSTEM.content LIKE
 				CONCAT('%',#{e.content},'%')
 			</if>
 			<if test="e.addTime != null and e.addTime != ''">
-				<![CDATA[and edu_msg_system.add_time >#{e.addTime}]]>
+				<![CDATA[and EDU_MSG_SYSTEM.add_time >#{e.addTime}]]>
 			</if>
 			<if test="e.endTime!=null and e.endTime!=''">
-				<![CDATA[and edu_msg_system.add_time <#{e.endTime}]]>
+				<![CDATA[and EDU_MSG_SYSTEM.add_time <#{e.endTime}]]>
 			</if>
 			<if test="e.status != -1">
-				and edu_msg_system.status = #{e.status}
+				and EDU_MSG_SYSTEM.status = #{e.status}
 			</if>
 		</where>
 	</select>
 
 	<update id="delMsgSystemById" parameterType="String">
-		update  edu_msg_system set status = 1 WHERE id in (${value})
+		update  EDU_MSG_SYSTEM set status = 1 WHERE id in (${value})
 	</update>
-	
+
 	<select id="queryMSListByLT" parameterType="java.util.HashMap"
 		resultMap="MsgSystemResult">
 		select
 		<include refid="edu_msg_system_columns" />
 		from
-		edu_msg_system
+		EDU_MSG_SYSTEM
 		<where>
-			edu_msg_system.status = 0
+			EDU_MSG_SYSTEM.status = 0
 			<if test="lastTime!=null">
-				and <![CDATA[edu_msg_system.add_time>#{lastTime}]]>
+				and <![CDATA[EDU_MSG_SYSTEM.add_time>#{lastTime}]]>
 			</if>
 		</where>
 	</select>
-	
+
 	<update id="updateMsgSystemPastTime" parameterType="java.util.HashMap">
-		update  edu_msg_system 
-		set status = 2 
+		update  EDU_MSG_SYSTEM
+		set status = 2
 		WHERE
-		<![CDATA[edu_msg_system.add_time<#{lastTime}]]>
+		<![CDATA[EDU_MSG_SYSTEM.add_time<#{lastTime}]]>
 	</update>
 </mapper>

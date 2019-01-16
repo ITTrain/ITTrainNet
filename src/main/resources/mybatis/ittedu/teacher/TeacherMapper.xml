@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="TeacherMapper">
 	<resultMap id="TeacherResult" type="Teacher">
@@ -85,7 +85,7 @@
 		SELECT
 		<include refid="edu_teacher_columns" />
 		FROM EDU_TEACHER
-		left join sys_subject on EDU_TEACHER.SUBJECT_ID = sys_subject.subject_id
+		left join SYS_SUBJECT on EDU_TEACHER.SUBJECT_ID = SYS_SUBJECT.subject_id
 		<where>
 			EDU_TEACHER.STATUS=0
 			<if test="e.isStar>0">
@@ -95,7 +95,7 @@
 				AND	<![CDATA[  EDU_TEACHER.NAME LIKE CONCAT('%',#{e.name},'%')  ]]>
 			</if>
 			<if test="e.subjectId>0">
-				AND (EDU_TEACHER.SUBJECT_ID=#{e.subjectId} or sys_subject.parent_id = #{e.subjectId})
+				AND (EDU_TEACHER.SUBJECT_ID=#{e.subjectId} or SYS_SUBJECT.parent_id = #{e.subjectId})
 			</if>
 			<if test="e.beginCreateTime!=null and e.beginCreateTime!=''">
 				AND EDU_TEACHER.CREATE_TIME >= #{e.beginCreateTime}
@@ -109,8 +109,8 @@
 
 	<!-- 查询课程讲师 -->
 	<select id="queryCourseTeacerList" parameterType="int" resultType="java.util.Map">
-		SELECT 
-			EDU_TEACHER.ID as id, 
+		SELECT
+			EDU_TEACHER.ID as id,
 			EDU_TEACHER.NAME as name,
 			EDU_TEACHER.EDUCATION as education,
 			EDU_TEACHER.PIC_PATH as picPath,

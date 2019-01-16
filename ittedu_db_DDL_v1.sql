@@ -8,9 +8,9 @@ SET @@sql_mode='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZER
 
 /*Table structure for table `edu_article` */
 
-DROP TABLE IF EXISTS `edu_article`;
+DROP TABLE IF EXISTS `EDU_ARTICLE`;
 
-CREATE TABLE `edu_article` (
+CREATE TABLE `EDU_ARTICLE` (
   `ARTICLE_ID` int(11) NOT NULL AUTO_INCREMENT COMMENT '文章ID',
   `TITLE` varchar(100) DEFAULT NULL COMMENT '文章标题',
   `SUMMARY` varchar(200) DEFAULT NULL COMMENT '文章摘要',
@@ -31,18 +31,18 @@ CREATE TABLE `edu_article` (
 
 /*Table structure for table `edu_article_content` */
 
-DROP TABLE IF EXISTS `edu_article_content`;
+DROP TABLE IF EXISTS `EDU_ARTICLE_CONTENT`;
 
-CREATE TABLE `edu_article_content` (
+CREATE TABLE `EDU_ARTICLE_CONTENT` (
   `ARTICLE_ID` int(11) DEFAULT '0' COMMENT '文章ID',
   `CONTENT` text COMMENT '文章内容'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='文章内容表';
 
 /*Table structure for table `edu_comment` */
 
-DROP TABLE IF EXISTS `edu_comment`;
+DROP TABLE IF EXISTS `EDU_COMMENT`;
 
-CREATE TABLE `edu_comment` (
+CREATE TABLE `EDU_COMMENT` (
   `COMMENT_ID` int(11) NOT NULL AUTO_INCREMENT COMMENT '评论表',
   `USER_ID` int(11) DEFAULT '0' COMMENT '用户id',
   `P_COMMENT_ID` int(11) DEFAULT NULL COMMENT '父级评论id(为0则是一级评论,不为0则是回复)',
@@ -57,9 +57,9 @@ CREATE TABLE `edu_comment` (
 
 /*Table structure for table `edu_course` */
 
-DROP TABLE IF EXISTS `edu_course`;
+DROP TABLE IF EXISTS `EDU_COURSE`;
 
-CREATE TABLE `edu_course` (
+CREATE TABLE `EDU_COURSE` (
   `COURSE_ID` int(10) NOT NULL AUTO_INCREMENT COMMENT '课程编号',
   `COURSE_NAME` varchar(300) NOT NULL DEFAULT '' COMMENT '课程名称',
   `IS_AVALIABLE` int(10) NOT NULL DEFAULT '0' COMMENT '1正常2删除',
@@ -85,9 +85,9 @@ CREATE TABLE `edu_course` (
 
 /*Table structure for table `edu_course_favorites` */
 
-DROP TABLE IF EXISTS `edu_course_favorites`;
+DROP TABLE IF EXISTS `EDU_COURSE_FAVORITES`;
 
-CREATE TABLE `edu_course_favorites` (
+CREATE TABLE `EDU_COURSE_FAVORITES` (
   `ID` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键',
   `COURSE_ID` int(11) DEFAULT '0' COMMENT '课程id',
   `USER_ID` int(11) DEFAULT '0' COMMENT '用户ID',
@@ -98,9 +98,9 @@ CREATE TABLE `edu_course_favorites` (
 
 /*Table structure for table `edu_course_kpoint` */
 
-DROP TABLE IF EXISTS `edu_course_kpoint`;
+DROP TABLE IF EXISTS `EDU_COURSE_KPOINT`;
 
-CREATE TABLE `edu_course_kpoint` (
+CREATE TABLE `EDU_COURSE_KPOINT` (
   `KPOINT_ID` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `COURSE_ID` int(11) DEFAULT '0' COMMENT '课程id',
   `NAME` varchar(300) DEFAULT NULL COMMENT '节点名称',
@@ -122,9 +122,9 @@ CREATE TABLE `edu_course_kpoint` (
 
 /*Table structure for table `edu_course_note` */
 
-DROP TABLE IF EXISTS `edu_course_note`;
+DROP TABLE IF EXISTS `EDU_COURSE_NOTE`;
 
-CREATE TABLE `edu_course_note` (
+CREATE TABLE `EDU_COURSE_NOTE` (
   `ID` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键',
   `USER_ID` int(11) DEFAULT '0' COMMENT '用户ID',
   `COURSE_ID` int(11) NOT NULL DEFAULT '0' COMMENT '课程id',
@@ -140,9 +140,9 @@ CREATE TABLE `edu_course_note` (
 
 /*Table structure for table `edu_course_studyhistory` */
 
-DROP TABLE IF EXISTS `edu_course_studyhistory`;
+DROP TABLE IF EXISTS `EDU_COURSE_STUDYHISTORY`;
 
-CREATE TABLE `edu_course_studyhistory` (
+CREATE TABLE `EDU_COURSE_STUDYHISTORY` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `USER_ID` int(11) NOT NULL COMMENT '用户id',
   `COURSE_ID` int(11) NOT NULL COMMENT '课程id',
@@ -158,9 +158,9 @@ CREATE TABLE `edu_course_studyhistory` (
 
 /*Data for the table `edu_course_studyhistory` */
 
-DROP TABLE IF EXISTS `edu_course_subject`;
+DROP TABLE IF EXISTS `EDU_COURSE_SUBJECT`;
 
-CREATE TABLE `edu_course_subject` (
+CREATE TABLE `EDU_COURSE_SUBJECT` (
   `ID` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `COURSE_ID` int(11) NOT NULL DEFAULT '0' COMMENT '课程id',
   `SUBJECT_ID` int(11) NOT NULL DEFAULT '0' COMMENT '分类id',
@@ -170,9 +170,9 @@ CREATE TABLE `edu_course_subject` (
 
 /*Table structure for table `edu_course_teacher` */
 
-DROP TABLE IF EXISTS `edu_course_teacher`;
+DROP TABLE IF EXISTS `EDU_COURSE_TEACHER`;
 
-CREATE TABLE `edu_course_teacher` (
+CREATE TABLE `EDU_COURSE_TEACHER` (
   `COURSE_ID` int(11) DEFAULT NULL COMMENT '课程id',
   `TEACHER_ID` int(11) DEFAULT NULL COMMENT '讲师id',
   KEY `course_id` (`COURSE_ID`)
@@ -180,9 +180,9 @@ CREATE TABLE `edu_course_teacher` (
 
 /*Table structure for table `edu_emailsend_history` */
 
-DROP TABLE IF EXISTS `edu_emailsend_history`;
+DROP TABLE IF EXISTS `EDU_EMAILSEND_HISTORY`;
 
-CREATE TABLE `edu_emailsend_history` (
+CREATE TABLE `EDU_EMAILSEND_HISTORY` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `email` longtext,
   `user_id` int(11) DEFAULT '0',
@@ -199,9 +199,9 @@ CREATE TABLE `edu_emailsend_history` (
 
 /*Table structure for table `edu_help_menu` */
 
-DROP TABLE IF EXISTS `edu_help_menu`;
+DROP TABLE IF EXISTS `EDU_HELP_MENU`;
 
-CREATE TABLE `edu_help_menu` (
+CREATE TABLE `EDU_HELP_MENU` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `parentId` int(11) DEFAULT '0' COMMENT '父级分类ID，默认0为一级分类',
   `name` varchar(20) DEFAULT '' COMMENT '菜单名称',
@@ -215,9 +215,9 @@ CREATE TABLE `edu_help_menu` (
 
 /*Table structure for table `edu_mobilesend_history` */
 
-DROP TABLE IF EXISTS `edu_mobilesend_history`;
+DROP TABLE IF EXISTS `EDU_MOBILESEND_HISTORY`;
 
-CREATE TABLE `edu_mobilesend_history` (
+CREATE TABLE `EDU_MOBILESEND_HISTORY` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `mobile` text,
   `user_id` int(11) DEFAULT NULL,
@@ -233,9 +233,9 @@ CREATE TABLE `edu_mobilesend_history` (
 
 /*Table structure for table `edu_msg_receive` */
 
-DROP TABLE IF EXISTS `edu_msg_receive`;
+DROP TABLE IF EXISTS `EDU_MSG_RECEIVE`;
 
-CREATE TABLE `edu_msg_receive` (
+CREATE TABLE `EDU_MSG_RECEIVE` (
   `ID` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键',
   `ADD_TIME` timestamp NULL DEFAULT NULL COMMENT '添加时间',
   `CUS_ID` int(11) DEFAULT '0' COMMENT '发信人用户id',
@@ -252,9 +252,9 @@ CREATE TABLE `edu_msg_receive` (
 
 /*Table structure for table `edu_msg_system` */
 
-DROP TABLE IF EXISTS `edu_msg_system`;
+DROP TABLE IF EXISTS `EDU_MSG_SYSTEM`;
 
-CREATE TABLE `edu_msg_system` (
+CREATE TABLE `EDU_MSG_SYSTEM` (
   `ID` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键',
   `ADD_TIME` timestamp NULL DEFAULT NULL COMMENT '添加时间',
   `UPDATE_TIME` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '修改时间',
@@ -265,9 +265,9 @@ CREATE TABLE `edu_msg_system` (
 
 /*Table structure for table `edu_praise` */
 
-DROP TABLE IF EXISTS `edu_praise`;
+DROP TABLE IF EXISTS `EDU_PRAISE`;
 
-CREATE TABLE `edu_praise` (
+CREATE TABLE `EDU_PRAISE` (
   `ID` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键id',
   `USER_ID` int(11) DEFAULT NULL COMMENT '用户id',
   `TARGET_ID` int(11) DEFAULT NULL COMMENT '点赞的对象id',
@@ -278,9 +278,9 @@ CREATE TABLE `edu_praise` (
 
 /*Table structure for table `edu_questions` */
 
-DROP TABLE IF EXISTS `edu_questions`;
+DROP TABLE IF EXISTS `EDU_QUESTIONS`;
 
-CREATE TABLE `edu_questions` (
+CREATE TABLE `EDU_QUESTIONS` (
   `ID` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键',
   `CUS_ID` int(11) DEFAULT NULL COMMENT '创建人id',
   `TITLE` varchar(100) DEFAULT NULL COMMENT '问答标题',
@@ -296,9 +296,9 @@ CREATE TABLE `edu_questions` (
 
 /*Table structure for table `edu_questions_comment` */
 
-DROP TABLE IF EXISTS `edu_questions_comment`;
+DROP TABLE IF EXISTS `EDU_QUESTIONS_COMMENT`;
 
-CREATE TABLE `edu_questions_comment` (
+CREATE TABLE `EDU_QUESTIONS_COMMENT` (
   `ID` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键id',
   `CUS_ID` int(11) DEFAULT NULL COMMENT '评论人id',
   `QUESTION_ID` int(11) DEFAULT NULL COMMENT '问答id',
@@ -313,9 +313,9 @@ CREATE TABLE `edu_questions_comment` (
 
 /*Table structure for table `edu_questions_tag` */
 
-DROP TABLE IF EXISTS `edu_questions_tag`;
+DROP TABLE IF EXISTS `EDU_QUESTIONS_TAG`;
 
-CREATE TABLE `edu_questions_tag` (
+CREATE TABLE `EDU_QUESTIONS_TAG` (
   `QUESTIONS_TAG_ID` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键id',
   `QUESTIONS_TAG_NAME` varchar(45) DEFAULT NULL COMMENT '标签名',
   `STATUS` int(1) DEFAULT NULL COMMENT '状态0默认1删除',
@@ -326,9 +326,9 @@ CREATE TABLE `edu_questions_tag` (
 
 /*Table structure for table `edu_questions_tag_relation` */
 
-DROP TABLE IF EXISTS `edu_questions_tag_relation`;
+DROP TABLE IF EXISTS `EDU_QUESTIONS_TAG_RELATION`;
 
-CREATE TABLE `edu_questions_tag_relation` (
+CREATE TABLE `EDU_QUESTIONS_TAG_RELATION` (
   `ID` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID',
   `QUESTIONS_ID` int(11) DEFAULT NULL COMMENT '问答id',
   `QUESTIONS_TAG_ID` int(11) DEFAULT NULL COMMENT '问答标签id',
@@ -337,9 +337,9 @@ CREATE TABLE `edu_questions_tag_relation` (
 
 /*Table structure for table `edu_statistics_computer` */
 
-DROP TABLE IF EXISTS `edu_statistics_computer`;
+DROP TABLE IF EXISTS `EDU_STATISTICS_COMPUTER`;
 
-CREATE TABLE `edu_statistics_computer` (
+CREATE TABLE `EDU_STATISTICS_COMPUTER` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `STATISTICS_TIME` datetime NOT NULL COMMENT '统计日期',
   `CPU_USAGE` varchar(20) NOT NULL COMMENT 'cpu使用率',
@@ -353,9 +353,9 @@ CREATE TABLE `edu_statistics_computer` (
 
 /*Table structure for table `edu_statistics_day` */
 
-DROP TABLE IF EXISTS `edu_statistics_day`;
+DROP TABLE IF EXISTS `EDU_STATISTICS_DAY`;
 
-CREATE TABLE `edu_statistics_day` (
+CREATE TABLE `EDU_STATISTICS_DAY` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `STATISTICS_TIME` datetime NOT NULL COMMENT '统计日期',
   `LOGIN_NUM` int(11) NOT NULL DEFAULT '0' COMMENT '登录人数（活跃人数 ）',
@@ -370,9 +370,9 @@ CREATE TABLE `edu_statistics_day` (
 
 /*Table structure for table `edu_teacher` */
 
-DROP TABLE IF EXISTS `edu_teacher`;
+DROP TABLE IF EXISTS `EDU_TEACHER`;
 
-CREATE TABLE `edu_teacher` (
+CREATE TABLE `EDU_TEACHER` (
   `ID` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '教师ID',
   `NAME` varchar(12) NOT NULL DEFAULT '' COMMENT '教师名称',
   `EDUCATION` varchar(200) NOT NULL DEFAULT '' COMMENT '教师资历,一句话说明老师',
@@ -390,9 +390,9 @@ CREATE TABLE `edu_teacher` (
 
 /*Table structure for table `edu_user` */
 
-DROP TABLE IF EXISTS `edu_user`;
+DROP TABLE IF EXISTS `EDU_USER`;
 
-CREATE TABLE `edu_user` (
+CREATE TABLE `EDU_USER` (
   `USER_ID` int(11) NOT NULL AUTO_INCREMENT COMMENT '学员ID',
   `MOBILE` varchar(11) DEFAULT NULL COMMENT '手机号',
   `EMAIL` varchar(50) DEFAULT NULL COMMENT '邮箱号',
@@ -413,9 +413,9 @@ CREATE TABLE `edu_user` (
 
 /*Table structure for table `edu_user_login_log` */
 
-DROP TABLE IF EXISTS `edu_user_login_log`;
+DROP TABLE IF EXISTS `EDU_USER_LOGIN_LOG`;
 
-CREATE TABLE `edu_user_login_log` (
+CREATE TABLE `EDU_USER_LOGIN_LOG` (
   `LOG_ID` int(11) NOT NULL AUTO_INCREMENT,
   `LOGIN_TIME` timestamp NULL DEFAULT NULL COMMENT '登录时间',
   `IP` varchar(20) DEFAULT NULL COMMENT '登录IP',
@@ -427,9 +427,9 @@ CREATE TABLE `edu_user_login_log` (
 
 /*Table structure for table `edu_website_course` */
 
-DROP TABLE IF EXISTS `edu_website_course`;
+DROP TABLE IF EXISTS `EDU_WEBSITE_COURSE`;
 
-CREATE TABLE `edu_website_course` (
+CREATE TABLE `EDU_WEBSITE_COURSE` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `NAME` varchar(100) DEFAULT '' COMMENT '推荐模块名称',
   `LINK` varchar(255) DEFAULT '' COMMENT '点击更多链接',
@@ -440,9 +440,9 @@ CREATE TABLE `edu_website_course` (
 
 /*Table structure for table `edu_website_course_detail` */
 
-DROP TABLE IF EXISTS `edu_website_course_detail`;
+DROP TABLE IF EXISTS `EDU_WEBSITE_COURSE_DETAIL`;
 
-CREATE TABLE `edu_website_course_detail` (
+CREATE TABLE `EDU_WEBSITE_COURSE_DETAIL` (
   `ID` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键',
   `RECOMMEND_ID` int(11) DEFAULT '0' COMMENT '推荐分类的id',
   `COURSE_ID` int(11) DEFAULT '0' COMMENT '课程id',
@@ -452,9 +452,9 @@ CREATE TABLE `edu_website_course_detail` (
 
 /*Table structure for table `edu_website_ehcache` */
 
-DROP TABLE IF EXISTS `edu_website_ehcache`;
+DROP TABLE IF EXISTS `EDU_WEBSITE_EHCACHE`;
 
-CREATE TABLE `edu_website_ehcache` (
+CREATE TABLE `EDU_WEBSITE_EHCACHE` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键',
   `ehcache_key` varchar(200) NOT NULL DEFAULT '' COMMENT 'ehcache key',
   `ehcache_desc` varchar(200) NOT NULL DEFAULT '' COMMENT '描述',
@@ -463,9 +463,9 @@ CREATE TABLE `edu_website_ehcache` (
 
 /*Table structure for table `edu_website_images` */
 
-DROP TABLE IF EXISTS `edu_website_images`;
+DROP TABLE IF EXISTS `EDU_WEBSITE_IMAGES`;
 
-CREATE TABLE `edu_website_images` (
+CREATE TABLE `EDU_WEBSITE_IMAGES` (
   `IMAGE_ID` int(11) NOT NULL AUTO_INCREMENT,
   `IMAGE_URL` varchar(200) NOT NULL DEFAULT '' COMMENT '图片地址',
   `LINK_ADDRESS` varchar(255) DEFAULT NULL COMMENT '图链接地址',
@@ -480,9 +480,9 @@ CREATE TABLE `edu_website_images` (
 
 /*Table structure for table `edu_website_images_type` */
 
-DROP TABLE IF EXISTS `edu_website_images_type`;
+DROP TABLE IF EXISTS `EDU_WEBSITE_IMAGES_TYPE`;
 
-CREATE TABLE `edu_website_images_type` (
+CREATE TABLE `EDU_WEBSITE_IMAGES_TYPE` (
   `TYPE_ID` int(11) NOT NULL AUTO_INCREMENT COMMENT '类型ID',
   `TYPE_NAME` varchar(50) DEFAULT NULL COMMENT '类型名',
   PRIMARY KEY (`TYPE_ID`)
@@ -490,9 +490,9 @@ CREATE TABLE `edu_website_images_type` (
 
 /*Table structure for table `edu_website_navigate` */
 
-DROP TABLE IF EXISTS `edu_website_navigate`;
+DROP TABLE IF EXISTS `EDU_WEBSITE_NAVIGATE`;
 
-CREATE TABLE `edu_website_navigate` (
+CREATE TABLE `EDU_WEBSITE_NAVIGATE` (
   `ID` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT 'ID',
   `NAME` varchar(100) NOT NULL DEFAULT '' COMMENT '导航显示名称',
   `URL` varchar(100) NOT NULL DEFAULT '' COMMENT '导航显示位置',
@@ -505,9 +505,9 @@ CREATE TABLE `edu_website_navigate` (
 
 /*Table structure for table `edu_website_profile` */
 
-DROP TABLE IF EXISTS `edu_website_profile`;
+DROP TABLE IF EXISTS `EDU_WEBSITE_PROFILE`;
 
-CREATE TABLE `edu_website_profile` (
+CREATE TABLE `EDU_WEBSITE_PROFILE` (
   `ID` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `TYPE` varchar(20) NOT NULL DEFAULT '' COMMENT '类型',
   `DESCIPTION` text COMMENT '内容JSON格式',
@@ -517,9 +517,9 @@ CREATE TABLE `edu_website_profile` (
 
 /*Table structure for table `sys_function` */
 
-DROP TABLE IF EXISTS `sys_function`;
+DROP TABLE IF EXISTS `SYS_FUNCTION`;
 
-CREATE TABLE `sys_function` (
+CREATE TABLE `SYS_FUNCTION` (
   `FUNCTION_ID` int(11) NOT NULL AUTO_INCREMENT COMMENT '权限ID',
   `PARENT_ID` int(11) DEFAULT '0' COMMENT '权限父ID',
   `FUNCTION_NAME` varchar(100) DEFAULT NULL COMMENT '权限名',
@@ -533,9 +533,9 @@ CREATE TABLE `sys_function` (
 
 /*Table structure for table `sys_login_log` */
 
-DROP TABLE IF EXISTS `sys_login_log`;
+DROP TABLE IF EXISTS `SYS_LOGIN_LOG`;
 
-CREATE TABLE `sys_login_log` (
+CREATE TABLE `SYS_LOGIN_LOG` (
   `LOG_ID` int(11) NOT NULL AUTO_INCREMENT,
   `LOGIN_TIME` timestamp NULL DEFAULT NULL COMMENT '登录时间',
   `IP` varchar(20) DEFAULT NULL COMMENT '登录IP',
@@ -547,9 +547,9 @@ CREATE TABLE `sys_login_log` (
 
 /*Table structure for table `sys_role` */
 
-DROP TABLE IF EXISTS `sys_role`;
+DROP TABLE IF EXISTS `SYS_ROLE`;
 
-CREATE TABLE `sys_role` (
+CREATE TABLE `SYS_ROLE` (
   `ROLE_ID` int(11) NOT NULL AUTO_INCREMENT COMMENT '角色ID',
   `ROLE_NAME` varchar(100) DEFAULT NULL COMMENT '角色名',
   `CREATE_TIME` timestamp NULL DEFAULT NULL COMMENT '创建时间',
@@ -558,18 +558,18 @@ CREATE TABLE `sys_role` (
 
 /*Table structure for table `sys_role_function` */
 
-DROP TABLE IF EXISTS `sys_role_function`;
+DROP TABLE IF EXISTS `SYS_ROLE_FUNCTION`;
 
-CREATE TABLE `sys_role_function` (
+CREATE TABLE `SYS_ROLE_FUNCTION` (
   `ROLE_ID` int(11) DEFAULT '0' COMMENT '角色ID',
   `FUNCTION_ID` int(11) DEFAULT '0' COMMENT '权限ID'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='角色权限关联表';
 
 /*Table structure for table `sys_subject` */
 
-DROP TABLE IF EXISTS `sys_subject`;
+DROP TABLE IF EXISTS `SYS_SUBJECT`;
 
-CREATE TABLE `sys_subject` (
+CREATE TABLE `SYS_SUBJECT` (
   `SUBJECT_ID` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键',
   `SUBJECT_NAME` varchar(50) NOT NULL DEFAULT '' COMMENT '专业名称',
   `STATUS` tinyint(1) NOT NULL DEFAULT '0' COMMENT '状态 0:默认 1:删除',
@@ -581,9 +581,9 @@ CREATE TABLE `sys_subject` (
 
 /*Table structure for table `sys_user` */
 
-DROP TABLE IF EXISTS `sys_user`;
+DROP TABLE IF EXISTS `SYS_USER`;
 
-CREATE TABLE `sys_user` (
+CREATE TABLE `SYS_USER` (
   `USER_ID` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键',
   `LOGIN_NAME` varchar(20) NOT NULL DEFAULT '' COMMENT '登录名',
   `LOGIN_PWD` varchar(32) NOT NULL DEFAULT '' COMMENT '登录密码',

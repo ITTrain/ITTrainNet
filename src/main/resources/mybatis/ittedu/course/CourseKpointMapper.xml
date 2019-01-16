@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="CourseKpointMapper">
 
@@ -20,7 +20,7 @@
 	<result property="fileType" column="FILE_TYPE"/>
 	<result property="content" column="CONTENT"/>
 	</resultMap>
-	
+
 	<sql id="edu_course_kpoint_columns">
 	EDU_COURSE_KPOINT.KPOINT_ID,
 	EDU_COURSE_KPOINT.COURSE_ID,
@@ -37,7 +37,7 @@
 	EDU_COURSE_KPOINT.VIDEO_TYPE,
 	EDU_COURSE_KPOINT.FILE_TYPE,
 	EDU_COURSE_KPOINT.CONTENT
-	
+
 	</sql>
 	<sql id="edu_course_kpoint_properties">
 	#{kpointId},
@@ -59,16 +59,16 @@
 
 	<!-- 创建视频节点 -->
 	<insert id="createCourseKpoint" parameterType="CourseKpoint" keyColumn="KPOINT_ID" keyProperty="kpointId" useGeneratedKeys="true">
-		INSERT INTO EDU_COURSE_KPOINT(<include refid="edu_course_kpoint_columns"/>) 
+		INSERT INTO EDU_COURSE_KPOINT(<include refid="edu_course_kpoint_columns"/>)
 		VALUES(<include refid="edu_course_kpoint_properties"/>)
 	</insert>
 	<!-- 查询课程所属视频 -->
 	<select id="queryCourseKpointByCourseId" parameterType="int" resultMap="CourseKpointResult">
-	SELECT <include refid="edu_course_kpoint_columns"/> 
+	SELECT <include refid="edu_course_kpoint_columns"/>
 	FROM EDU_COURSE_KPOINT WHERE EDU_COURSE_KPOINT.COURSE_ID=#{value}
 	ORDER BY EDU_COURSE_KPOINT.SORT DESC
 	</select>
-	
+
 	<!-- 查询通过视频节点ID，查询节点详情 -->
 	<select id="queryCourseKpointById" parameterType="int" resultType="CourseKpointDto">
 	SELECT EDU_COURSE_KPOINT.KPOINT_ID as kpointId,
@@ -90,7 +90,7 @@
 	LEFT JOIN EDU_TEACHER ON EDU_TEACHER.ID = EDU_COURSE_KPOINT.TEACHER_ID
 	WHERE EDU_COURSE_KPOINT.KPOINT_ID=#{value}
 	</select>
-	
+
 	<!-- 修改视频节点 -->
 	<update id="updateKpoint" parameterType="CourseKpoint">
 	UPDATE EDU_COURSE_KPOINT SET
@@ -107,22 +107,22 @@
 	EDU_COURSE_KPOINT.CONTENT=#{content}
 	WHERE EDU_COURSE_KPOINT.KPOINT_ID=#{kpointId}
 	</update>
-	
+
 	<!-- 删除视频节点 -->
 	<delete id="deleteKpointByIds" parameterType="java.lang.String">
 	DELETE FROM EDU_COURSE_KPOINT where EDU_COURSE_KPOINT.KPOINT_ID IN(${value})
 	</delete>
-	
+
 	<!-- 修改视频节点所属父节点 -->
 	<update id="updateKpointParentId" parameterType="java.util.Map">
 	UPDATE EDU_COURSE_KPOINT SET EDU_COURSE_KPOINT.PARENT_ID=#{parentId} WHERE EDU_COURSE_KPOINT.KPOINT_ID=#{kpointId}
 	</update>
-	
+
 	<!--  获取课程的 视频节点总数 -->
 	<select id="getSecondLevelKpointCount" parameterType="long" resultType="int">
-	SELECT IFNULL(count(1),0) 
-		FROM edu_course_kpoint 
-	where 
-		edu_course_kpoint.COURSE_ID=#{value} and edu_course_kpoint.KPOINT_TYPE=1
+	SELECT IFNULL(count(1),0)
+		FROM EDU_COURSE_KPOINT
+	where
+		EDU_COURSE_KPOINT.COURSE_ID=#{value} and EDU_COURSE_KPOINT.KPOINT_TYPE=1
 	</select>
 </mapper>

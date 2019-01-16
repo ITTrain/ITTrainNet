@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="SubjectMapper">
 
@@ -79,18 +79,18 @@
 		SYS_SUBJECT.sort=#{sort}
 		WHERE SYS_SUBJECT.SUBJECT_ID=#{subjectId}
 	</update>
-	
+
 	<!-- 根据父级ID查找子项目集合 -->
 	<select id="getSubjectListByOne" parameterType="Long" resultMap="SubjectResult">
- 		select <include refid="sys_subject_columns" /> 
- 			from sys_subject 
- 		where 
+ 		select <include refid="sys_subject_columns" />
+ 			from SYS_SUBJECT
+ 		where
  			parent_id=#{value,jdbcType=INTEGER} and status=0
  	</select>
- 	
+
  	<select id="getSubjectBySubject" parameterType="Subject" resultMap="SubjectResult">
  		select <include refid="sys_subject_columns" />
- 			from sys_subject
+ 			from SYS_SUBJECT
  		where
  			subject_Id=#{subjectId,jdbcType=INTEGER}
  	</select>

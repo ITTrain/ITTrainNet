@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="QuestionsMapper">
 
@@ -14,24 +14,24 @@
 		<result property="browseCount" column="BROWSE_COUNT" />
 		<result property="praiseCount" column="PRAISE_COUNT" />
 		<result property="addTime" column="ADD_TIME" />
-		
+
 		<result property="showName" column="showName" />
 		<result property="email" column="email" />
 		<result property="picImg" column="picImg" />
 	</resultMap>
-	
+
 	<!-- 表全部的属性 -->
 	<sql id="edu_questions_columns">
-		edu_questions.ID,
-		edu_questions.CUS_ID,
-		edu_questions.TITLE,
-		edu_questions.CONTENT,
-		edu_questions.TYPE,
-		edu_questions.STATUS,
-		edu_questions.REPLY_COUNT,
-		edu_questions.BROWSE_COUNT,
-		edu_questions.PRAISE_COUNT,
-		edu_questions.ADD_TIME
+		EDU_QUESTIONS.ID,
+		EDU_QUESTIONS.CUS_ID,
+		EDU_QUESTIONS.TITLE,
+		EDU_QUESTIONS.CONTENT,
+		EDU_QUESTIONS.TYPE,
+		EDU_QUESTIONS.STATUS,
+		EDU_QUESTIONS.REPLY_COUNT,
+		EDU_QUESTIONS.BROWSE_COUNT,
+		EDU_QUESTIONS.PRAISE_COUNT,
+		EDU_QUESTIONS.ADD_TIME
 	</sql>
 
 	<sql id="edu_questions_properties">
@@ -50,7 +50,7 @@
 	<!-- 添加问答 -->
 	<insert id="createQuestions" parameterType="Questions"
 		useGeneratedKeys="true" keyColumn="id" keyProperty="id">
-		insert INTO edu_questions (
+		insert INTO EDU_QUESTIONS (
 		<include refid="edu_questions_columns" />
 		) VALUES (
 		<include refid="edu_questions_properties" />
@@ -60,15 +60,15 @@
 	<!-- 删除问答 -->
 	<delete id="deleteQuestionsById" parameterType="long">
 		delete from
-		edu_questions
+		EDU_QUESTIONS
 		where
 		id = #{value}
 	</delete>
-	
+
 	<!-- 更新问答 -->
 	<update id="updateQuestions" parameterType="Questions">
 		update
-		edu_questions
+		EDU_QUESTIONS
 		SET
 		ID = #{id},
 		CUS_ID = #{cusId},
@@ -82,15 +82,15 @@
 		where
 		id =#{id}
 	</update>
-	
+
 	<!-- 通过id查询问答 -->
 	<select id="getQuestionsById" resultMap="QuestionsResult"
 		parameterType="long">
 		select
 		<include refid="edu_questions_columns" />
-		,edu_user.SHOW_NAME as showName,edu_user.EMAIL as email ,edu_user.PIC_IMG as picImg
-		from edu_questions
-		left join edu_user on edu_user.USER_ID=edu_questions.CUS_ID
+		,EDU_USER.SHOW_NAME as showName,EDU_USER.EMAIL as email ,EDU_USER.PIC_IMG as picImg
+		from EDU_QUESTIONS
+		left join EDU_USER on EDU_USER.USER_ID=EDU_QUESTIONS.CUS_ID
 		where
 		id = #{value}
 	</select>
@@ -98,47 +98,47 @@
 	<!-- 查询问答列表 -->
 	<select id="getQuestionsList" resultMap="QuestionsResult" parameterType="java.util.HashMap">
 		select
-		distinct(edu_questions.id),
+		distinct(EDU_QUESTIONS.id),
 		<include refid="edu_questions_columns" />
-		,edu_user.SHOW_NAME as showName,edu_user.EMAIL as email ,edu_user.PIC_IMG as picImg
-		from edu_questions
-		left join edu_user on edu_user.USER_ID=edu_questions.CUS_ID
-		left join `edu_questions_tag_relation` on `edu_questions_tag_relation`.QUESTIONS_ID = edu_questions.ID
-		left join `edu_questions_comment` on `edu_questions_comment`.QUESTION_ID = edu_questions.ID
+		,EDU_USER.SHOW_NAME as showName,EDU_USER.EMAIL as email ,EDU_USER.PIC_IMG as picImg
+		from EDU_QUESTIONS
+		left join EDU_USER on EDU_USER.USER_ID=EDU_QUESTIONS.CUS_ID
+		left join `EDU_QUESTIONS_TAG_RELATION` on `EDU_QUESTIONS_TAG_RELATION`.QUESTIONS_ID = EDU_QUESTIONS.ID
+		left join `EDU_QUESTIONS_COMMENT` on `EDU_QUESTIONS_COMMENT`.QUESTION_ID = EDU_QUESTIONS.ID
 		<where>
 			<if test="e.id!=null and e.id!=0">
-				and edu_questions.ID = #{e.id}
+				and EDU_QUESTIONS.ID = #{e.id}
 			</if>
 			<if test="e.title!=null and e.title!=''">
-				and <![CDATA[ edu_questions.TITLE like CONCAT('%',#{e.title},'%') ]]>
+				and <![CDATA[ EDU_QUESTIONS.TITLE like CONCAT('%',#{e.title},'%') ]]>
 			</if>
 			<if test="e.type != 0">
-				and edu_questions.TYPE = #{e.type}
+				and EDU_QUESTIONS.TYPE = #{e.type}
 			</if>
 			<if test="e.orderFalg=='status0'">
-				and edu_questions.status =#{e.status}
+				and EDU_QUESTIONS.status =#{e.status}
 			</if>
 			<if test="e.questionsTagId!=null and e.questionsTagId!=0">
-				and edu_questions_tag_relation.QUESTIONS_TAG_ID=#{e.questionsTagId}
+				and EDU_QUESTIONS_TAG_RELATION.QUESTIONS_TAG_ID=#{e.questionsTagId}
 			</if>
 			<if test="e.beginCreateTime!=null and e.beginCreateTime!='' ">
-                 AND <![CDATA[edu_questions.ADD_TIME>#{e.beginCreateTime} ]]>
+                 AND <![CDATA[EDU_QUESTIONS.ADD_TIME>#{e.beginCreateTime} ]]>
              </if>
              <if test="e.endCreateTime!=null and e.endCreateTime!='' ">
-                 AND <![CDATA[edu_questions.ADD_TIME<#{e.endCreateTime} ]]>
+                 AND <![CDATA[EDU_QUESTIONS.ADD_TIME<#{e.endCreateTime} ]]>
              </if>
              <if test="e.cusId!=null and e.cusId!=0"><!-- 我的提问  -->
-				and edu_questions.CUS_ID = #{e.cusId}
+				and EDU_QUESTIONS.CUS_ID = #{e.cusId}
 			</if>
 			<if test="e.commentUserId !=null and e.commentUserId !=0"><!-- 我的回答  -->
-				and edu_questions.CUS_ID != #{e.commentUserId} and edu_questions_comment.CUS_ID=#{e.commentUserId}
+				and EDU_QUESTIONS.CUS_ID != #{e.commentUserId} and EDU_QUESTIONS_COMMENT.CUS_ID=#{e.commentUserId}
 			</if>
 		</where>
 		<if test="e.orderFalg=='addTime'">
-			order by edu_questions.ADD_TIME desc
+			order by EDU_QUESTIONS.ADD_TIME desc
 		</if>
 		<if test="e.orderFalg=='replycount'">
-			order by edu_questions.REPLY_COUNT desc
+			order by EDU_QUESTIONS.REPLY_COUNT desc
 		</if>
 		<include refid="publicMapper.pageEnd" />
 	</select>
@@ -146,51 +146,51 @@
 	<select id="getQuestionsListCount" resultType="int"
 		parameterType="java.util.HashMap">
 		select
-		COUNT(distinct(edu_questions.id))
-		from edu_questions
-		left join `edu_questions_tag_relation` on `edu_questions_tag_relation`.QUESTIONS_ID = edu_questions.ID
-		left join `edu_questions_comment` on `edu_questions_comment`.QUESTION_ID = edu_questions.ID
+		COUNT(distinct(EDU_QUESTIONS.id))
+		from EDU_QUESTIONS
+		left join `EDU_QUESTIONS_TAG_RELATION` on `EDU_QUESTIONS_TAG_RELATION`.QUESTIONS_ID = EDU_QUESTIONS.ID
+		left join `EDU_QUESTIONS_COMMENT` on `EDU_QUESTIONS_COMMENT`.QUESTION_ID = EDU_QUESTIONS.ID
 		<where>
 			<if test="e.id!=null and e.id!=0">
-				and edu_questions.ID = #{e.id}
+				and EDU_QUESTIONS.ID = #{e.id}
 			</if>
 			<if test="e.title!=null and e.title!='' ">
-				and <![CDATA[ edu_questions.TITLE like CONCAT('%',#{e.title},'%') ]]>
+				and <![CDATA[ EDU_QUESTIONS.TITLE like CONCAT('%',#{e.title},'%') ]]>
 			</if>
 			<if test="e.type != 0">
-				and edu_questions.TYPE = #{e.type}
+				and EDU_QUESTIONS.TYPE = #{e.type}
 			</if>
 			<if test="e.orderFalg=='status0'">
-				and edu_questions.status =#{e.status}
+				and EDU_QUESTIONS.status =#{e.status}
 			</if>
 			<if test="e.questionsTagId!=null and e.questionsTagId!=0">
-				and edu_questions_tag_relation.QUESTIONS_TAG_ID=#{e.questionsTagId}
+				and EDU_QUESTIONS_TAG_RELATION.QUESTIONS_TAG_ID=#{e.questionsTagId}
 			</if>
 			<if test="e.beginCreateTime!=null and e.beginCreateTime!='' ">
-                 AND <![CDATA[edu_questions.ADD_TIME>#{e.beginCreateTime} ]]>
+                 AND <![CDATA[EDU_QUESTIONS.ADD_TIME>#{e.beginCreateTime} ]]>
              </if>
              <if test="e.endCreateTime!=null and e.endCreateTime!='' ">
-                 AND <![CDATA[edu_questions.ADD_TIME<#{e.endCreateTime} ]]>
+                 AND <![CDATA[EDU_QUESTIONS.ADD_TIME<#{e.endCreateTime} ]]>
              </if>
              <if test="e.cusId!=null and e.cusId!=0"><!-- 我的提问  -->
-				and edu_questions.CUS_ID = #{e.cusId}
+				and EDU_QUESTIONS.CUS_ID = #{e.cusId}
 			</if>
 			<if test="e.commentUserId !=null and e.commentUserId !=0"><!-- 我的回答  -->
-				and edu_questions.CUS_ID != #{e.commentUserId} and edu_questions_comment.CUS_ID=#{e.commentUserId}
+				and EDU_QUESTIONS.CUS_ID != #{e.commentUserId} and EDU_QUESTIONS_COMMENT.CUS_ID=#{e.commentUserId}
 			</if>
 		</where>
 	</select>
-	
+
 	<select id="queryQuestionsOrder" parameterType="java.util.HashMap"
 		resultMap="QuestionsResult">
 		select
 		<include refid="edu_questions_columns" />
-		from edu_questions
-		order by edu_questions.REPLY_COUNT desc,edu_questions.PRAISE_COUNT desc,edu_questions.BROWSE_COUNT desc
+		from EDU_QUESTIONS
+		order by EDU_QUESTIONS.REPLY_COUNT desc,EDU_QUESTIONS.PRAISE_COUNT desc,EDU_QUESTIONS.BROWSE_COUNT desc
 		limit #{size}
 	</select>
-	
+
 	<select id="queryAllQuestionsCount" resultType="int">
-		select count(1) from edu_questions
+		select count(1) from EDU_QUESTIONS
 	</select>
 </mapper>

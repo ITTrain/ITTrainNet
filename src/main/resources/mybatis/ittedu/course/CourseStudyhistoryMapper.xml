@@ -26,15 +26,15 @@
 		<result property="logo" column="logo" />
 	</resultMap>
 	<sql id="edu_course_studyhistory_columns">
-		edu_course_studyhistory.ID,
-		edu_course_studyhistory.USER_ID,
-		edu_course_studyhistory.COURSE_ID,
-		edu_course_studyhistory.KPOINT_iD,
-		edu_course_studyhistory.PLAYERCOUNT,
-		edu_course_studyhistory.COURSE_NAME,
-		edu_course_studyhistory.KPOINT_NAME,
-		edu_course_studyhistory.DATABACK,
-		edu_course_studyhistory.UPDATE_TIME
+		EDU_COURSE_STUDYHISTORY.ID,
+		EDU_COURSE_STUDYHISTORY.USER_ID,
+		EDU_COURSE_STUDYHISTORY.COURSE_ID,
+		EDU_COURSE_STUDYHISTORY.KPOINT_ID,
+		EDU_COURSE_STUDYHISTORY.PLAYERCOUNT,
+		EDU_COURSE_STUDYHISTORY.COURSE_NAME,
+		EDU_COURSE_STUDYHISTORY.KPOINT_NAME,
+		EDU_COURSE_STUDYHISTORY.DATABACK,
+		EDU_COURSE_STUDYHISTORY.UPDATE_TIME
 	</sql>
 
 	<sql id="edu_course_studyhistory_properties">
@@ -51,7 +51,7 @@
 
 	<insert id="createCourseStudyhistory" parameterType="CourseStudyhistory"
 		keyColumn="ID" keyProperty="id" useGeneratedKeys="true">
-		insert INTO edu_course_studyhistory (
+		insert INTO EDU_COURSE_STUDYHISTORY (
 		<include refid="edu_course_studyhistory_columns" />
 		) VALUES (
 		<include refid="edu_course_studyhistory_properties" />
@@ -60,14 +60,14 @@
 
 	<delete id="deleteCourseStudyhistoryById" parameterType="Long">
 		delete
-		from edu_course_studyhistory
+		from EDU_COURSE_STUDYHISTORY
 		where
 		ID = #{value}
 	</delete>
 
 	<update id="updateCourseStudyhistory" parameterType="CourseStudyhistory">
 		update
-		edu_course_studyhistory SET
+		EDU_COURSE_STUDYHISTORY SET
 		USER_ID = #{userId},
 		COURSE_ID =
 		#{courseId},
@@ -86,26 +86,26 @@
 		parameterType="CourseStudyhistory">
 		select
 		<include refid="edu_course_studyhistory_columns" />,
-		edu_user.PIC_IMG AS picImg,
+		EDU_USER.PIC_IMG AS picImg,
 		ifnull(edu_User.SHOW_NAME,edu_user.EMAIL) AS showName
-		from edu_course_studyhistory
-		left join edu_course_kpoint on edu_course_kpoint.KPOINT_ID = edu_course_studyhistory.KPOINT_ID
-		left join edu_user on edu_user.USER_ID = edu_course_studyhistory.USER_ID
+		from EDU_COURSE_STUDYHISTORY
+		left join EDU_COURSE_KPOINT on EDU_COURSE_KPOINT.KPOINT_ID = EDU_COURSE_STUDYHISTORY.KPOINT_ID
+		left join EDU_USER on EDU_USER.USER_ID = EDU_COURSE_STUDYHISTORY.USER_ID
 		<where>
-			edu_course_kpoint.KPOINT_ID is not null
-			and edu_course_kpoint.KPOINT_TYPE=1
+			EDU_COURSE_KPOINT.KPOINT_ID is not null
+			and EDU_COURSE_KPOINT.KPOINT_TYPE=1
 			<if test="userId!=null and userId>0">
-				and edu_course_studyhistory.USER_ID = #{userId}
+				and EDU_COURSE_STUDYHISTORY.USER_ID = #{userId}
 			</if>
 			<if test="courseId!=null and courseId>0">
-				and edu_course_studyhistory.COURSE_ID = #{courseId}
+				and EDU_COURSE_STUDYHISTORY.COURSE_ID = #{courseId}
 			</if>
 			<if test="kpointId!=null and kpointId>0">
-				and edu_course_studyhistory.KPOINT_iD = #{kpointId}
+				and EDU_COURSE_STUDYHISTORY.KPOINT_iD = #{kpointId}
 			</if>
 		</where>
 		<if test="queryLimit>0">
-			ORDER by edu_course_studyhistory.UPDATE_TIME DESC
+			ORDER by EDU_COURSE_STUDYHISTORY.UPDATE_TIME DESC
 			limit #{queryLimit}
 		</if>
 	</select>
@@ -113,24 +113,24 @@
 	<!-- 查看 课程下的学习记录 -->
 	<select id="getCourseStudyhistoryListByCouId" resultMap="CourseStudyhistoryResult" parameterType="long">
 		select
-		distinct(edu_course_studyhistory.USER_ID),
-		edu_user.SHOW_NAME as userShowName,edu_user.EMAIL as userEmail,edu_user.PIC_IMG as userImg,
-		edu_course_studyhistory.UPDATE_TIME
-		from edu_course_studyhistory
-        left join edu_user on edu_user.USER_ID = edu_course_studyhistory.USER_ID
+		distinct(EDU_COURSE_STUDYHISTORY.USER_ID),
+		EDU_USER.SHOW_NAME as userShowName,EDU_USER.EMAIL as userEmail,EDU_USER.PIC_IMG as userImg,
+		EDU_COURSE_STUDYHISTORY.UPDATE_TIME
+		from EDU_COURSE_STUDYHISTORY
+        left join EDU_USER on EDU_USER.USER_ID = EDU_COURSE_STUDYHISTORY.USER_ID
 		where
-	    edu_course_studyhistory.COURSE_ID = #{value}
-	    order by edu_course_studyhistory.UPDATE_TIME desc
+	    EDU_COURSE_STUDYHISTORY.COURSE_ID = #{value}
+	    order by EDU_COURSE_STUDYHISTORY.UPDATE_TIME desc
         limit 8
 	</select>
 
 	<!-- 查看 课程下的学习记录 总人数-->
 	<select id="getCourseStudyhistoryCountByCouId" resultType="int" parameterType="long">
 		select
-		IFNULL(count(distinct(edu_course_studyhistory.USER_ID)),0)
-		from edu_course_studyhistory
+		IFNULL(count(distinct(EDU_COURSE_STUDYHISTORY.USER_ID)),0)
+		from EDU_COURSE_STUDYHISTORY
 		where
-	    edu_course_studyhistory.COURSE_ID = #{value}
+	    EDU_COURSE_STUDYHISTORY.COURSE_ID = #{value}
 	</select>
 
 </mapper>
