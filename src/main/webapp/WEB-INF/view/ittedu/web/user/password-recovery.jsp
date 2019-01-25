@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>找回密码</title>
+<title>パスワードを忘れた方</title>
 <script type="text/javascript" src="${ctx}/static/inxweb/front/forget_password.js"></script>
 </head>
 <body>
@@ -13,7 +13,7 @@
 				<div style="width: 80%; margin: 0 auto;" class="i-box">
 					<div>
 						<section class="c-infor-tabTitle c-tab-title">
-							<a title="忘记密码 &gt; 找回密码" style="cursor: default;" href="javascript: void(0)">忘记密码 &gt; 找回密码</a>
+							<a title="パスワードを忘れた方" style="cursor: default;" href="javascript: void(0)">パスワードを忘れた方</a>
 						</section>
 					</div>
 					<form id="recoveryForm">
@@ -24,13 +24,13 @@
 								</p>
 							</div>
 							<ol class="e-login-options">
-								<li><input type="text" name="email" id="u-email" placeholder="请输入注册邮箱" />
+								<li><input type="text" name="email" id="u-email" placeholder="メールアドレスを入力してください" />
 									<p class="lr-tip-wrap"></p></li>
-								<li class="clearfix"><input type="text" id="u-password" class="fl" style="width: 120px;" placeholder="请输入验证码" name="pageCode" value=""> <img width="86" height="40" onclick="this.src='${ctx}/ran/random?random='+Math.random();" alt="验证码，点击图片更换" src="${ctx}/ran/random">
+								<li class="clearfix"><input type="text" id="u-password" class="fl" style="width: 120px;" placeholder="検証コードを入力してください" name="pageCode" value=""> <img width="86" height="40" onclick="this.src='${ctx}/ran/random?random='+Math.random();" alt="検証コードを再取得" src="${ctx}/ran/random">
 									<p class="lr-tip-wrap"></p></li>
 							</ol>
 							<section class="mt20 tac">
-								<a href="javascript: void(0)" onclick="sendPwdRecoveery()" title="提 交" class="e-login-btn">提 交</a>
+								<a href="javascript: void(0)" onclick="sendPwdRecoveery()" title="登録" class="e-login-btn">登録</a>
 							</section>
 						</div>
 					</form>

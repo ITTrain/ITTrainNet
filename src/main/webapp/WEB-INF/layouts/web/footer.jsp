@@ -4,7 +4,7 @@
 	<section class="container">
 		<div class="">
 			<h4 class="hLh30">
-				<span class="fsize18 f-fM c-999">友情链接</span>
+				<span class="fsize18 f-fM c-999">関連サービス</span>
 			</h4>
 			<ul class="of flink-list">
 				<c:forEach items="${navigatemap.FRIENDLINK}" var="friendLinkNavigate">
@@ -20,7 +20,7 @@
 						<c:forEach items="${navigatemap.TAB}" var="indexNavigate" varStatus="index">
 							<a href="${indexNavigate.url}" title="${indexNavigate.name}" <c:if test="${indexNavigate.newPage==0}">target="_blank"</c:if>>${indexNavigate.name}</a>|
 								</c:forEach>
-						<span>服务热线：${websitemap.web.phone}</span> <span>Email：${websitemap.web.email}</span>
+						<span>システムサポート：${websitemap.web.phone}</span> <span>Email：${websitemap.web.email}</span>
 					</section>
 					<section class="b-f-link mt10">
 						<span>${websitemap.web.copyright}</span>
@@ -53,7 +53,7 @@
 		</div>
 	</section>
 </footer>
-<div class="r-fixed-wrap">
+<!-- <div class="r-fixed-wrap">
 	<ul class="r-fixed-ul">
 		<li id="goTopBtn" class="undis">
 			<a href="javascript: void(0)" title="返回顶部" class="bg-orange">
@@ -71,4 +71,4 @@
 			</a>
 		</li>
 	</ul>
-</div>
+</div> -->
