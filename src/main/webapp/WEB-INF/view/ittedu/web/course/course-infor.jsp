@@ -3,7 +3,7 @@
 <!DOCTYPE>
 <html>
 <head>
-<title>${course.courseName}详情</title>
+<title>${course.courseName}詳細</title>
 
 <script type="text/javascript">
 	var isok = ${isok};
@@ -15,9 +15,9 @@
 		<!-- /课程详情 开始 -->
 		<section class="container">
 			<section class="path-wrap txtOf hLh30">
-				<a href="${ctx }" title="" class="c-999 fsize14">首页</a>
+				<a href="${ctx }" title="" class="c-999 fsize14">ホーム</a>
 				\
-				<a href="${ctx }/front/showcoulist" title="" class="c-999 fsize14">课程列表</a>
+				<a href="${ctx }/front/showcoulist" title="" class="c-999 fsize14">講座リスト</a>
 				\ <span class="c-333 fsize14">${course.courseName}</span>
 			</section>
 			<div>
@@ -38,7 +38,7 @@
 					</section>
 					<section class="p-h-video-tip">
 						<img src="${ctx }/static/inxweb/img/v-loading.gif">
-						<p class="hLh20"><span class="c-999">加载中...</span></p>
+						<p class="hLh20"><span class="c-999">ロード中...</span></p>
 					</section>
 				</article>
 				<aside class="c-attr-wrap">
@@ -47,43 +47,43 @@
 							<span class="c-fff fsize24">${course.courseName}</span>
 						</h2>
 						<section class="c-attr-jg">
-							<span class="c-fff">价格：</span><big class="c-yellow">￥${course.currentPrice }</big> <span class="c-ccc ml10">原价：<s>￥${course.sourcePrice }</s></span>
+							<span class="c-fff">価格：</span><big class="c-yellow">￥${course.currentPrice }</big> <span class="c-ccc ml10">元価格：<s>￥${course.sourcePrice }</s></span>
 						</section>
 						<section class="c-attr-mt c-attr-undis">
-							<span class="c-fff fsize14">主讲： <c:forEach items="${teacherList }" var="tea">
+							<span class="c-fff fsize14">教師： <c:forEach items="${teacherList }" var="tea">
 									<%-- <a href="${ctx}/front/teacher/${tea.id }">${tea.name }</a>&nbsp;&nbsp;&nbsp; --%>
 									${tea.name }&nbsp;&nbsp;&nbsp;
                       			</c:forEach>
 							</span>
 						</section>
 						<section class="c-attr-mt c-attr-time">
-							<span class="c-fff fsize14">课程有效期：
+							<span class="c-fff fsize14">講座有効期間：
 											<c:if test="${course.loseType==0 }">
 												<fmt:formatDate pattern="yyyy/MM/dd HH:mm"  value="${course.endTime}" />
 											</c:if>
 											<c:if test="${course.loseType==1 }">
-													从购买之日起${course.loseTime }天
+													購入${course.loseTime }日
 												</span>
 											</c:if>
 							</span>
 						</section>
 						<section class="c-attr-mt">
-									<a href="javascript:void(0)" title="立即观看" onclick="if(isLogin()){ window.location.href='/uc/play/${course.courseId }'} else{lrFun();} " class="comm-btn c-btn-3">立即观看</a>
-							<span class="ml10"><tt class="c-yellow f-fM">*咨询 ${websitemap.web.phone}</tt></span>
+									<a href="javascript:void(0)" title="視聴する" onclick="if(isLogin()){ window.location.href='/uc/play/${course.courseId }'} else{lrFun();} " class="comm-btn c-btn-3">視聴する</a>
+							<span class="ml10"><tt class="c-yellow f-fM">*お問い合わせ${websitemap.web.phone}</tt></span>
 						</section>
 						<section class="c-attr-mt of ml10">
 							<section class="kcShare pr fl hand vam">
 								<tt>
-									<em class="icon18 shareIcon"></em><span class="vam c-fff f-fM">分享</span>
+									<em class="icon18 shareIcon"></em><span class="vam c-fff f-fM">シェア</span>
 								</tt>
-								<div id="bdshare" class="bdsharebuttonbox"><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a></div>
-								<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+								<!-- <div id="bdshare" class="bdsharebuttonbox"><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a></div>
+								<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script> -->
 							</section>
 							<c:if test="${isFavorites==true }">
-										<span class="ml10 vam sc-end"><em class="icon18 scIcon"></em><a class="c-fff vam" title="收藏" onclick="" href="javascript:void(0)">已收藏</a></span>
+										<span class="ml10 vam sc-end"><em class="icon18 scIcon"></em><a class="c-fff vam" title="お気に入り" onclick="" href="javascript:void(0)">お気に入り追加完了</a></span>
 									</c:if>
 									<c:if test="${isFavorites!=true }">
-										<span class="ml10 vam"><em class="icon18 scIcon"></em><a class="c-fff vam" title="收藏" onclick="favorites(${course.courseId},this)" href="javascript:void(0)">收藏</a></span>
+										<span class="ml10 vam"><em class="icon18 scIcon"></em><a class="c-fff vam" title="お気に入り" onclick="favorites(${course.courseId},this)" href="javascript:void(0)">お気に入り</a></span>
 									</c:if>
 						</section>
 					</section>
@@ -92,17 +92,17 @@
 					<ol class="thr-attr-ol clearfix">
 						<li><p>&nbsp;</p>
 							<aside>
-								<span class="c-fff f-fM">购买数</span><br>
+								<span class="c-fff f-fM">購入数</span><br>
 								<h6 class="c-fff f-fM mt10">${course.pageBuycount }</h6>
 							</aside></li>
 						<li><p>&nbsp;</p>
 							<aside>
-								<span class="c-fff f-fM">课时数</span><br>
+								<span class="c-fff f-fM">課時数</span><br>
 								<h6 class="c-fff f-fM mt10">${course.lessionNum }</h6>
 							</aside></li>
 						<li><p>&nbsp;</p>
 							<aside>
-								<span class="c-fff f-fM">浏览数</span><br>
+								<span class="c-fff f-fM">閲覧数</span><br>
 								<h6 class="c-fff f-fM mt10">${course.pageViewcount}</h6>
 							</aside></li>
 					</ol>
@@ -116,20 +116,20 @@
 						<div class="i-box">
 							<div>
 								<section id="c-i-tabTitle" class="c-infor-tabTitle c-tab-title">
-									<a name="c-i" class="current" title="课程详情" href="javascript: void(0)">课程详情</a>
-									<a name="c-g" title="课程大纲" href="javascript: void(0)">课程大纲</a>
-									<a name="c-c" title="课程评论" href="javascript: void(0)">课程评论</a>
+									<a name="c-i" class="current" title="お気に入り" href="javascript: void(0)">講座詳細</a>
+									<a name="c-g" title="講座概要" href="javascript: void(0)">講座概要</a>
+									<a name="c-c" title="講座コメント" href="javascript: void(0)">講座コメント</a>
 								</section>
 							</div>
 							<article class="ml10 mr10 pt20">
 								<div>
 									<h6 class="c-i-content c-infor-title">
-										<span>课程介绍</span>
+										<span>講座紹介</span>
 									</h6>
 									<!-- /无数据提示 开始-->
 									<c:if test="${empty course.context}">
 										<section class="no-data-wrap">
-											<em class="icon30 no-data-ico">&nbsp;</em> <span class="c-666 fsize14 ml10 vam">没有相关数据，小编正在努力整理中...</span>
+											<em class="icon30 no-data-ico">&nbsp;</em> <span class="c-666 fsize14 ml10 vam">相関情報が存在していない...</span>
 										</section>
 									</c:if>
 									<!-- /无数据提示 结束-->
@@ -138,14 +138,14 @@
 											<section class="course-txt-body">
 												<p>${course.context}</p>
 											</section>
-											<section class="ctb-btn"><a href="javascript: void(0)" class="comm-btn c-btn-6" title="查看更多">查看更多∨</a></section>
+											<section class="ctb-btn"><a href="javascript: void(0)" class="comm-btn c-btn-6" title=MOREを見る>Moreを見る∨</a></section>
 										</div>
 									</c:if>
 								</div>
 								<!-- /课程介绍 -->
 								<div class="mt50">
 									<h6 class="c-g-content c-infor-title">
-										<span>课程大纲</span>
+										<span>講座概要</span>
 									</h6>
 									<section class="mt20">
 										<div class="lh-menu-wrap">
@@ -167,7 +167,7 @@
 																		<li class="lh-menu-second ml30"><a href="javascript:void(0)" <%-- onclick="playVideo('${sonKpoint.videoUrl }',this)" --%> onclick="getPlayerHtml(${sonKpoint.kpointId },${sonKpoint.free },this)" title="">
 																				<span class="fr">
 																					<c:if test="${sonKpoint.free==1 }">
-																						<tt class="free-icon vam mr10">免费试听</tt>
+																						<tt class="free-icon vam mr10">無料デモ</tt>
 																					</c:if>
 																					<c:if test="${!empty sonKpoint.playTime}">
 																						<em class="lh-p-icon icon14 ml5">&nbsp;</em>
@@ -187,7 +187,7 @@
 																	<li class="lh-menu-second"><a title="" <%-- onclick="playVideo('${parentKpoint.videoUrl }',this)" --%> onclick="getPlayerHtml(${parentKpoint.kpointId },${parentKpoint.free },this)" href="javascript:void(0)">
 																			<span class="fr">
 																				<c:if test="${parentKpoint.free==1 }">
-																					<tt class="free-icon vam mr10">免费试听</tt>
+																					<tt class="free-icon vam mr10">無料デモ</tt>
 																				</c:if>
 																				<c:if test="${!empty parentKpoint.playTime}">
 																					<em class="lh-p-icon icon14 ml5">&nbsp;</em>
@@ -215,7 +215,7 @@
 					<div class="i-box">
 						<div>
 							<section class="c-infor-tabTitle c-tab-title">
-								<a title="" href="javascript:void(0)">主讲讲师</a>
+								<a title="" href="javascript:void(0)">講座教師</a>
 							</section>
 							<section class="stud-act-list">
 								<c:forEach items="${teacherList }" var="tea">
@@ -251,19 +251,19 @@
 					<div class="i-box mt20">
 						<div  id="courseLearnedUserDiv">
 							<section class="c-infor-tabTitle c-tab-title">
-								<a title="" href="javascript:void(0)">学过此课的人（0）</a>
+								<a title="" href="javascript:void(0)">受講された方（0）</a>
 							</section>
-							<section class="no-data-wrap"><em class="icon30 no-data-ico">&nbsp;</em><span class="c-666 fsize14 ml10 vam">还没有人学过此课程，快去学习吧...</span></section>
+							<section class="no-data-wrap"><em class="icon30 no-data-ico">&nbsp;</em><span class="c-666 fsize14 ml10 vam">受講始まり...</span></section>
 						</div>
 					</div>
 					<div class="i-box mt20">
 						<div>
 							<section class="c-infor-tabTitle c-tab-title">
-								<a title="" href="javascript:void(0)">猜你想学</a>
+								<a title="" href="javascript:void(0)">おススメ講座</a>
 							</section>
 							<c:if test="${empty courseList}">
 								<section class="no-data-wrap">
-									<em class="icon30 no-data-ico">&nbsp;</em> <span class="c-666 fsize14 ml10 vam">没有相关数据，小编正在整理中...</span>
+									<em class="icon30 no-data-ico">&nbsp;</em> <span class="c-666 fsize14 ml10 vam">相関情報が存在していない...</span>
 								</section>
 							</c:if>
 							<c:if test="${not empty courseList}">
@@ -287,7 +287,7 @@
 													<a href="${ctx }/front/couinfo/${interfixCourse.courseId}" class="c-333 fsize16">${interfixCourse.courseName}</a>
 												</section>
 												<section class="hLh20 mt5 txtOf">
-													<span class="c-999">讲师： <c:if test="${interfixCourse.teacherList!=null && interfixCourse.teacherList.size()>0}">
+													<span class="c-999">教師： <c:if test="${interfixCourse.teacherList!=null && interfixCourse.teacherList.size()>0}">
 															<c:forEach items="${interfixCourse.teacherList}" var="teacher">
 																	${teacher.name}&nbsp;&nbsp;
 																</c:forEach>
@@ -347,10 +347,10 @@
 				ctb.css({"height" : "88px"});
 				ctBtn.parent().show();
 				ctBtn.toggle(function() {
-					ctBtn.text("收起更多∧");
+					ctBtn.text("折り畳み∧");
 					ctb.stop().animate({"height" : "100%"}, 500);
 				}, function() {
-					ctBtn.text("查看更多∨");
+					ctBtn.text("Moreを見る∨");
 					ctb.css({"height" : "88px"});
 				});
 			};

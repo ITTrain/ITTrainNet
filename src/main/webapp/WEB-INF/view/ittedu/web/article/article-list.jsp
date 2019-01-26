@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>文章列表</title>
+<title>文章リスト</title>
 </head>
 <body>
 	<div id="aCoursesList" class="bg-fa of">
@@ -22,7 +22,7 @@
 						<!-- /无数据提示 开始-->
 						<c:if test="${empty articleList }">
 							<section class="no-data-wrap">
-								<em class="icon30 no-data-ico">&nbsp;</em> <span class="c-666 fsize14 ml10 vam">没有相关数据，小编正在努力整理中...</span>
+								<em class="icon30 no-data-ico">&nbsp;</em> <span class="c-666 fsize14 ml10 vam">相関情報が存在していない...</span>
 							</section>
 						</c:if>
 						<!-- /无数据提示 结束-->
@@ -45,13 +45,13 @@
 											</section>
 											<section class="hLh30 txtOf mt5 pr10 a-list-extrainfo">
 												<span class="fr"><tt class="c-999 f-fM">
-														<!-- 1小时前发布 -->
+														<!-- 1時間前 -->
 														<fmt:formatDate value="${article.publishTime }" pattern="yyyy-MM-dd HH:mm" />
 													</tt></span>
 												<div class="fl">
-													<span> <a class="noter-dy vam" title="回答" href="${ctx }/front/articleinfo/${article.articleId}.html">
+													<span> <a class="noter-dy vam" title="答え" href="${ctx }/front/articleinfo/${article.articleId}.html">
 															<em class="icon18">&nbsp;</em>(<span>${article.commentNum }</span>)
-														</a> <tt title="赞一下" class="noter-zan vam ml10 f-fM" onclick="addPraise('${article.articleId}',3)">
+														</a> <tt title="いいよ" class="noter-zan vam ml10 f-fM" onclick="addPraise('${article.articleId}',3)">
 															<em class="icon18">&nbsp;</em>(<span class="addPraise${article.articleId}_3 praiseCount">${article.praiseCount }</span>)
 														</tt>
 													</span>

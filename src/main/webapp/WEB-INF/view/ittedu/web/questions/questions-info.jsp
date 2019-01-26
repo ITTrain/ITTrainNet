@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>问题详情</title>
+<title>問題詳細</title>
 </head>
 <body>
 	<div class="bg-fa of">
@@ -12,9 +12,9 @@
 				<div class="fl col-7">
 					<section class="mr30 pt10">
 						<section class="path-wrap txtOf hLh30">
-							<a href="${ctx }" title="" class="c-999 fsize14">首页</a>
+							<a href="${ctx }" title="" class="c-999 fsize14">ホーム</a>
 							\
-							<a href="${ctx }/questions/list" title="" class="c-999 fsize14">全部问答</a>
+							<a href="${ctx }/questions/list" title="" class="c-999 fsize14">すべて答え</a>
 							\ <span class="c-333 fsize14">${questions.title }</span>
 						</section>
 						<!-- /问题详情 开始 -->
@@ -34,21 +34,21 @@
 									</aside>
 									<section class="q-txt-box">
 										<aside class="q-share">
-											<span class="fl" title="分享到："><em class="icon14 q-share-icon mt5">&nbsp;</em></span>
+											<span class="fl" title="シェア："><em class="icon14 q-share-icon mt5">&nbsp;</em></span>
 											<div class="fl ml10" style="width: 95px;">
-												<div class="bdsharebuttonbox bdshare-button-style0-16" id="bdshare" data-bd-bind="1443601302583" style="right: -160px;">
+<!-- 												<div class="bdsharebuttonbox bdshare-button-style0-16" id="bdshare" data-bd-bind="1443601302583" style="right: -160px;">
 													<a title="分享到新浪微博" href="#" class="bds_tsina" data-cmd="tsina"></a>
 													<a title="分享到微信" href="#" class="bds_weixin" data-cmd="weixin"></a>
 													<a title="分享到QQ空间" href="#" class="bds_qzone" data-cmd="qzone"></a>
 													<a title="分享到腾讯微博" href="#" class="bds_tqq" data-cmd="tqq"></a>
-												</div>
+												</div> -->
 												<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
 											</div>
 											<div class="clear"></div>
 										</aside>
 										<h3 class="hLh30 txtOf">
 											<em class="icon16 q-tw">&nbsp;</em> <span class="c-blue fsize14"> <c:if test="${empty questions.showName }">${questions.email }</c:if> <c:if test="${not empty questions.showName }">${questions.showName }</c:if>
-											</span> <span class="c-999 fsize14"> <c:if test="${questions.type==1 }">课程提问</c:if> <c:if test="${questions.type==2 }">学习分享</c:if>
+											</span> <span class="c-999 fsize14"> <c:if test="${questions.type==1 }">ご質問</c:if> <c:if test="${questions.type==2 }">シェア</c:if>
 											</span>
 										</h3>
 									</section>
@@ -59,15 +59,15 @@
 											</h3>
 										</div>
 										<div class="i-q-txt mt15">
-											
+
 												<span class="c-999 f-fA"><c:out value="${questions.content}"></c:out></span>
-											
+
 										</div>
 										<div class="mt20 pr10">
 											<section class="fr">
-												<span> <a href="#i-art-comment" title="评论" class="noter-dy vam">
+												<span> <a href="#i-art-comment" title="コメント" class="noter-dy vam">
 														<em class="icon18">&nbsp;</em>(<span id="questionsReplyCount">${questions.replyCount }</span>)
-													</a> <tt class="noter-zan vam ml10 f-fM" title="赞一下" onclick="addPraise(${questions.id },1,this)">
+													</a> <tt class="noter-zan vam ml10 f-fM" title="いいよ" onclick="addPraise(${questions.id },1,this)">
 														<em class="icon18">&nbsp;</em>(<span>${questions.praiseCount }</span>)
 													</tt>
 												</span>
@@ -93,7 +93,7 @@
 				<aside class="fl col-3">
 					<div class="mt30 pl10">
 						<section class="pt10">
-							<a href="javascript:void(0)" onclick="toAddQuestions()" title="我要提问" class="comm-btn c-btn-5">我要提问</a>
+							<a href="javascript:void(0)" onclick="toAddQuestions()" title="ご質問" class="comm-btn c-btn-5">ご質問</a>
 						</section>
 						<section class="pt20">
 							<div class="taglist clearfix">
@@ -112,12 +112,12 @@
 						<!-- /标签云 -->
 						<section class="mt30">
 							<section class="c-infor-tabTitle c-tab-title">
-								<a href="javascript: void(0)" title="热门问答推荐">热门问答推荐</a>
+								<a href="javascript: void(0)" title="よくある質問">よくある質問</a>
 							</section>
 							<div class="q-r-rank-list">
 								<ul id="hotQuestions">
 									<section class="no-data-wrap">
-										<em class="icon30 no-data-ico">&nbsp;</em> <span class="c-666 fsize14 ml10 vam">没有相关数据，小编正在努力整理中...</span>
+										<em class="icon30 no-data-ico">&nbsp;</em> <span class="c-666 fsize14 ml10 vam">相関情報が存在していない...</span>
 									</section>
 								</ul>
 							</div>

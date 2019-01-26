@@ -16,19 +16,19 @@
 					</aside>
 					<div class="of hLh20">
 						<c:if test="${questions.status==0 and  questions.cusId==user.userId and questionsComment.cusId != questions.cusId}">
-							<span class="fr"><a href="javascript:void(0)" onclick="acceptComment(${questionsComment.id})" title="" class="comm-btn c-btn-6">采纳为最佳答案</a></span>
+							<span class="fr"><a href="javascript:void(0)" onclick="acceptComment(${questionsComment.id})" title="" class="comm-btn c-btn-6">ベスト採用答え案</a></span>
 						</c:if>
 						<span class="fl"> <font class="fsize12 c-blue"> <c:if test="${not empty questionsComment.showName }">${questionsComment.showName }</c:if> <c:if test="${empty questionsComment.showName }">${questionsComment.email }</c:if>
-						</font> <font class="fsize12 c-999 ml5">回复：</font></span>
+						</font> <font class="fsize12 c-999 ml5">返事：</font></span>
 					</div>
 					<div class="noter-txt mt5">
 						<p><c:out value="${questionsComment.content }"></c:out></p>
 					</div>
 					<div class="of mt5">
-						<span class="fr"><font class="fsize12 c-999 ml5"> <!-- <a href="" class="c-blue mr10">删除</a> --> <fmt:formatDate type="both" value="${questionsComment.addTime }" pattern="yyyy-MM-dd HH:mm" />
-						</font></span> <span class="fl"> <a href="javascript: void(0)" title="回答" class="noter-dy vam" onclick="getCommentById(this,${questionsComment.id })">
+						<span class="fr"><font class="fsize12 c-999 ml5"> <!-- <a href="" class="c-blue mr10">削除</a> --> <fmt:formatDate type="both" value="${questionsComment.addTime }" pattern="yyyy-MM-dd HH:mm" />
+						</font></span> <span class="fl"> <a href="javascript: void(0)" title="答え" class="noter-dy vam" onclick="getCommentById(this,${questionsComment.id })">
 								<em class="icon18">&nbsp;</em>(<span>${questionsComment.replyCount }</span>)
-							</a> <tt class="noter-zan vam ml10" title="赞一下" onclick="addPraise(${questionsComment.id },2,this)">
+							</a> <tt class="noter-zan vam ml10" title="いいよ" onclick="addPraise(${questionsComment.id },2,this)">
 								<em class="icon18">&nbsp;</em>(<span>${questionsComment.praiseCount }</span>)
 							</tt>
 						</span>
@@ -53,7 +53,7 @@
 												<font class="fsize12 c-blue">
 													<c:if test="${empty questionsComment.showName }">${questionsComment.email }</c:if>
 													<c:if test="${not empty questionsComment.showName }">${questionsComment.showName }</c:if>
-												</font><font class="fsize12 c-999 ml5">评论：</font></span>
+												</font><font class="fsize12 c-999 ml5">コメント：</font></span>
 										</div>
 										<div class="noter-txt mt5">
 											<p><c:out value="${questionsComment.content }"></c:out></p>
@@ -61,7 +61,7 @@
 										<div class="of mt5">
 											<span class="fr"><font class="fsize12 c-999 ml5"><fmt:formatDate type="both" value="${questionsComment.addTime }" pattern="yyyy-MM-dd HH:mm"/></font></span>
 											<span class="fl">
-												<tt class="noter-zan vam" title="赞一下" onclick="addPraise(${questionsComment.id },2,this)"><em class="icon18">&nbsp;</em>(<span>${questionsComment.praiseCount }</span>)</tt>
+												<tt class="noter-zan vam" title="いいよ" onclick="addPraise(${questionsComment.id },2,this)"><em class="icon18">&nbsp;</em>(<span>${questionsComment.praiseCount }</span>)</tt>
 											</span>
 										</div>
 									</dd>
@@ -71,7 +71,7 @@
 								<!-- 公共分页 结束 -->
 							</dl>
 						</div>
-					</div> <!-- /回复盒子 -->
+					</div> <!-- /返事盒子 -->
 				</li>
 		</ul>
 	</section>
