@@ -328,19 +328,19 @@ function lrFun(type) {
                     '<div>'+
                         '<ol class="e-login-options">'+
                             '<li>'+
-                                '<input id="u-email" type="text" placeholder="请输入登录邮箱"  name="" value="" onkeyup="$(this).next().html(\'\');">'+
+                                '<input id="u-email" type="text" placeholder="登録メールアドレスを入力してください"  name="" value="" onkeyup="$(this).next().html(\'\');">'+
                                 '<p class="lr-tip-wrap"></p>'+
                             '</li>'+
                             '<li>'+
-                                '<input id="u-password" type="password" placeholder="请输入密码"  name="" value="" onkeyup="$(this).next().html(\'\');">'+
+                                '<input id="u-password" type="password" placeholder="パスワードを入力してください"  name="" value="" onkeyup="$(this).next().html(\'\');">'+
                                 '<p class="lr-tip-wrap"></p>'+
                             '</li>'+
                         '</ol>'+
                         /*'<section class="hLh30 of pl10"><span class="fr"><a href="/uc/register" class="c-master fsize12">没有账号？去注册→</a></span>'+*/
                         '<section class="hLh30 of pl10">'+
-                        '<span class="fl"><label class="hand c-999 vam"><input type="checkbox" style="vertical-align: -2px;" id="autoThirty">自动登录</label><a class="vam ml10 c-blue" title="" href="/front/passwordRecovery">忘记密码?</a></span></section>'+
+                        '<span class="fl"><label class="hand c-999 vam"><input type="checkbox" style="vertical-align: -2px;" id="autoThirty">パスワードを忘れた方</label><a class="vam ml10 c-blue" title="" href="/front/passwordRecovery">パスワードを忘れた方</a></span></section>'+
                         '<section class="mt20 tac">'+
-                            '<a href="javascript:void(0)" title="登 录" class="e-login-btn" onclick="dialogLogin('+type+')">登 录</a>'+
+                            '<a href="javascript:void(0)" title="ログイン" class="e-login-btn" onclick="dialogLogin('+type+')">ログイン</a>'+
                         '</section>'+
                       /*  '<section class="mt20 sf-lr-wrap tac">'+
                             '<h6 class="hLh20 mb15"><span class="c-666 fsize14">第三方快捷登录</span></h6>'+
@@ -357,7 +357,7 @@ function lrFun(type) {
                     '<div>'+
                         '<ol class="e-login-options">'+
                             '<li>'+
-                                '<input id="u-email-reg" type="text" placeholder="请输入登录邮箱"  name="" value="" onkeyup="$(this).next().html(\'\');">'+
+                                '<input id="u-email-reg" type="text" placeholder="登録メールアドレスを入力してください"  name="" value="" onkeyup="$(this).next().html(\'\');">'+
                                 '<p class="lr-tip-wrap"></p>'+
                             '</li>'+
                             '<li>'+
@@ -365,11 +365,11 @@ function lrFun(type) {
 	                            '<p class="lr-tip-wrap"></p>'+
 	                        '</li>'+
                             '<li>'+
-                                '<input id="u-password-reg" type="password" placeholder="请输入密码"  name="" value="" onkeyup="$(this).next().html(\'\');">'+
+                                '<input id="u-password-reg" type="password" placeholder="パスワードを入力してください"  name="" value="" onkeyup="$(this).next().html(\'\');">'+
                                 '<p class="lr-tip-wrap"></p>'+
                             '</li>'+
                             '<li>'+
-                                '<input id="u-passwordre-reg" type="password" placeholder="请再输入一次密码"  name="" value="" onkeyup="$(this).next().html(\'\');">'+
+                                '<input id="u-passwordre-reg" type="password" placeholder="パスワードを再入力してください"  name="" value="" onkeyup="$(this).next().html(\'\');">'+
                                 '<p class="lr-tip-wrap"></p>'+
                             '</li>'+
                             '<li>'+

@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>首页</title>
+<title></title>
 <script>
 	var theme_color = '${theme_color}';
 </script>
@@ -36,9 +36,9 @@
 		<div class="bg-fa of">
 			<section class="container">
 				<header class="comm-title">
-					<span class="fr mt5"><a href="javascript:void(0)" title="换一换" class="c-master" onclick="huanyihuan()">换一换</a></span>
+					<span class="fr mt5"><a href="javascript:void(0)" title="おススメ切替え" class="c-master" onclick="huanyihuan()">おススメ切替え</a></span>
 					<h2 class="fl tac">
-						<span class="c-333">为你推荐</span>
+						<span class="c-333">おススメ情報</span>
 					</h2>
 				</header>
 				<article class="comm-course-list">
@@ -55,14 +55,14 @@
 			<section class="container">
 				<header class="comm-title">
 					<h2 class="tac">
-						<span class="c-333">网校课程</span>
+						<span class="c-333">eラーニング 講座</span>
 					</h2>
 				</header>
 				<div>
 					<section class="c-tab-title">
-						<a href="javascript:void(0)" title="精品课程" onclick="bna('FOLLOW',this)" class="current boutiqueCourse">精品课程</a>
-						<a href="javascript:void(0)" title="最新课程" onclick="bna('NEW',this)">最新课程</a>
-						<a href="javascript:void(0)" title="全部课程" onclick="bna('ALL',this)">全部课程</a>
+						<a href="javascript:void(0)" title="おススメ講座" onclick="bna('FOLLOW',this)" class="current boutiqueCourse">おススメ講座</a>
+						<a href="javascript:void(0)" title="最新講座" onclick="bna('NEW',this)">最新講座</a>
+						<a href="javascript:void(0)" title="すべて講座" onclick="bna('ALL',this)">すべて講座</a>
 					</section>
 				</div>
 				<div>
@@ -72,7 +72,7 @@
 						<div class="clear"></div>
 					</article>
 					<section class="tac pt20">
-						<a href="${ctx }/front/showcoulist" title="全部课程" class="comm-btn c-btn-2">全部课程</a>
+						<a href="${ctx }/front/showcoulist" title="すべて講座" class="comm-btn c-btn-2">すべて講座</a>
 					</section>
 				</div>
 			</section>
@@ -85,7 +85,7 @@
 					<div class="mr50">
 						<header class="comm-title">
 							<h2 class="fl tac">
-								<span class="c-333">课程互动</span>
+								<span class="c-333">講座コメント一覧</span>
 							</h2>
 						</header>
 						<div class="i-question-list">
@@ -111,7 +111,7 @@
 														${comment.userName}
 													</c:if>
 												</span>
-											    <span class="fsize14 c-999 ml5 f-fA">评论课程：</span>
+											    <span class="fsize14 c-999 ml5 f-fA">コメント：</span>
 											</section>
 											<section class="hLh20 of mt10">
 												<a class="c-master fsize14" href="${ctx}/front/couinfo/${comment.courseId}">《${comment.courseName}》</a>
@@ -130,9 +130,9 @@
 				</article>
 				<aside class="fl col-3">
 					<header class="comm-title">
-						<!-- <span class="fr"><a class="c-master" title="" href="">换一换</a></span> -->
+						<!-- <span class="fr"><a class="c-master" title="" href="">おススメ切り替え</a></span> -->
 						<h2 class="fl tac">
-							<span class="c-333">学生动态</span>
+							<span class="c-333">研修者のこころ声</span>
 						</h2>
 					</header>
 					<div class="stud-act-list">
@@ -152,7 +152,7 @@
 			<section class="container">
 				<header class="comm-title">
 					<h2 class="tac">
-						<span class="c-333">网校名师</span>
+						<span class="c-333">おススメ講師</span>
 					</h2>
 				</header>
 				<div>
@@ -187,7 +187,7 @@
 						<div class="clear"></div>
 					</article>
 					<section class="tac pt20">
-						<a href="${ctx}/front/teacherlist" title="全部讲师" class="comm-btn c-btn-2">全部讲师</a>
+						<a href="${ctx}/front/teacherlist" title="講師一覧" class="comm-btn c-btn-2">講師一覧</a>
 					</section>
 				</div>
 			</section>
