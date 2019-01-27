@@ -149,7 +149,7 @@
 		<!-- /课程互动 结束-->
 		<!-- /网校名师 开始 -->
 		<div>
-			<section class="container">
+<%-- 			<section class="container">
 				<header class="comm-title">
 					<h2 class="tac">
 						<span class="c-333">おススメ講師</span>
@@ -190,7 +190,7 @@
 						<a href="${ctx}/front/teacherlist" title="講師一覧" class="comm-btn c-btn-2">講師一覧</a>
 					</section>
 				</div>
-			</section>
+			</section> --%>
 		</div>
 		<!-- /网校名师 结束 -->
 	</div>

@@ -95,7 +95,7 @@ function replyFun() {
                  '<textarea name=""></textarea>' +
                  '</fieldset><p class="of mt5 tar pl10 pr10">' +
                  '<span class="fl"><tt class="c-red">回复内容不能为空！</tt></span>'+
-                 '<u class="hand mr10 qxBtn c-999">取消</u>' +
+                 '<u class="hand mr10 qxBtn c-999">キャンセル</u>' +
                  '<a href="javascript: void(0)" title="回复" class="lh-reply-btn" onclick="addReply(this)">回复</a>' +
                  '</p></section>';
     $(".question-list>ul>li").each(function() {
@@ -191,13 +191,13 @@ var scrollLoad = (function (options) {
 function dialog(dTitle,msg,index,url) {
 	 $("#tisbutt,.dClose,#qujiao").click();
     var oBg = $('<div class="bMask"></div>').appendTo($("body")),
-        dialogEle = $('<div class="dialogWrap"><div class="dialog-ele"><h4 class="d-s-head pr"><a href="javascript:void(0)" title="关闭" class="dClose icon16 pa">&nbsp;</a><span class="d-s-head-txt">'+dTitle+'</span></h4><div class="of"><div id="dcWrap" class="mt20 mb20 ml20 mr20 "></div></div></div></div>').appendTo($("body"));
+        dialogEle = $('<div class="dialogWrap"><div class="dialog-ele"><h4 class="d-s-head pr"><a href="javascript:void(0)" title="閉じる" class="dClose icon16 pa">&nbsp;</a><span class="d-s-head-txt">'+dTitle+'</span></h4><div class="of"><div id="dcWrap" class="mt20 mb20 ml20 mr20 "></div></div></div></div>').appendTo($("body"));
     var dCont = [
-            "<div class='d-tips-1'><em class='pa d-t-icon-3'></em><p class='fsize14 c-666'>"+msg+"</p><div class='tac mt30'><a href='javascript:void(0)' title='' class='order-submit dClose'>确定</a></div></div>",
-            "<div class='d-tips-2'><em class='pa d-t-icon-2'></em><p class='fsize14 c-666'>"+msg+"</p><div class='tac mt30'><a href='javascript:void(0)' title='' class='order-submit dClose'>确定</a></div></div>",
-            "<div class='d-tips-3'><em class='pa d-t-icon-3'></em><p class='fsize14 c-666'>"+msg+"</p><div class='tac mt30'><a href='"+url+"' title='' class='order-submit'>确定</a><a href='javascript:void(0)' title='' class='goBack-btn ml10 dClose'>取消</a></div></div>",
-            "<div class='d-tips-4><em class='pa d-t-icon-1'></em><p class='fsize14 c-666'>你选择使用工商银行网银进行在线支付，在你支付成功后我们将尽快发送给你购买的课程。祝你学习愉快！</p><div class='tac mt20'><a href='' title='' class='blue-btn mr10'>支付过程发生问题</a><a href='' title='' class='blue-btn ml10'>已成功完成支付</a></div><p class='tar mt20 c-666'>如有疑问请询问客服：400-6587-777</p></div>",
-            "<div class='d-tips-5'><em class='pa d-t-icon-4'></em><p class='fsize14 c-666 disIb ml5'>恭喜，你已成功激活。现在你可以：</p><div class='tac mt20 mb10'><a href='' title='' class='blue-btn mr10'>登录网页</a><a href='' title='' class='blue-btn'>查看课程</a></div></div>",
+            "<div class='d-tips-1'><em class='pa d-t-icon-3'></em><p class='fsize14 c-666'>"+msg+"</p><div class='tac mt30'><a href='javascript:void(0)' title='' class='order-submit dClose'>確認</a></div></div>",
+            "<div class='d-tips-2'><em class='pa d-t-icon-2'></em><p class='fsize14 c-666'>"+msg+"</p><div class='tac mt30'><a href='javascript:void(0)' title='' class='order-submit dClose'>確認</a></div></div>",
+            "<div class='d-tips-3'><em class='pa d-t-icon-3'></em><p class='fsize14 c-666'>"+msg+"</p><div class='tac mt30'><a href='"+url+"' title='' class='order-submit'>確認</a><a href='javascript:void(0)' title='' class='goBack-btn ml10 dClose'>キャンセル</a></div></div>",
+            "<div class='d-tips-4><em class='pa d-t-icon-1'></em><p class='fsize14 c-666'>ご勉強を楽しみに！</p><div class='tac mt20'><a href='' title='' class='blue-btn mr10'>支払失敗</a><a href='' title='' class='blue-btn ml10'>支払成功</a></div><p class='tar mt20 c-666'>お問い合わせ：400-6587-777</p></div>",
+            "<div class='d-tips-5'><em class='pa d-t-icon-4'></em><p class='fsize14 c-666 disIb ml5'>おめでとうございます。</p><div class='tac mt20 mb10'><a href='' title='' class='blue-btn mr10'>画面へ登録</a><a href='' title='' class='blue-btn'>講座情報を確認</a></div></div>",
             "<div class='d-tips-6'>"+msg+"</div>"
         ];
     $("#dcWrap").html(dCont[index]);
@@ -258,7 +258,7 @@ function addPraise(targetId,type,obj){
 			async:true,
 			success:function(result){
 				if(result.success==true){
-					dialog('提示',"点赞成功",0);
+					dialog('メッセージ',"操作成功",0);
 					//点赞数加一
 					var praiseNum = $(".addPraise"+targetId+"_"+type).html();
 					$(".addPraise"+targetId+"_"+type).html(praiseNum*1+1);
@@ -267,7 +267,7 @@ function addPraise(targetId,type,obj){
 					var priaseCount=parseInt($(obj).children("span").html());
 					$(obj).children("span").html(priaseCount+1);
 				}else{
-					dialog('提示',result.message,1);
+					dialog('メッセージ',result.message,1);
 				}
 			}
 		})
@@ -306,7 +306,7 @@ function queryUnReadNum(){
 			if(unReadNum!=0){
 				$("#headerMsgCountId").next().show();
 			}
-			$("#headerMsgCountId").attr("title",unReadNum+"条未读消息");
+			$("#headerMsgCountId").attr("title",unReadNum+"件新通知");
 			//$("#headerMsgCountId").html(unReadNum);
 		}
 	});
@@ -318,7 +318,7 @@ function queryUnReadNum(){
 */
 function lrFun(type) {
     var oBg = $('<div class="bMask"></div>').appendTo($("body")),
-        dialogEle = $('<div class="dialogWrap" style="position: absolute;"><div class="dialog-ele"><h4 class="d-s-head pr"><a href="javascript:void(0)" title="关闭" class="dClose icon16 pa">&nbsp;</a><span id="d-s-head-tab" class="d-s-head-tab"><a href="javascript:void(0)" class="current">登录</a><a href="javascript:void(0)">注册</a></span></h4><div class="of"><div id="lrEleWrap" class="mt10 mb20 ml20"></div></div></div></div>').appendTo($("body")),
+        dialogEle = $('<div class="dialogWrap" style="position: absolute;"><div class="dialog-ele"><h4 class="d-s-head pr"><a href="javascript:void(0)" title="閉じる" class="dClose icon16 pa">&nbsp;</a><span id="d-s-head-tab" class="d-s-head-tab"><a href="javascript:void(0)" class="current">ログイン</a><a href="javascript:void(0)">新規登録</a></span></h4><div class="of"><div id="lrEleWrap" class="mt10 mb20 ml20"></div></div></div></div>').appendTo($("body")),
         rlEle = [
             '<div id="d-s-head-cont" class="lrWrap">'+
                 '<section class="dis e-login-ele">'+
@@ -338,7 +338,7 @@ function lrFun(type) {
                         '</ol>'+
                         /*'<section class="hLh30 of pl10"><span class="fr"><a href="/uc/register" class="c-master fsize12">没有账号？去注册→</a></span>'+*/
                         '<section class="hLh30 of pl10">'+
-                        '<span class="fl"><label class="hand c-999 vam"><input type="checkbox" style="vertical-align: -2px;" id="autoThirty">パスワードを忘れた方</label><a class="vam ml10 c-blue" title="" href="/front/passwordRecovery">パスワードを忘れた方</a></span></section>'+
+                        '<span class="fl"><label class="hand c-999 vam"><input type="checkbox" style="vertical-align: -2px;" id="autoThirty">自動登録</label><a class="vam ml10 c-blue" title="" href="/front/passwordRecovery">パスワードを忘れた方</a></span></section>'+
                         '<section class="mt20 tac">'+
                             '<a href="javascript:void(0)" title="ログイン" class="e-login-btn" onclick="dialogLogin('+type+')">ログイン</a>'+
                         '</section>'+
@@ -360,10 +360,10 @@ function lrFun(type) {
                                 '<input id="u-email-reg" type="text" placeholder="登録メールアドレスを入力してください"  name="" value="" onkeyup="$(this).next().html(\'\');">'+
                                 '<p class="lr-tip-wrap"></p>'+
                             '</li>'+
-                            '<li>'+
+/*                            '<li>'+
 	                            '<input id="u-mobile-reg" type="text" placeholder="请输入用户手机号"  name="" value="" onkeyup="$(this).next().html(\'\');" maxlength="11">'+
 	                            '<p class="lr-tip-wrap"></p>'+
-	                        '</li>'+
+	                        '</li>'+*/
                             '<li>'+
                                 '<input id="u-password-reg" type="password" placeholder="パスワードを入力してください"  name="" value="" onkeyup="$(this).next().html(\'\');">'+
                                 '<p class="lr-tip-wrap"></p>'+
@@ -373,15 +373,15 @@ function lrFun(type) {
                                 '<p class="lr-tip-wrap"></p>'+
                             '</li>'+
                             '<li>'+
-                                '<input id="u-randomcode-reg" class="fl" style="width: 100px;" type="text" placeholder="请输入验证码"  name="" value="" onkeyup="$(this).next().next().next().html(\'\');" maxlength="4">'+
-                                '<a href="javascript:void(0)" title="" class="vam ml10 disIb fl"><img onclick=this.src="'+baselocation+'/ran/random?random=Math.random()" alt="验证码，点击图片更换" src="'+baselocation+'/ran/random" width="86" height="40"></a>'+
-                                '<span class="c-999 fl ml10">看不清<br><a href="javascript:void(0)" class="js-verify-refresh c-green" onclick="$(this).parent().prev().find(\'img\').click()">换一张</a></span>'+
+                                '<input id="u-randomcode-reg" class="fl" style="width: 100px;" type="text" placeholder="検証コードを入力してください"  name="" value="" onkeyup="$(this).next().next().next().html(\'\');" maxlength="4">'+
+                                '<a href="javascript:void(0)" title="" class="vam ml10 disIb fl"><img onclick=this.src="'+baselocation+'/ran/random?random=Math.random()" alt="検証コード，クリックして変更" src="'+baselocation+'/ran/random" width="86" height="40"></a>'+
+                                '<span class="c-999 fl ml10">霞んでしまう<br><a href="javascript:void(0)" class="js-verify-refresh c-green" onclick="$(this).parent().prev().find(\'img\').click()">変更</a></span>'+
                                 '<p class="lr-tip-wrap"><span class="c-red"></p>'+
                                 '<p class="clear"></p>'+
                             '</li>'+
                         '</ol>'+
                         '<section class="mt20 tac">'+
-                            '<a href="javascript: void(0)" onclick="dialogRegister()" title="注 册" class="e-login-btn">注 册</a>'+
+                            '<a href="javascript: void(0)" onclick="dialogRegister()" title="新規登録" class="e-login-btn">新規登録</a>'+
                         '</section>'+
                     /*    '<section class="mt20 sf-lr-wrap tac">'+
                             '<h6 class="hLh20 mb15"><span class="c-666 fsize14">第三方快捷登录</span></h6>'+
@@ -479,11 +479,11 @@ function dialogLogin(type){
     $("#u-password").next().html('');
     $(".e-l-jy").html('');
     if(userName==""||userName==null){
-    	$("#u-email").next().html('<span class="c-orange"><em class="icon16 u-a-cw">&nbsp;</em>请输入正确的邮箱！</span>');
+    	$("#u-email").next().html('<span class="c-orange"><em class="icon16 u-a-cw">&nbsp;</em>有効なメールアドレスを入力してください！</span>');
         return false;
     }
     if(pwd==""||pwd==null){
-    	$("#u-password").next().html('<span class="c-orange"><em class="icon16 u-a-cw">&nbsp;</em>请输入正确的密码！</span>');
+    	$("#u-password").next().html('<span class="c-orange"><em class="icon16 u-a-cw">&nbsp;</em>正しいパスワードを入力してください！</span>');
         return false;
     }
 	$.ajax({
@@ -507,7 +507,7 @@ function dialogLogin(type){
 			}
 		},
 		error:function(error){
-			alert("系统繁忙，请稍后再操作！");
+			alert("システム異常、再確認してください！");
 		}
 	});
 }
@@ -519,17 +519,17 @@ function dialogRegister() {
 	$(".e-l-jy").html('');
 	var emailVal=$("#u-email-reg").val();
 	if(emailVal==""){//验证邮箱是否为空
-		$("#u-email-reg").next().html('<span class="c-orange"><em class="icon16 u-a-cw">&nbsp;</em>请输入邮箱！</span>');
+		$("#u-email-reg").next().html('<span class="c-orange"><em class="icon16 u-a-cw">&nbsp;</em>メールアドレスを入力してください！</span>');
 		return;
 	}
 	var reg=/^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_])+(.[a-zA-Z0-9_])+/; //验证邮箱正则
 	if(reg.test(emailVal)==false){//格式不正确
-		$("#u-email-reg").next().html('<span class="c-orange"><em class="icon16 u-a-cw">&nbsp;</em>请输入正确的邮箱！</span>');
+		$("#u-email-reg").next().html('<span class="c-orange"><em class="icon16 u-a-cw">&nbsp;</em>有効なメールアドレスを入力してください！</span>');
 		return;
 	};
 
 	var mobileVal=$("#u-mobile-reg").val();
-	if(mobileVal==""){//验证手机是否为空
+/*	if(mobileVal==""){//验证手机是否为空
 		$("#u-mobile-reg").next().html('<span class="c-orange"><em class="icon16 u-a-cw">&nbsp;</em>请输入用户手机号！</span>');
 		return;
 	}
@@ -537,27 +537,27 @@ function dialogRegister() {
 	if(reg.test(mobileVal)==false){//格式不正确
 		$("#u-mobile-reg").next().html('<span class="c-orange"><em class="icon16 u-a-cw">&nbsp;</em>请输入正确的手机！</span>');
 		return;
-	};
+	};*/
 
 	if($("#u-password-reg").val().trim()==""){//验证密码是否为空
-		$("#u-password-reg").next().html('<span class="c-orange"><em class="icon16 u-a-cw">&nbsp;</em>请输入密码！</span>');
+		$("#u-password-reg").next().html('<span class="c-orange"><em class="icon16 u-a-cw">&nbsp;</em>パスワードを入力してください！</span>');
 		return;
 	}
 	if($("#u-password-reg").val().length<6){//验证密码长度
-		$("#u-password-reg").next().html('<span class="c-orange"><em class="icon16 u-a-cw">&nbsp;</em>密码长度不能小于六位！</span>');
+		$("#u-password-reg").next().html('<span class="c-orange"><em class="icon16 u-a-cw">&nbsp;</em>６桁のパスワードを入力してください！</span>');
 		return;
 	}
 	if(($("#u-password-reg").val()).indexOf(" ")!=-1){
-		$("#u-password-reg").next().html('<span class="c-orange"><em class="icon16 u-a-cw">&nbsp;</em>密码不能包含空格！</span>');
+		$("#u-password-reg").next().html('<span class="c-orange"><em class="icon16 u-a-cw">&nbsp;</em>パスワードはスペースを含めています！</span>');
 		return false;
 	}
 	if($("#u-passwordre-reg").val().trim()==""){//验证确认密码是否为空
-		$("#u-passwordre-reg").next().html('<span class="c-orange"><em class="icon16 u-a-cw">&nbsp;</em>请输入确认密码！</span>');
+		$("#u-passwordre-reg").next().html('<span class="c-orange"><em class="icon16 u-a-cw">&nbsp;</em>パスワードを再入力してください！</span>');
 		return;
 	}
 
 	if($("#u-randomcode-reg").val().trim()==""){//验证 验证码是否为空
-		$("#u-randomcode-reg").next().next().next().html('<span class="c-orange"><em class="icon16 u-a-cw">&nbsp;</em>请输入验证码！</span>');
+		$("#u-randomcode-reg").next().next().next().html('<span class="c-orange"><em class="icon16 u-a-cw">&nbsp;</em>検証コードを入力してください！</span>');
 		return;
 	}
 
@@ -578,7 +578,7 @@ function dialogRegister() {
 			}
 		},
 		error : function(error) {
-			$(".e-l-jy").html('<font class="fsize12 c-orange">系统繁忙，请稍后再操作</font>');
+			$(".e-l-jy").html('<font class="fsize12 c-orange">システム異常、再確認してください</font>');
 		}
 	});
 }
@@ -599,7 +599,7 @@ function getCourseLearnedUser(courseId){
 				if(resultList.length!=0){
 					var useImg="";
 	 				var userShowName="";
-	 				var resultStr='<section class="c-infor-tabTitle c-tab-title"><a href="" title="">学过此课的人（'+result.message+'）</a></section>';
+	 				var resultStr='<section class="c-infor-tabTitle c-tab-title"><a href="" title="">研修した会員情報（'+result.message+'）</a></section>';
 	 				resultStr+='<section class="buy-cin-list">';
 	 				for(var i=0;i<resultList.length;i++){
 	 					useImg=resultList[i].userImg;

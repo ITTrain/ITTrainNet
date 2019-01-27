@@ -26,13 +26,12 @@
 			<div class="of mt5">
 				<span class="fr"><font class="fsize12 c-999 ml5"><fmt:formatDate type="both" value="${questionsComment.addTime }" pattern="yyyy-MM-dd HH:mm"/></font></span>
 				<span class="fl">
-					<tt class="noter-zan vam" title="赞一下" onclick="addPraise(${questionsComment.id },2,this)"><em class="icon18">&nbsp;</em>(<span>${questionsComment.praiseCount }</span>)</tt>
+					<tt class="noter-zan vam" title="いいよ" onclick="addPraise(${questionsComment.id },2,this)"><em class="icon18">&nbsp;</em>(<span>${questionsComment.praiseCount }</span>)</tt>
 				</span>
 			</div>
 		</dd>
 	</c:if>
 </c:forEach>
 <c:if test="${questionsCommentRepList.size()>8 }">
-	<div class="mt20 tac bg-fa hLh30"><a href="javascript:void(0)" onclick="getAllCommentById(${questionsCommentRepList[0].commentId})" class="comm-btn c-btn-6">查看更多评论回复</a></div>
+	<div class="mt20 tac bg-fa hLh30"><a href="javascript:void(0)" onclick="getAllCommentById(${questionsCommentRepList[0].commentId})" class="comm-btn c-btn-6">moreコメントを見る</a></div>
 </c:if>
-									

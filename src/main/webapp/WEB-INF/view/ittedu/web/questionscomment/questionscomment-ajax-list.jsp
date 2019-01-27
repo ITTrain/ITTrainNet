@@ -4,7 +4,7 @@
 	<!-- /最佳答案 开始-->
 	<div class="good-anwer-box">
 		<h4 class="g-a-title">
-			<span class="bg-green vam"><em class="icon24 mr5">&nbsp;</em>最佳答案</span>
+			<span class="bg-green vam"><em class="icon24 mr5">&nbsp;</em>最高答え</span>
 		</h4>
 		<section class="good-answer mt10">
 			<section class="question-list lh-bj-list pr">
@@ -23,28 +23,28 @@
 							</aside>
 							<div class="of hLh20">
 								<span class="fl"> <font class="fsize12 c-blue"> <c:if test="${not empty questionsComment.showName}">${questionsComment.showName}</c:if> <c:if test="${empty questionsComment.showName }">${questionsComment.email }</c:if>
-								</font> <font class="fsize12 c-999 ml5">回复：</font></span>
+								</font> <font class="fsize12 c-999 ml5">返事：</font></span>
 							</div>
 							<div class="noter-txt mt5">
 								<p><c:out value="${questionsComment.content }"></c:out></p>
 							</div>
 							<div class="of mt5">
-								<span class="fr"><font class="fsize12 c-999 ml5"><fmt:formatDate type="both" value="${questionsComment.addTime }" pattern="yyyy-MM-dd HH:mm" /></font></span> <span class="fl"> <a href="javascript: void(0)" title="回答" class="noter-dy vam"
+								<span class="fr"><font class="fsize12 c-999 ml5"><fmt:formatDate type="both" value="${questionsComment.addTime }" pattern="yyyy-MM-dd HH:mm" /></font></span> <span class="fl"> <a href="javascript: void(0)" title="答え" class="noter-dy vam"
 										onclick="getCommentById(this,${questionsComment.id })">
-										<em class="icon18">&nbsp;</em>全部评论(<span>${questionsComment.replyCount }</span>)
-									</a> <tt class="noter-zan vam ml10 f-fM" title="赞一下" onclick="addPraise(${questionsComment.id },2,this)">
-										<em class="icon18">&nbsp;</em>点赞(<span>${questionsComment.praiseCount }</span>)
+										<em class="icon18">&nbsp;</em>すべてコメント(<span>${questionsComment.replyCount }</span>)
+									</a> <tt class="noter-zan vam ml10 f-fM" title="いいよ" onclick="addPraise(${questionsComment.id },2,this)">
+										<em class="icon18">&nbsp;</em>いいよ(<span>${questionsComment.praiseCount }</span>)
 									</tt>
 								</span>
 							</div>
 							<div class="n-reply">
 								<section class="n-reply-wrap mt10">
 									<fieldset>
-										<textarea name="" placeholder="输入您要评论的文字" id="commentContent"></textarea>
+										<textarea name="" placeholder="コメントを入力してください" id="commentContent"></textarea>
 									</fieldset>
 									<p class="of mt5 tar pl10 pr10">
 										<span class="fl "><tt class="c-red commentContentmeg" style="display: none;"></tt></span>
-										<a href="javascript:addComment();" title="回复" class="lh-reply-btn">回复</a>
+										<a href="javascript:addComment();" title="返事" class="lh-reply-btn">返事</a>
 									</p>
 								</section>
 								<input type="hidden" id="" name="" value="${questionsComment.id}" />
@@ -66,7 +66,7 @@
 <div class="q-i-noter-box">
 	<section class="q-i-reply">
 		<h6 class="c-c-content c-infor-title">
-			<span>问答列表</span>
+			<span>Q&Aリスト</span>
 		</h6>
 		<c:if test="${questions.status==0 }">
 			<section class="lh-bj-list pr mt20">
@@ -85,11 +85,11 @@
 						<div class="of">
 							<section class="n-reply-wrap">
 								<fieldset>
-									<textarea placeholder="输入您要回复的文字" name="questionsComment.content" onkeyup="$(this).parent().next().find('tt').html('');"></textarea>
+									<textarea placeholder="コメントを入力してください" name="questionsComment.content" onkeyup="$(this).parent().next().find('tt').html('');"></textarea>
 								</fieldset>
 								<p class="of mt5 tar pl10 pr10">
-									<span class="fl"><tt class="c-red"></tt></span> <u class="hand mr10 qxBtn c-999" style="display: none;">取消</u>
-									<a class="lh-reply-btn" title="回复" href="javascript: void(0)" onclick="addComment(this)">回复</a>
+									<span class="fl"><tt class="c-red"></tt></span> <u class="hand mr10 qxBtn c-999" style="display: none;">キャンセル</u>
+									<a class="lh-reply-btn" title="返事" href="javascript: void(0)" onclick="addComment(this)">返事</a>
 								</p>
 							</section>
 						</div>
@@ -101,7 +101,7 @@
 	<c:if test="${empty questionsCommentList  }">
 		<!-- /无数据提示 开始-->
 		<section class="no-data-wrap">
-			<em class="icon30 no-data-ico">&nbsp;</em> <span class="c-666 fsize14 ml10 vam">还没有人回答，提问者喊你去回答...</span>
+			<em class="icon30 no-data-ico">&nbsp;</em> <span class="c-666 fsize14 ml10 vam">コメント情報が存在していない...</span>
 		</section>
 		<!-- /无数据提示 结束-->
 	</c:if>
@@ -123,19 +123,19 @@
 							</aside>
 							<div class="of hLh20">
 								<c:if test="${questions.status==0 and  questions.cusId==user.userId and questionsComment.cusId != questions.cusId}">
-									<span class="fr"><a href="javascript:void(0)" onclick="acceptComment(${questionsComment.id})" title="" class="comm-btn c-btn-6">采纳为最佳答案</a></span>
+									<span class="fr"><a href="javascript:void(0)" onclick="acceptComment(${questionsComment.id})" title="" class="comm-btn c-btn-6">採用答え案</a></span>
 								</c:if>
 								<span class="fl"> <font class="fsize12 c-blue"> <c:if test="${not empty questionsComment.showName}">${questionsComment.showName}</c:if> <c:if test="${empty questionsComment.showName}">${questionsComment.email}</c:if>
-								</font> <font class="fsize12 c-999 ml5">回复：</font></span>
+								</font> <font class="fsize12 c-999 ml5">返事：</font></span>
 							</div>
 							<div class="noter-txt mt5">
 								<p><c:out value="${questionsComment.content }"></c:out></p>
 							</div>
 							<div class="of mt5">
-								<span class="fr"><font class="fsize12 c-999 ml5"> <!-- <a href="" class="c-blue mr10">删除</a> --> <fmt:formatDate type="both" value="${questionsComment.addTime}" pattern="yyyy-MM-dd HH:mm" />
-								</font></span> <span class="fl"> <a href="javascript: void(0)" title="回答" class="noter-dy vam" onclick="getCommentById(this,${questionsComment.id})">
+								<span class="fr"><font class="fsize12 c-999 ml5"> <!-- <a href="" class="c-blue mr10">削除</a> --> <fmt:formatDate type="both" value="${questionsComment.addTime}" pattern="yyyy-MM-dd HH:mm" />
+								</font></span> <span class="fl"> <a href="javascript: void(0)" title="答え" class="noter-dy vam" onclick="getCommentById(this,${questionsComment.id})">
 										<em class="icon18">&nbsp;</em>(<span>${questionsComment.replyCount }</span>)
-									</a> <tt class="noter-zan vam ml10" title="赞一下" onclick="addPraise(${questionsComment.id },2,this)">
+									</a> <tt class="noter-zan vam ml10" title="いいよ" onclick="addPraise(${questionsComment.id },2,this)">
 										<em class="icon18">&nbsp;</em>(<span>${questionsComment.praiseCount }</span>)
 									</tt>
 								</span>
@@ -148,8 +148,8 @@
 											<textarea name="" onkeyup="$(this).parent().next().find('tt').html('');"></textarea>
 										</fieldset>
 										<p class="of mt5 tar pl10 pr10">
-											<span class="fl"><tt class="c-red"></tt></span><u class="hand mr10 qxBtn c-999" >取消</u>
-											<a href="javascript: void(0)" title="回复" class="lh-reply-btn" onclick="addReply(this)">回复</a>
+											<span class="fl"><tt class="c-red"></tt></span><u class="hand mr10 qxBtn c-999" >キャンセル</u>
+											<a href="javascript: void(0)" title="返事" class="lh-reply-btn" onclick="addReply(this)">返事</a>
 										</p>
 									</section>
 									<input type="hidden" id="" name="" value="${questionsComment.id}" />

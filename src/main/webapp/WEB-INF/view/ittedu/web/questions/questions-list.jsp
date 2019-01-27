@@ -3,18 +3,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>问题列表</title>
+<title>ご質問一覧</title>
 </head>
-<body> 
+<body>
 	<div class="bg-fa of">
 		<section class="container">
 			<section class="i-question">
 				<div class="fl col-7">
 					<section class="mr30 pt10">
 						<section class="c-infor-tabTitle c-tab-title">
-							<a href="javascript: void(0)" title="全部问答" onclick="submitForm(0,'type')" <c:if test="${questions.type==0 }">class="current"</c:if>>全部问答</a>
-							<a href="javascript: void(0)" title="课程问答" onclick="submitForm(1,'type')" <c:if test="${questions.type==1 }">class="current"</c:if>>课程问答</a>
-							<a href="javascript: void(0)" title="学习分享" onclick="submitForm(2,'type')" <c:if test="${questions.type==2 }">class="current"</c:if>>学习分享</a>
+							<a href="javascript: void(0)" title="すべて答え" onclick="submitForm(0,'type')" <c:if test="${questions.type==0 }">class="current"</c:if>>すべて答え</a>
+							<a href="javascript: void(0)" title="講座Q&A" onclick="submitForm(1,'type')" <c:if test="${questions.type==1 }">class="current"</c:if>>講座Q&A</a>
+							<a href="javascript: void(0)" title="研修シェア" onclick="submitForm(2,'type')" <c:if test="${questions.type==2 }">class="current"</c:if>>研修シェア</a>
 						</section>
 						<div class="js-wrap">
 							<section class="fr">
@@ -24,8 +24,8 @@
 							<section class="fl">
 								<ol class="js-tap clearfix">
 									<li <c:if test="${questions.orderFalg=='addTime' }">class="current bg-orange"</c:if>><a onclick="submitForm('addTime','order')" href="javascript:void(0)" title="最新">最新</a></li>
-									<li <c:if test="${questions.orderFalg=='replycount' }">class="current bg-orange"</c:if>><a onclick="submitForm('replycount','order')" href="javascript:void(0)" title="热门">热门</a></li>
-									<li <c:if test="${questions.orderFalg=='status0' }">class="current bg-orange"</c:if>><a onclick="submitForm('status0','order')" href="javascript:void(0)" title="等待回答">等待回答</a></li>
+									<li <c:if test="${questions.orderFalg=='replycount' }">class="current bg-orange"</c:if>><a onclick="submitForm('replycount','order')" href="javascript:void(0)" title="ホット">ホット</a></li>
+									<li <c:if test="${questions.orderFalg=='status0' }">class="current bg-orange"</c:if>><a onclick="submitForm('status0','order')" href="javascript:void(0)" title="答え待ち">答え待ち</a></li>
 								</ol>
 							</section>
 						</div>
@@ -34,7 +34,7 @@
 							<c:if test="${empty questionsList }">
 								<!-- /无数据提示 开始-->
 								<section class="no-data-wrap">
-									<em class="icon30 no-data-ico">&nbsp;</em> <span class="c-666 fsize14 ml10 vam">没有相关数据，小编正在努力整理中...</span>
+									<em class="icon30 no-data-ico">&nbsp;</em> <span class="c-666 fsize14 ml10 vam">相関情報が存在していない...</span>
 								</section>
 								<!-- /无数据提示 结束-->
 							</c:if>
@@ -63,13 +63,13 @@
 														<div class="replyNum">
 															<span class="r-b-num">${question.replyCount }</span>
 															<p class="hLh30">
-																<span class="c-999 f-fA">回答数</span>
+																<span class="c-999 f-fA">答え数</span>
 															</p>
 														</div>
 														<div class="browseNum">
 															<span class="r-b-num">${question.browseCount }</span>
 															<p class="hLh30">
-																<span class="c-999 f-fA">浏览数</span>
+																<span class="c-999 f-fA">閲覧数</span>
 															</p>
 														</div>
 													</a>
@@ -80,12 +80,12 @@
 													<h3 class="hLh30 txtOf mt5">
 														<em class="icon16 q-hd">&nbsp;</em>
 														<c:if test="${empty question.questionsCommentList }">
-															<span class="fsize12 c-999 vam">哈~~~ 此问题大家还有苦思冥想中...</span>
+															<span class="fsize12 c-999 vam">回答案検討中..</span>
 															<!-- 没有回答时的内容 -->
 														</c:if>
 														<c:if test="${not empty question.questionsCommentList }">
 															<c:if test="${question.status==0 }">
-																<span class="fsize12 c-999 vam"> <tt class="c-ccc f-fM mr5">[最新回答]</tt> <c:forEach items="${question.questionsCommentList }" var="questionsComment">
+																<span class="fsize12 c-999 vam"> <tt class="c-ccc f-fM mr5">[最新答え]</tt> <c:forEach items="${question.questionsCommentList }" var="questionsComment">
 																		<c:out value="${questionsComment.content }"></c:out>
 																	</c:forEach>
 																</span>
@@ -93,8 +93,8 @@
 															</c:if>
 
 															<c:if test="${question.status==1 }">
-																<span class="fsize12 c-999 vam"> <tt class="c-green f-fM mr5">[最佳回答]</tt> 
-																<c:forEach items="${question.questionsCommentList }" var="questionsComment">
+																<span class="fsize12 c-999 vam"> <tt class="c-green f-fM mr5">[最高答え]</tt>
+																<c:forEach items="${question.questionsCommentList }" var="questionsComent">
 																	<c:out value="${questionsComment.content }"></c:out>
 																	</c:forEach>
 																</span>
@@ -136,11 +136,11 @@
 				<aside class="fl col-3">
 					<div class="mt30 pl10">
 						<section class="pt10">
-							<a href="javascript:void(0)" onclick="toAddQuestions()" title="我要提问" class="comm-btn c-btn-5">我要提问</a>
+							<a href="javascript:void(0)" onclick="toAddQuestions()" title="ご質問" class="comm-btn c-btn-5">ご質問</a>
 						</section>
 						<section class="pt20">
 							<div class="taglist clearfix">
-								<a onclick="submitForm('0','questionsTagId')" href="javascript:;" class="list-tag <c:if test='${questions.questionsTagId==0 }' >onactive</c:if>" data-id="0" title="JAVA">全部</a>
+								<a onclick="submitForm('0','questionsTagId')" href="javascript:;" class="list-tag <c:if test='${questions.questionsTagId==0 }' >onactive</c:if>" data-id="0" title="JAVA">すべて</a>
 								<c:forEach items="${questionsTagList }" var="questionsTag">
 									<a title="${questionsTag.questionsTagName }" data-id="${questionsTag.questionsTagId }" class="list-tag <c:if test='${questionsTag.questionsTagId==questions.questionsTagId }' >onactive</c:if>" href="javascript:;" onclick="submitForm('${questionsTag.questionsTagId }','questionsTagId')">${questionsTag.questionsTagName }</a>
 								</c:forEach>
@@ -149,12 +149,12 @@
 						<!-- /标签云 -->
 						<section class="mt30">
 							<section class="c-infor-tabTitle c-tab-title">
-								<a href="javascript: void(0)" title="热门问答推荐">热门问答推荐</a>
+								<a href="javascript: void(0)" title="おススメ回答案">おススメ回答案</a>
 							</section>
 							<div class="q-r-rank-list">
 								<ul id="hotQuestions">
 									<section class="no-data-wrap">
-										<em class="icon30 no-data-ico">&nbsp;</em> <span class="c-666 fsize14 ml10 vam">没有相关数据，小编正在努力整理中...</span>
+										<em class="icon30 no-data-ico">&nbsp;</em> <span class="c-666 fsize14 ml10 vam">相関情報が存在していない...</span>
 									</section>
 								</ul>
 							</div>

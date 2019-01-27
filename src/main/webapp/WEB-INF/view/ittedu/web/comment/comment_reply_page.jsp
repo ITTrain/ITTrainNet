@@ -13,8 +13,8 @@
 						</c:if>
 					</aside>
 					<div class="of">
-						<span class="fl"> 
-						<font class="fsize12 c-blue"> 
+						<span class="fl">
+						<font class="fsize12 c-blue">
 							<c:if test="${empty parentComment.userName }">
 								${parentComment.email}
 							</c:if>
@@ -22,15 +22,15 @@
 								${parentComment.userName}
 							</c:if>
 						</font>
-						<font class="fsize12 c-999 ml5">评论：</font></span>
+						<font class="fsize12 c-999 ml5">コメント：</font></span>
 					</div>
 					<div class="noter-txt mt5">
 						<p><c:out value="${parentComment.content}"></c:out></p>
 					</div>
 					<div class="of mt5">
-						<span class="fr"><font class="fsize12 c-999 ml5"><fmt:formatDate value="${parentComment.addTime}" pattern="yyyy/MM/dd HH:mm" /></font></span> <span class="fl"> <a class="noter-dy vam" title="回复" href="javascript: void(0)">
+						<span class="fr"><font class="fsize12 c-999 ml5"><fmt:formatDate value="${parentComment.addTime}" pattern="yyyy/MM/dd HH:mm" /></font></span> <span class="fl"> <a class="noter-dy vam" title="返事" href="javascript: void(0)">
 								<em class="icon18">&nbsp;</em>(<span class="replyCount${parentComment.commentId}">${parentComment.replyCount}</span>)
-							</a> <tt title="赞一下" class="noter-zan vam ml10" onclick="addPraise('${parentComment.commentId}',4)">
+							</a> <tt title="いいよ" class="noter-zan vam ml10" onclick="addPraise('${parentComment.commentId}',4)">
 								<em class="icon18">&nbsp;</em>(<span class="addPraise${parentComment.commentId}_4 praiseCount">${parentComment.praiseCount }</span>)
 							</tt>
 						</span>
@@ -56,14 +56,14 @@
 											<c:if test="${!empty ac.userName }">
 												${ac.userName}
 											</c:if>
-											</font><font class="fsize12 c-999 ml5" >回复：</font></span>
+											</font><font class="fsize12 c-999 ml5" >Re：</font></span>
 										</div>
 										<div class="noter-txt mt5">
 											<p><c:out value="${ac.content}"></c:out></p>
 										</div>
 										<div class="of mt5">
-											<span class="fr"><font class="fsize12 c-999 ml5"><fmt:formatDate value="${ac.addTime}" pattern="yyyy/MM/dd HH:mm" /></font></span> <span class="fl"> 
-											<tt class="noter-zan vam" title="赞一下" onclick="addPraise('${ac.commentId}',4)">
+											<span class="fr"><font class="fsize12 c-999 ml5"><fmt:formatDate value="${ac.addTime}" pattern="yyyy/MM/dd HH:mm" /></font></span> <span class="fl">
+											<tt class="noter-zan vam" title="いいよ" onclick="addPraise('${ac.commentId}',4)">
 													<em class="icon18">&nbsp;</em><span class="addPraise${ac.commentId}_4 praiseCount">${ac.praiseCount }</span>
 												</tt>
 											</span>

@@ -5,35 +5,35 @@
 		<span id="pager_con">
 			<c:choose>
 				<c:when test="${page.first}">
-					<a href="javascript:void(0)" title="首页">
+					<a href="javascript:void(0)" title="ホーム">
 						<em class="left-go icon-2-16">&nbsp;</em>
 					</a>
-					<a href="javascript:void(0)" title="上一页" class="page-up b-fff">上一页</a>
+					<a href="javascript:void(0)" title="前へ" class="page-up b-fff">前へ</a>
 				</c:when>
 				<c:otherwise>
-					<a href="javascript:goPageAjax(1)" title="首页">
+					<a href="javascript:goPageAjax(1)" title="ホーム">
 						<em class="left-go icon-2-16">&nbsp;</em>
 					</a>
-					<a href="javascript:goPageAjax(${page.currentPage-1})" title="上一页" class="page-up b-fff">上一页</a>
+					<a href="javascript:goPageAjax(${page.currentPage-1})" title="前へ" class="page-up b-fff">前へ</a>
 				</c:otherwise>
 			</c:choose>
 			<c:choose>
 				<c:when test="${page.last}">
-					<a href="javascript:void(0)" title="下一页" class="page-down b-fff">下一页</a>
-					<a href="javascript:void(0)" title="末页">
+					<a href="javascript:void(0)" title="次へ" class="page-down b-fff">次へ</a>
+					<a href="javascript:void(0)" title="最後">
 						<em class="right-go icon-2-16">&nbsp;</em>
 					</a>
 				</c:when>
 				<c:otherwise>
-					<a href="javascript:goPageAjax(${page.currentPage+1 })" title="下一页" class="page-down b-fff">下一页</a>
-					<a href="javascript:goPageAjax(${page.totalPageSize })" title="末页">
+					<a href="javascript:goPageAjax(${page.currentPage+1 })" title="次へ" class="page-down b-fff">次へ</a>
+					<a href="javascript:goPageAjax(${page.totalPageSize })" title="最後">
 						<em class="right-go icon-2-16">&nbsp;</em>
 					</a>
 				</c:otherwise>
 			</c:choose>
 		</span>
 		<span class="ml50">
-			<tt class="c-666">第${page.currentPage}页/共${page.totalPageSize }页</tt>
+			<tt class="c-666">第${page.currentPage}ページ/合計${page.totalPageSize }ページ</tt>
 		</span>
 	</div>
 </c:if>

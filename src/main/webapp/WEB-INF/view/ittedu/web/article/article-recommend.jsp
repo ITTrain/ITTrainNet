@@ -3,7 +3,7 @@
 <div>
 	<header class="comm-title all-article-title">
 		<h2 class="fl tac">
-			<span class="c-333">文章排行榜</span>
+			<span class="c-333">文章ランキング</span>
 		</h2>
 		<section class="c-tab-title">
 			<a href="javascript: void(0)">&nbsp;</a>
@@ -25,15 +25,15 @@
 						</section> --%>
 						<section class="hLh30 txtOf mt5">
 							<div class="fr">
-								<span> <a class="noter-dy vam" title="回答" href="${ctx }/front/articleinfo/${article.articleId}.html">
+								<span> <a class="noter-dy vam" title="答え" href="${ctx }/front/articleinfo/${article.articleId}.html">
 										<em class="icon18">&nbsp;</em>(${article.commentNum })
-									</a> <tt title="赞一下" class="noter-zan vam ml10 f-fM" onclick="addPraise('${article.articleId}',3)">
+									</a> <tt title="いいよ" class="noter-zan vam ml10 f-fM" onclick="addPraise('${article.articleId}',3)">
 										<em class="icon18">&nbsp;</em>(<span class="addPraise${article.articleId}_3 praiseCount">${article.praiseCount }</span>)
 									</tt>
 								</span>
 							</div>
 							<span class="fl"><tt class="c-999 f-fM">
-									<!-- 1小时前发布 -->
+									<!-- １時間前 -->
 									<fmt:formatDate value="${article.publishTime }" pattern="yyyy-MM-dd HH:mm" />
 								</tt></span>
 						</section>

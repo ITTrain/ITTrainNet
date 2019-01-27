@@ -18,11 +18,11 @@
 				<div class="of">
 					<section class="n-reply-wrap">
 						<fieldset>
-							<textarea name="" placeholder="输入您要评论的文字" id="commentContent"></textarea>
+							<textarea name="" placeholder="コメントを入力してください" id="commentContent"></textarea>
 						</fieldset>
 						<p class="of mt5 tar pl10 pr10">
 							<span class="fl "><tt class="c-red commentContentmeg" style="display: none;"></tt></span>
-							<a href="javascript:addComment();" title="回复" class="lh-reply-btn">回复</a>
+							<a href="javascript:addComment();" title="Re" class="lh-reply-btn">"Re"</a>
 						</p>
 					</section>
 				</div>
@@ -32,7 +32,7 @@
 	<c:if test="${empty commentList }">
 		<!-- /无数据提示 开始-->
 		<section class="no-data-wrap">
-			<em class="icon30 no-data-ico">&nbsp;</em> <span class="c-666 fsize14 ml10 vam">还没有评论，快来抢沙发吧...</span>
+			<em class="icon30 no-data-ico">&nbsp;</em> <span class="c-666 fsize14 ml10 vam">コメント情報が存在しない...</span>
 		</section>
 		<!-- /无数据提示 结束-->
 	</c:if>
@@ -51,8 +51,8 @@
 								</c:if>
 							</aside>
 							<div class="of">
-								<span class="fl"> 
-								<font class="fsize12 c-blue"> 
+								<span class="fl">
+								<font class="fsize12 c-blue">
 									<c:if test="${empty ac.userName }">
 										${ac.email}
 									</c:if>
@@ -60,15 +60,15 @@
 										${ac.userName}
 									</c:if>
 								</font>
-								<font class="fsize12 c-999 ml5">评论：</font></span>
+								<font class="fsize12 c-999 ml5">コメント：</font></span>
 							</div>
 							<div class="noter-txt mt5">
 								<p><c:out value="${ac.content}"></c:out></p>
 							</div>
 							<div class="of mt5">
-								<span class="fr"><font class="fsize12 c-999 ml5"><fmt:formatDate value="${ac.addTime}" pattern="yyyy/MM/dd HH:mm" /></font></span> <span class="fl"> <a class="noter-dy vam" title="回复" href="javascript: void(0)" onclick="queryCommentReply('${ac.commentId}')">
+								<span class="fr"><font class="fsize12 c-999 ml5"><fmt:formatDate value="${ac.addTime}" pattern="yyyy/MM/dd HH:mm" /></font></span> <span class="fl"> <a class="noter-dy vam" title="Re" href="javascript: void(0)" onclick="queryCommentReply('${ac.commentId}')">
 										<em class="icon18">&nbsp;</em>(<span class="replyCount${ac.commentId}">${ac.replyCount}</span>)
-									</a> <tt title="赞一下" class="noter-zan vam ml10" onclick="addPraise('${ac.commentId}',4)">
+									</a> <tt title="いいよ" class="noter-zan vam ml10" onclick="addPraise('${ac.commentId}',4)">
 										<em class="icon18">&nbsp;</em>(<span class="addPraise${ac.commentId}_4 praiseCount">${ac.praiseCount }</span>)
 									</tt>
 								</span>
@@ -80,7 +80,7 @@
 									</fieldset>
 									<p class="of mt5 tar pl10 pr10">
 										<span class="fl"><tt class="c-red commentReplyMsg${ac.commentId}"></tt></span>
-										<a onclick="addCommentReply('${ac.commentId}')" class="lh-reply-btn" title="回复" href="javascript: void(0)">回复</a>
+										<a onclick="addCommentReply('${ac.commentId}')" class="lh-reply-btn" title="Re" href="javascript: void(0)">Re</a>
 									</p>
 								</section>
 								<div class="mt10 pl10 pr10 pb10 commentReply${ac.commentId}"></div>
@@ -102,18 +102,18 @@
 	var totalResultSize = ${page.totalResultSize};
 	$(".totalResultComment").html(totalResultSize);
 	var order = "${comment.order}";
-	var title = "评论";
+	var title = "コメント";
 	if (type == 1) {
-		title = "文章评论（${page.totalPageSize}条）"
+		title = "文章コメント（${page.totalPageSize}条）"
 	}
 	if (type == 2) {
-		title = "课程评论"
+		title = "講座コメント"
 		if(order=='praiseCount'){
-			title = "精彩评论"
+			title = "おススメコメント"
 			$(".replyhtml").hide();
 		}
-		
+
 	}
-	
+
 	$(".commentTitle").html(title);
 </script>

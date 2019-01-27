@@ -20,14 +20,14 @@
 					<c:if test="${!empty ac.userName }">
 						${ac.userName}
 					</c:if>
-					</font><font class="fsize12 c-999 ml5" >回复：</font></span>
+					</font><font class="fsize12 c-999 ml5" >Re：</font></span>
 				</div>
 				<div class="noter-txt mt5">
 					<p><c:out value="${ac.content}"></c:out></p>
 				</div>
 				<div class="of mt5">
-					<span class="fr"><font class="fsize12 c-999 ml5"><fmt:formatDate value="${ac.addTime}" pattern="yyyy/MM/dd HH:mm" /></font></span> <span class="fl"> 
-					<tt class="noter-zan vam" title="赞一下" onclick="addPraise('${ac.commentId}',4)">
+					<span class="fr"><font class="fsize12 c-999 ml5"><fmt:formatDate value="${ac.addTime}" pattern="yyyy/MM/dd HH:mm" /></font></span> <span class="fl">
+					<tt class="noter-zan vam" title="いいよ" onclick="addPraise('${ac.commentId}',4)">
 							<em class="icon18">&nbsp;</em><span class="addPraise${ac.commentId}_4 praiseCount">${ac.praiseCount }</span>
 						</tt>
 					</span>
@@ -36,6 +36,6 @@
 		</c:if>
 	</c:forEach>
 	<c:if test="${commentList.size()>8 }">
-		<div class="mt20 tac bg-fa hLh30"><a href="javascript:void(0)" onclick="queryCommentReplyPage(${commentList[0].PCommentId})" class="comm-btn c-btn-6">查看更多评论回复</a></div>
+		<div class="mt20 tac bg-fa hLh30"><a href="javascript:void(0)" onclick="queryCommentReplyPage(${commentList[0].PCommentId})" class="comm-btn c-btn-6">More</a></div>
 	</c:if>
 </dl>
