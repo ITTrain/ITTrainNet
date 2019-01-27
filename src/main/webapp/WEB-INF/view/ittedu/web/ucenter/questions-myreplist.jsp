@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>我的回答</title>
+<title>My Q&A</title>
 </head>
 <body>
 	<article class="col-7 fl">
@@ -12,16 +12,16 @@
 				<div>
 					<span class="fr"><a href="${ctx }/questions/toadd" title="" class="comm-btn c-btn-6" style="font-size: 16px; height: 22px; line-height: 22px; padding: 0 20px;">去提问</a></span>
 					<section class="c-infor-tabTitle c-tab-title cnew-tab-title">
-						<a href="${ctx }javascript: void(0)" title="Wo的问答" style="cursor: default;">Wo的问答</a>
-						<a href="${ctx }/uc/myquestions/list" title="Wo的提问">Wo的提问</a>
-						<a href="${ctx }/uc/myrepquestions/list" title="Wo的回答" class="current">Wo的回答</a>
+						<a href="${ctx }javascript: void(0)" title="My Q&A" style="cursor: default;">My Q&A</a>
+						<a href="${ctx }/uc/myquestions/list" title="My 質問">My 質問</a>
+						<a href="${ctx }/uc/myrepquestions/list" title="My 答え" class="current">My 答え</a>
 					</section>
 				</div>
 				<div class="mt40">
 					<c:if test="${empty questionsList }">
 						<!-- /无数据提示 开始-->
 						<section class="no-data-wrap">
-							<em class="icon30 no-data-ico">&nbsp;</em> <span class="c-666 fsize14 ml10 vam">亲，您还没有回复问答,赶快去回答吧！</span>
+							<em class="icon30 no-data-ico">&nbsp;</em> <span class="c-666 fsize14 ml10 vam">ご質問をしましょう!</span>
 						</section>
 						<!-- /无数据提示 结束-->
 					</c:if>
@@ -56,7 +56,7 @@
 													<div class="browseNum">
 														<span class="r-b-num">${question.browseCount }</span>
 														<p class="hLh30">
-															<span class="c-999 f-fA">浏览数</span>
+															<span class="c-999 f-fA">閲覧数</span>
 														</p>
 													</div>
 												</a>
@@ -67,12 +67,12 @@
 												<h3 class="hLh30 txtOf mt5">
 													<em class="icon16 q-hd">&nbsp;</em>
 													<c:if test="${empty question.questionsCommentList }">
-														<span class="fsize12 c-999 vam">哈~~~ 此问题大家还有苦思冥想中...</span>
+														<span class="fsize12 c-999 vam">ご検討中...</span>
 														<!-- 没有回答时的内容 -->
 													</c:if>
 													<c:if test="${not empty question.questionsCommentList }">
 														<c:if test="${question.status==0 }">
-															<span class="fsize12 c-999 vam"> <tt class="c-ccc f-fM mr5">[最新回答]</tt> <c:forEach items="${question.questionsCommentList }" var="questionsComment">
+															<span class="fsize12 c-999 vam"> <tt class="c-ccc f-fM mr5">[最新答え]</tt> <c:forEach items="${question.questionsCommentList }" var="questionsComment">
 																		<c:out value="${questionsComment.content }"></c:out>
 																	</c:forEach>
 															</span>
@@ -80,7 +80,7 @@
 														</c:if>
 
 														<c:if test="${question.status==1 }">
-															<span class="fsize12 c-999 vam"> <tt class="c-green f-fM mr5">[最佳回答]</tt> <c:forEach items="${question.questionsCommentList }" var="questionsComment">
+															<span class="fsize12 c-999 vam"> <tt class="c-green f-fM mr5">[一番良い答え]</tt> <c:forEach items="${question.questionsCommentList }" var="questionsComment">
 																		<c:out value="${questionsComment.content }"></c:out>
 																	</c:forEach>
 															</span>

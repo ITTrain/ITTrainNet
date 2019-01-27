@@ -11,8 +11,8 @@
 		<section>
 			<div>
 				<section class="c-infor-tabTitle c-tab-title">
-					<a href="javascript: void(0)" title="Wo的课程" style="cursor: default;">免费课程</a>
-					<a href="${ctx }/uc/index" title="免费课程" class="current">免费</a>
+					<a href="javascript: void(0)" title="My 講座" style="cursor: default;">無料講座</a>
+					<a href="${ctx }/uc/index" title="無料講座" class="current">無料</a>
 				</section>
 			</div>
 			<div class="mt40">
@@ -20,7 +20,7 @@
 					<!-- /无数据提示 开始-->
 					<section class="no-data-wrap">
 						<em class="icon30 no-data-ico">&nbsp;</em>
-						<span class="c-666 fsize14 ml10 vam">暂无免费课程！</span>
+						<span class="c-666 fsize14 ml10 vam">無料講座がありません！</span>
 					</section>
 					<!-- /无数据提示 结束-->
 				</c:if>
@@ -41,7 +41,7 @@
 													</c:otherwise>
 												</c:choose>
 												<div class="cc-mask">
-													<a href="${ctx}/uc/play/${course.courseId}" title="" class="comm-btn c-btn-1">继续学习</a>
+													<a href="${ctx}/uc/play/${course.courseId}" title="" class="comm-btn c-btn-1">研修を継ぎ</a>
 												</div>
 											</section>
 											<h3 class="hLh30 txtOf mt10">
@@ -49,7 +49,7 @@
 											</h3>
 											<section class="mt10 of">
 												<div class="time-bar-wrap">
-													<div class="lev-num-wrap" title="已学${course.studyPercent}%">
+													<div class="lev-num-wrap" title="研修済み${course.studyPercent}%">
 														<aside class='lev-num-bar <c:if test="${course.studyPercent>=100}">bg-orange</c:if> <c:if test="${course.studyPercent<100}">bg-green</c:if>' style="width: ${course.studyPercent}%;"></aside>
 														<span class="lev-num"><big>${course.studyPercent}%</big>/<small>100%</small></span>
 													</div>

@@ -57,18 +57,18 @@
 		<section class="clearfix">
 			<div class="u-face-pic">
 				<img src="${ctx }/static/inxweb/img/avatar-boy.gif" alt="" class="userImgPhoto">
-				<a href="${ctx }/uc/initUpdateUser/1" title="" class="c-fff">修改头像</a>
+				<a href="${ctx }/uc/initUpdateUser/1" title="" class="c-fff">プロフィール写真変更</a>
 			</div>
 			<h4 class="hLh30 txtOf">
 				<span class="fsize16 c-ccc userNameClass">
-					<span class="vam ml5" style="cursor:pointer;" onclick="lrFun(1)">登录</span>
+					<span class="vam ml5" style="cursor:pointer;" onclick="lrFun(1)">ログイン</span>
 				</span>
 			</h4>
 			<div class="hLh30">
-				<a href="${ctx }/uc/initUpdateUser/0" title="个人资料设置" class="c-999">个人资料设置</a>
+				<a href="${ctx }/uc/initUpdateUser/0" title="プロフィール情報設定" class="c-999">プロフィール情報設定</a>
 			</div>
 			<div class="hLh20 undis" id="mobileExitDiv">
-				<a href="javascript:void(0)" title="退出" onclick="exit();" class="c-999">退出</a>
+				<a href="javascript:void(0)" title="ログアウト" onclick="exit();" class="c-999">ログアウト</a>
 			</div>
 		</section>
 		<nav class="mw-nav">
@@ -81,38 +81,38 @@
 		<section class="u-m-dd">
 			<ul>
 				<li>
-					<span>Wo的学习</span>
+					<span>My 講座</span>
 					<ol>
-						<li class="current"><a href="javascript:void(0)" onclick="mobileHrefCheckLogin('${ctx }/uc/index')" title="">免费课程</a></li>
-						<li><a href="javascript:void(0)" onclick="mobileHrefCheckLogin('${ctx }/front/showcoulist')" title="">选课中心</a></li>
-						<li><a href="javascript:void(0)" onclick="mobileHrefCheckLogin('${ctx }/uc/myFavorites')" title="">Wo的收藏</a></li>
+						<li class="current"><a href="javascript:void(0)" onclick="mobileHrefCheckLogin('${ctx }/uc/index')" title="">無料講座</a></li>
+						<li><a href="javascript:void(0)" onclick="mobileHrefCheckLogin('${ctx }/front/showcoulist')" title="">講座一覧</a></li>
+						<li><a href="javascript:void(0)" onclick="mobileHrefCheckLogin('${ctx }/uc/myFavorites')" title="">お気に入り</a></li>
 					</ol>
 				</li>
 			</ul>
 			<ul>
 				<li>
-					<span>Wo的问答</span>
+					<span>My Q&A</span>
 					<ol>
-						<li><a href="javascript:void(0)" onclick="mobileHrefCheckLogin('${ctx }/uc/myquestions/list')" title="">Wo的提问</a></li>
-						<li><a href="javascript:void(0)" onclick="mobileHrefCheckLogin('${ctx }/uc/myrepquestions/list')" title="">Wo的回答</a></li>
+						<li><a href="javascript:void(0)" onclick="mobileHrefCheckLogin('${ctx }/uc/myquestions/list')" title="">My 質問</a></li>
+						<li><a href="javascript:void(0)" onclick="mobileHrefCheckLogin('${ctx }/uc/myrepquestions/list')" title="">My 答え</a></li>
 					</ol>
 				</li>
 			</ul>
 			<ul>
 				<li>
-					<span>Wo的资料</span>
+					<span>My 情報</span>
 					<ol>
-						<li><a href="javascript:void(0)" onclick="mobileHrefCheckLogin('${ctx }/uc/initUpdateUser/0')" title="">基本资料</a></li>
-						<li><a href="javascript:void(0)" onclick="mobileHrefCheckLogin('${ctx }/uc/initUpdateUser/1')" title="">个人头像</a></li>
-						<li><a href="javascript:void(0)" onclick="mobileHrefCheckLogin('${ctx }/uc/initUpdateUser/2')" title="">密码设置</a></li>
+						<li><a href="javascript:void(0)" onclick="mobileHrefCheckLogin('${ctx }/uc/initUpdateUser/0')" title="">基本情報</a></li>
+						<li><a href="javascript:void(0)" onclick="mobileHrefCheckLogin('${ctx }/uc/initUpdateUser/1')" title="">プロフィール写真</a></li>
+						<li><a href="javascript:void(0)" onclick="mobileHrefCheckLogin('${ctx }/uc/initUpdateUser/2')" title="">パスワード設定</a></li>
 					</ol>
 				</li>
 			</ul>
 			<ul>
 				<li>
-					<span>Wo的消息</span>
+					<span>My メッセージ</span>
 					<ol>
-						<li><a href="javascript:void(0)" onclick="mobileHrefCheckLogin('${ctx }/uc/letter')" title="">系统消息</a></li>
+						<li><a href="javascript:void(0)" onclick="mobileHrefCheckLogin('${ctx }/uc/letter')" title="">システム通知</a></li>
 					</ol>
 				</li>
 			</ul>

@@ -14,9 +14,9 @@ function delULetter(id){//删除站内信
 		cache:true,
 		async:false,
 		success:function(result){
-			if(result.message=="success"){ 
+			if(result.message=="success"){
 				$("#del"+id).remove();//
-				dialog('提示','删除成功',0,'/uc/letter');
+				dialog('情報','削除成功,0,'/uc/letter');
 			}
 		}
 	});
@@ -29,8 +29,8 @@ function delULetter(id){//删除站内信
 		<section>
 			<div>
 				<section class="c-infor-tabTitle c-tab-title">
-					<a href="javascript: void(0)" title="Wo的消息" style="cursor: default;">Wo的消息</a>
-					<a href="javascript: void(0)" title="系统消息" class="current">消息列表</a>
+					<a href="javascript: void(0)" title="My メッセージ" style="cursor: default;">My メッセージ</a>
+					<a href="javascript: void(0)" title="システム通知" class="current">メッセージ一覧</a>
 				</section>
 			</div>
 			<div class="mt40">
@@ -38,7 +38,7 @@ function delULetter(id){//删除站内信
 					<!-- /无数据提示 开始-->
 					<section class="no-data-wrap">
 						<em class="icon30 no-data-ico">&nbsp;</em>
-						<span class="c-666 fsize14 ml10 vam">您还没有收到消息哦！</span>
+						<span class="c-666 fsize14 ml10 vam">メッセージがありません！</span>
 					</section>
 					<!-- /无数据提示 结束-->
 				</c:if>
@@ -48,7 +48,7 @@ function delULetter(id){//删除站内信
 							<dl id="del${qltl.id }">
 								<dt>
 									<section class="tar">
-										<p class="hLh30"><b class="fsize14 f-fA c-red">系统消息</b> </p>
+										<p class="hLh30"><b class="fsize14 f-fA c-red">システム通知</b> </p>
 										<p class="hLh20"><span class="f-fA c-666"><fmt:formatDate type="both" value="${qltl.addTime }" pattern="MM月dd日 hh:mm" /></span></p>
 										<p class="hLh20"><span class="f-fA c-999"><fmt:formatDate type="both" value="${qltl.addTime }" pattern="yyyy年" /></span></p>
 									</section>
@@ -59,7 +59,7 @@ function delULetter(id){//删除站内信
 											<p><span class="c-666 f-fA">${qltl.content }</span></p>
 										</div>
 										<div class="mt10 tar">
-											<a href="javascript:void(0)" onclick="delULetter(${qltl.id })"  title="" class="comm-btn c-btn-6">删 除</a>
+											<a href="javascript:void(0)" onclick="delULetter(${qltl.id })"  title="" class="comm-btn c-btn-6">削 除</a>
 										</div>
 									</section>
 								</dd>
