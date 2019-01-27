@@ -87,7 +87,7 @@
 		select
 		<include refid="edu_course_studyhistory_columns" />,
 		EDU_USER.PIC_IMG AS picImg,
-		ifnull(edu_User.SHOW_NAME,edu_user.EMAIL) AS showName
+		ifnull(EDU_USER.SHOW_NAME,EDU_USER.EMAIL) AS showName
 		from EDU_COURSE_STUDYHISTORY
 		left join EDU_COURSE_KPOINT on EDU_COURSE_KPOINT.KPOINT_ID = EDU_COURSE_STUDYHISTORY.KPOINT_ID
 		left join EDU_USER on EDU_USER.USER_ID = EDU_COURSE_STUDYHISTORY.USER_ID

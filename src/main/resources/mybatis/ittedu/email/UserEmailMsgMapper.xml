@@ -102,14 +102,14 @@
 	<select id="queryUserEmailMsgById" parameterType="java.lang.Long" resultMap="UserEmailMsgResult">
 		select <include refid="edu_Emailsend_history_columns"/>,
 		sys_user.login_name
-		from edu_emailsend_history
-		left join sys_user on edu_emailsend_history.user_id =sys_user.user_id
-		where edu_emailsend_history.id=#{id}
+		from EDU_EMAILSEND_HISTORY
+		left join sys_user on EDU_EMAILSEND_HISTORY.user_id =sys_user.user_id
+		where EDU_EMAILSEND_HISTORY.id=#{id}
 	</select>
 
 	<!-- 修改未发送的邮箱记录 -->
 	<update id="updateUserEmailMsgById" parameterType="java.util.HashMap">
-        update edu_emailsend_history set
+        update EDU_EMAILSEND_HISTORY set
         title = #{title},
         content = #{content},
         send_time = #{sendTime}
@@ -119,7 +119,7 @@
     <!-- 删除邮箱记录 -->
     <delete id="delUserEmailMsgById" parameterType="java.util.HashMap">
       delete from
-		edu_emailsend_history
+		EDU_EMAILSEND_HISTORY
 		where
 		id = #{value}
     </delete>
@@ -129,20 +129,20 @@
         select
         <include refid="edu_Emailsend_history_columns"/>,
         sys_user.login_name
-        from edu_emailsend_history
-        left join sys_user on edu_emailsend_history.user_id =sys_user.user_id
+        from EDU_EMAILSEND_HISTORY
+        left join sys_user on EDU_EMAILSEND_HISTORY.user_id =sys_user.user_id
         <where>
             <if test="email !=null and email !='' ">
-                edu_emailsend_history.email like CONCAT('%',#{e.email},'%')
+                EDU_EMAILSEND_HISTORY.email like CONCAT('%',#{e.email},'%')
             </if>
             <if test="type !=null and type !=0 ">
-               and edu_emailsend_history.type = #{type}
+               and EDU_EMAILSEND_HISTORY.type = #{type}
             </if>
             <if test="status !=null and status !=0 ">
-                and edu_emailsend_history.status = #{status}
+                and EDU_EMAILSEND_HISTORY.status = #{status}
             </if>
             <if test="sendTime !=null ">
-                <![CDATA[  and edu_emailsend_history.send_time < #{sendTime} ]]>
+                <![CDATA[  and EDU_EMAILSEND_HISTORY.send_time < #{sendTime} ]]>
             </if>
         </where>
     </select>
