@@ -306,7 +306,7 @@ function queryUnReadNum(){
 			if(unReadNum!=0){
 				$("#headerMsgCountId").next().show();
 			}
-			$("#headerMsgCountId").attr("title",unReadNum+"件新通知");
+			$("#headerMsgCountId").attr("title",unReadNum+"件お知らせ");
 			//$("#headerMsgCountId").html(unReadNum);
 		}
 	});

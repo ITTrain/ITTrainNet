@@ -40,7 +40,7 @@
 								<div class="fr">
 									<span> <a class="noter-dy vam" title="コメント" href="#i-art-comment">
 											<em class="icon18">&nbsp;</em>(<span class="totalResultComment">0</span>)
-										</a> <tt title="いいよ" onclick="addPraise('${article.articleId}',3)" class="noter-zan vam ml5 f-fM">
+										</a> <tt title="いいね" onclick="addPraise('${article.articleId}',3)" class="noter-zan vam ml5 f-fM">
 											<em class="icon18">&nbsp;</em>(<span class="addPraise${article.articleId}_3 praiseCount">0</span>)
 										</tt>
 									</span>
@@ -56,7 +56,7 @@
 									<tt class="c-999 f-fM">
 										コメント：<span class="totalResultComment">0</span>
 									</tt> <tt class="c-999 f-fM ml20">
-										いいよ：<span class="addPraise${article.articleId}_3 praiseCount">0</span>
+										いいね：<span class="addPraise${article.articleId}_3 praiseCount">0</span>
 									</tt> <tt class="c-999 f-fM ml20">
 										閲覧：<span class="clickNum"></span>
 									</tt>

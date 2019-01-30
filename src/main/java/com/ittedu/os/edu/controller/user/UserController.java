@@ -1,17 +1,44 @@
 package com.ittedu.os.edu.controller.user;
 
+import java.text.NumberFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Random;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
+
 import com.ittedu.os.common.cache.EHCacheUtil;
+import com.ittedu.os.common.constants.CacheConstans;
+import com.ittedu.os.common.constants.CommonConstants;
 import com.ittedu.os.common.controller.BaseController;
 import com.ittedu.os.common.entity.PageEntity;
 import com.ittedu.os.common.service.email.EmailService;
 import com.ittedu.os.common.util.MD5;
+import com.ittedu.os.common.util.SingletonLoginUtils;
 import com.ittedu.os.common.util.StringUtils;
 import com.ittedu.os.common.util.WebUtils;
-import com.ittedu.os.common.constants.CacheConstans;
-import com.ittedu.os.common.constants.CommonConstants;
-import com.ittedu.os.common.util.SingletonLoginUtils;
 import com.ittedu.os.edu.constants.enums.WebSiteProfileType;
-import com.ittedu.os.edu.entity.course.*;
+import com.ittedu.os.edu.entity.course.Course;
+import com.ittedu.os.edu.entity.course.CourseDto;
+import com.ittedu.os.edu.entity.course.CourseStudyhistory;
+import com.ittedu.os.edu.entity.course.FavouriteCourseDTO;
+import com.ittedu.os.edu.entity.course.QueryCourse;
 import com.ittedu.os.edu.entity.kpoint.CourseKpoint;
 import com.ittedu.os.edu.entity.letter.MsgReceive;
 import com.ittedu.os.edu.entity.letter.QueryMsgReceive;
@@ -26,19 +53,6 @@ import com.ittedu.os.edu.service.teacher.TeacherService;
 import com.ittedu.os.edu.service.user.UserLoginLogService;
 import com.ittedu.os.edu.service.user.UserService;
 import com.ittedu.os.edu.service.website.WebsiteProfileService;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.text.NumberFormat;
-import java.util.*;
 
 /**
  * 前台学员  Controller
@@ -274,7 +288,7 @@ public class UserController extends BaseController{
 				userService.setLoginInfo(request,user.getUserId(),"false");
 				json = this.setJson(true, null, null);
 			}else{
-				json = this.setJson(true, "头像修改失败", null);
+				json = this.setJson(true, "プロフィール写真変更失敗", null);
 			}
 		}catch (Exception e) {
 			this.setAjaxException(json);
@@ -303,31 +317,31 @@ public class UserController extends BaseController{
 				//确认密码
 				String confirmPwd = request.getParameter("confirmPwd")==null?"":request.getParameter("confirmPwd");
 				if(nowPassword.equals("")|| nowPassword.trim().length()==0){
-					json = this.setJson(false, "请输入旧密码！", null);
+					json = this.setJson(false, "古いパスワードを入力してください！", null);
 					return json;
 				}
 				if(!user.getPassword().equals(MD5.getMD5(nowPassword))){
-					json = this.setJson(false, "旧密码不正确！", null);
+					json = this.setJson(false, "古いパスワードは正しくありません！", null);
 					return json;
 				}
 				if(newPassword.equals("") || newPassword.trim().length()==0){
-					json = this.setJson(false, "请输入新密码！", null);
+					json = this.setJson(false, "新しいパスワードを入力してください！", null);
 					return json;
 				}
 				if(!WebUtils.isPasswordAvailable(newPassword)){
-					json = this.setJson(false, "密码只能是数字字母组合且大于等于6位小于等于16位", null);
+					json = this.setJson(false, "パスワードは6桁～１６桁英数字で入力してください", null);
 					return json;
 				}
 				if(!newPassword.equals(confirmPwd)){
-					json = this.setJson(false, "新密码和确认密码不一致！", null);
+					json = this.setJson(false, "古いパスワードと新しパスワードは一致していない！", null);
 					return json;
 				}
 				user.setPassword(MD5.getMD5(newPassword));
 				userService.updateUserPwd(user);
-				json = this.setJson(true, "修改成功", null);
+				json = this.setJson(true, "変更成功", null);
 				return json;
 			}
-			json = this.setJson(false, "修改失败", null);
+			json = this.setJson(false, "変更失敗", null);
 		}catch (Exception e) {
 			this.setAjaxException(json);
 			logger.error("updatePwd()--error",e);
@@ -347,7 +361,7 @@ public class UserController extends BaseController{
 		Map<String,Object> json = new HashMap<String,Object>();
 		try{
 			userService.updateUser(user);
-			json = this.setJson(true, "修改成功", user);
+			json = this.setJson(true, "変更成功", user);
 			//缓存用户
 			userService.setLoginInfo(request,user.getUserId(),"false");
 		}catch (Exception e) {
@@ -413,21 +427,21 @@ public class UserController extends BaseController{
 			String password = request.getParameter("password");
 			String ipForget = request.getParameter("ipForget");
 			if(!StringUtils.isNotEmpty(account)){
-				json = this.setJson(false, "请输入登录帐号", null);
+				json = this.setJson(false, "ログインアカウントを入力してください", null);
 				return json;
 			}
 			if(!StringUtils.isNotEmpty(password)){
-				json = this.setJson(false, "请输入登录密码", null);
+				json = this.setJson(false, "パスワードを入力してください", null);
 				return json;
 			}
 			User user = userService.getLoginUser(account, MD5.getMD5(password));
 			if(user==null){
-				json = this.setJson(false, "帐号或密码错误", null);
+				json = this.setJson(false, "アカウントとパスワーエラー", null);
 				return json;
 			}
 			EHCacheUtil.remove(CacheConstans.WEB_USER_LOGIN_PREFIX+user.getUserId());
 			if(user.getIsavalible()==2){
-				json = this.setJson(false, "帐号已被禁用", null);
+				json = this.setJson(false, "アカウントすでにロックさらた。", null);
 				return json;
 			}
 
@@ -484,34 +498,34 @@ public class UserController extends BaseController{
 			String registerCode = request.getParameter("registerCode")==null?"":request.getParameter("registerCode");
 			Object randCode = request.getSession().getAttribute(CommonConstants.RAND_CODE);
 			if(randCode==null || !registerCode.equals(randCode.toString())){
-				json = this.setJson(false, "请输入正确的验证码", null);
+				json = this.setJson(false, "正しい検証コードを入力してください", null);
 				return json;
 			}
 
 			String confirmPwd = request.getParameter("confirmPwd");
 
 			if(user.getEmail()==null || user.getEmail().trim().length()==0 || !WebUtils.checkEmail(user.getEmail(), 50)){
-				json = this.setJson(false, "请输入正确的邮箱号", null);
+				json = this.setJson(false, "正しいメールアドレスを入力してください", null);
 				return json;
 			}
 			if(userService.checkEmail(user.getEmail().trim())){
-				json = this.setJson(false, "该邮箱号已被使用", null);
+				json = this.setJson(false, "メールアドレスすでに利用されている", null);
 				return json;
 			}
-			if(user.getMobile()==null || user.getMobile().trim().length()==0 || !WebUtils.checkMobile(user.getMobile())){
+/*			if(user.getMobile()==null || user.getMobile().trim().length()==0 || !WebUtils.checkMobile(user.getMobile())){
 				json = this.setJson(false, "请输入正确的手机号", null);
 				return json;
 			}
 			if(userService.checkMobile(user.getMobile())){
 				json = this.setJson(false, "该手机号已被使用", null);
 				return json;
-			}
+			}*/
 			if(user.getPassword()==null || user.getPassword().trim().length()==0 || !WebUtils.isPasswordAvailable(user.getPassword())){
-				json = this.setJson(false, "密码有字母和数字组合且≥6位≤16位", null);
+				json = this.setJson(false, "パスワードは６桁～１６桁英数字で入力してください", null);
 				return json;
 			}
 			if(!user.getPassword().equals(confirmPwd)){
-				json = this.setJson(false, "两次密码不一致", null);
+				json = this.setJson(false, "パスワードは不一致です", null);
 				return json;
 			}
 
@@ -523,13 +537,13 @@ public class UserController extends BaseController{
 			user.setLastSystemTime(new Date());
 			userService.createUser(user);
 			request.getSession().removeAttribute(CommonConstants.RAND_CODE);
-			json = this.setJson(true, "注册成功", null);
+			json = this.setJson(true, "登録しました", null);
 
 			// 注册时发送系统消息
 			Map<String, Object> websitemap = websiteProfileService.getWebsiteProfileByType(WebSiteProfileType.web.toString());
 			Map<String, Object> web = (Map<String, Object>) websitemap.get("web");
 			String company = web.get("company").toString();
-			String conent = "欢迎来到" + company + ",希望您能够快乐的学习";
+			String conent = "ようこそ" + company + ",ご研修を楽しみに";
 			msgReceiveService.addSystemMessageByCusId(conent, Long.valueOf(user.getUserId()));
 			String uuid = StringUtils.createUUID().replace("-", "");
 			//缓存用户key
@@ -582,22 +596,22 @@ public class UserController extends BaseController{
 		try{
 			String email = request.getParameter("email");
 			if(email==null || email.trim().length()==0){
-				json = this.setJson(false, "请填写邮箱号", null);
+				json = this.setJson(false, "メールアドレスを入力してください", null);
 				return json;
 			}
 			if(!WebUtils.checkEmail(email, 50)){
-				json = this.setJson(false, "请填正确的邮箱号", null);
+				json = this.setJson(false, "正しいメールアドレスを入力してください", null);
 				return json;
 			}
 			String pageCode = request.getParameter("pageCode");
 			String randCode = (String) request.getSession().getAttribute(CommonConstants.RAND_CODE);
 			if(randCode==null ||randCode.trim().length()==0 || pageCode==null || pageCode.trim().length()==0 || !pageCode.equals(randCode) ){
-				json = this.setJson(false, "验证码错误", null);
+				json = this.setJson(false, "検証コードエラー", null);
 				return json;
 			}
 			User user = userService.queryUserByEmailOrMobile(email);
 			if(user==null){
-				json = this.setJson(false, "该邮箱号未注册", null);
+				json = this.setJson(false, "このメールアドレスは未使用です", null);
 				return json;
 			}
 			String newPwd = getRandomNum(6);
@@ -606,8 +620,8 @@ public class UserController extends BaseController{
 			@SuppressWarnings("unchecked")
 			Map<String, Object> web = (Map<String, Object>) websitemap.get("web");
 			String company = web.get("company").toString();
-			emailService.sendMail(email,"帐号为["+user.getEmail()+"]的用户，您新密码是["+newPwd+"],请使用后修改密码———帐号找回["+company+"]", "找回密码");
-			json = this.setJson(true, "邮件发送成功，请登录邮箱查收", null);
+			emailService.sendMail(email,"アカウントは["+user.getEmail()+"]の客様，新しパスワードは["+newPwd+"],パスワードを変更してください———アカウントが分からない["+company+"]", "パスワードが分からない");
+			json = this.setJson(true, "メールへ送信しました，ご確認してください", null);
 			request.getSession().removeAttribute(CommonConstants.RAND_CODE);
 			userService.updateUserPwd(user);
 		}catch (Exception e) {

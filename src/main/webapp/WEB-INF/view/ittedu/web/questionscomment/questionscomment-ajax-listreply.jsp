@@ -26,7 +26,7 @@
 			<div class="of mt5">
 				<span class="fr"><font class="fsize12 c-999 ml5"><fmt:formatDate type="both" value="${questionsComment.addTime }" pattern="yyyy-MM-dd HH:mm"/></font></span>
 				<span class="fl">
-					<tt class="noter-zan vam" title="いいよ" onclick="addPraise(${questionsComment.id },2,this)"><em class="icon18">&nbsp;</em>(<span>${questionsComment.praiseCount }</span>)</tt>
+					<tt class="noter-zan vam" title="いいね" onclick="addPraise(${questionsComment.id },2,this)"><em class="icon18">&nbsp;</em>(<span>${questionsComment.praiseCount }</span>)</tt>
 				</span>
 			</div>
 		</dd>

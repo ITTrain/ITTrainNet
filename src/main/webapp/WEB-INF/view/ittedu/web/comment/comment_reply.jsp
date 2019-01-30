@@ -27,7 +27,7 @@
 				</div>
 				<div class="of mt5">
 					<span class="fr"><font class="fsize12 c-999 ml5"><fmt:formatDate value="${ac.addTime}" pattern="yyyy/MM/dd HH:mm" /></font></span> <span class="fl">
-					<tt class="noter-zan vam" title="いいよ" onclick="addPraise('${ac.commentId}',4)">
+					<tt class="noter-zan vam" title="いいね" onclick="addPraise('${ac.commentId}',4)">
 							<em class="icon18">&nbsp;</em><span class="addPraise${ac.commentId}_4 praiseCount">${ac.praiseCount }</span>
 						</tt>
 					</span>

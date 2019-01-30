@@ -51,7 +51,7 @@
 												<div class="fl">
 													<span> <a class="noter-dy vam" title="答え" href="${ctx }/front/articleinfo/${article.articleId}.html">
 															<em class="icon18">&nbsp;</em>(<span>${article.commentNum }</span>)
-														</a> <tt title="いいよ" class="noter-zan vam ml10 f-fM" onclick="addPraise('${article.articleId}',3)">
+														</a> <tt title="いいね" class="noter-zan vam ml10 f-fM" onclick="addPraise('${article.articleId}',3)">
 															<em class="icon18">&nbsp;</em>(<span class="addPraise${article.articleId}_3 praiseCount">${article.praiseCount }</span>)
 														</tt>
 													</span>

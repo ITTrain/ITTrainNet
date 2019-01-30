@@ -67,7 +67,7 @@
 											<section class="fr">
 												<span> <a href="#i-art-comment" title="コメント" class="noter-dy vam">
 														<em class="icon18">&nbsp;</em>(<span id="questionsReplyCount">${questions.replyCount }</span>)
-													</a> <tt class="noter-zan vam ml10 f-fM" title="いいよ" onclick="addPraise(${questions.id },1,this)">
+													</a> <tt class="noter-zan vam ml10 f-fM" title="いいね" onclick="addPraise(${questions.id },1,this)">
 														<em class="icon18">&nbsp;</em>(<span>${questions.praiseCount }</span>)
 													</tt>
 												</span>

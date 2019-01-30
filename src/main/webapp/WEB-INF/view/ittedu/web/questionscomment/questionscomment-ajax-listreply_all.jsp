@@ -28,7 +28,7 @@
 						<span class="fr"><font class="fsize12 c-999 ml5"> <!-- <a href="" class="c-blue mr10">削除</a> --> <fmt:formatDate type="both" value="${questionsComment.addTime }" pattern="yyyy-MM-dd HH:mm" />
 						</font></span> <span class="fl"> <a href="javascript: void(0)" title="答え" class="noter-dy vam" onclick="getCommentById(this,${questionsComment.id })">
 								<em class="icon18">&nbsp;</em>(<span>${questionsComment.replyCount }</span>)
-							</a> <tt class="noter-zan vam ml10" title="いいよ" onclick="addPraise(${questionsComment.id },2,this)">
+							</a> <tt class="noter-zan vam ml10" title="いいね" onclick="addPraise(${questionsComment.id },2,this)">
 								<em class="icon18">&nbsp;</em>(<span>${questionsComment.praiseCount }</span>)
 							</tt>
 						</span>
@@ -61,7 +61,7 @@
 										<div class="of mt5">
 											<span class="fr"><font class="fsize12 c-999 ml5"><fmt:formatDate type="both" value="${questionsComment.addTime }" pattern="yyyy-MM-dd HH:mm"/></font></span>
 											<span class="fl">
-												<tt class="noter-zan vam" title="いいよ" onclick="addPraise(${questionsComment.id },2,this)"><em class="icon18">&nbsp;</em>(<span>${questionsComment.praiseCount }</span>)</tt>
+												<tt class="noter-zan vam" title="いいね" onclick="addPraise(${questionsComment.id },2,this)"><em class="icon18">&nbsp;</em>(<span>${questionsComment.praiseCount }</span>)</tt>
 											</span>
 										</div>
 									</dd>
