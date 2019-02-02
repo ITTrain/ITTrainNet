@@ -127,14 +127,16 @@ public class AppUserController extends BaseController{
 				json = this.setJson(false, "该邮箱号已被使用", null);
 				return json;
 			}
-			if(mobile==null || mobile.trim().length()==0 || !WebUtils.checkMobile(mobile)){
-				json = this.setJson(false, "请输入正确的手机号", null);
-				return json;
-			}
-			if(userService.checkMobile(mobile)){
-				json = this.setJson(false, "该手机号已被使用", null);
-				return json;
-			}
+			// 20190202 tang 移动端注册手机号码验证删除 start
+//			if(mobile==null || mobile.trim().length()==0 || !WebUtils.checkMobile(mobile)){
+//				json = this.setJson(false, "请输入正确的手机号", null);
+//				return json;
+//			}
+//			if(userService.checkMobile(mobile)){
+//				json = this.setJson(false, "该手机号已被使用", null);
+//				return json;
+//			}
+			// 20190202 tang 移动端注册手机号码验证删除 end
 			if(password==null || password.trim().length()==0 || !WebUtils.isPasswordAvailable(password)){
 				json = this.setJson(false, "密码有字母和数字组合且≥6位≤16位", null);
 				return json;
