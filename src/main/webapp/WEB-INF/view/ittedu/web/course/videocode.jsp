@@ -44,11 +44,11 @@
 		<div id="videoareaname" style="width: 100%;height: 100%"></div>
 		<script type="text/javascript">
             var flashvars={
-                f:'${ctx}${videourl}',
+                f:'${videourl}',
                 c:0,
                 loaded:'loadedHandler'
             };
-            var video=['${ctx}${videourl}->video/mp4'];
+            var video=['${videourl}->video/mp4'];
             CKobject.embed('${ctx}/static/common/ckplayer/ckplayer.swf','videoareaname','ckplayer_a1','100%','100%',false,flashvars,video);
 		</script>
 <!-- 20190105 tang 本地视频播放  End -->
