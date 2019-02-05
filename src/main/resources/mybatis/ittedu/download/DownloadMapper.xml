@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="DownloadMapper">
+		<resultMap id="DownloadResult" type="DownloadFile">
+		<result property="fileId" column="FILE_ID" />
+		<result property="fileUrl" column="FILE_URL" />
+		<result property="fileName" column="FILE_NAME" />
+		<result property="type1" column="TYPE1" />
+		<result property="type2" column="TYPE2" />
+		<result property="title" column="TITLE" />
+		<result property="authority" column="AUTHORITY" />
+		<result property="createTime" column="CREATE_TIME" />
+		<result property="subjectId" column="SUBJECT_ID" />
+		<result property="clickNum" column="CLICK_NUM" />
+		<result property="sort" column="SORT" />
+	</resultMap>
+
+	<sql id="edu_download_columns">
+		EDU_DOWNLOAD.FILE_ID,
+		EDU_DOWNLOAD.FILE_URL,
+		EDU_DOWNLOAD.FILE_NAME,
+		EDU_DOWNLOAD.TYPE1,
+		EDU_DOWNLOAD.TYPE2,
+		EDU_DOWNLOAD.TITLE,
+		EDU_DOWNLOAD.AUTHORITY,
+		EDU_DOWNLOAD.CREATE_TIME,
+		EDU_DOWNLOAD.SUBJECT_ID,
+		EDU_DOWNLOAD.CLICK_NUM,
+		EDU_DOWNLOAD.SORT
+	</sql>
+	<!-- 根据条件获取Teacher列表 -->
+	<select id="queryDownloadListPage" resultMap="DownloadResult" parameterType="java.util.Map">
+		SELECT
+		<include refid="edu_download_columns" />
+		FROM EDU_DOWNLOAD
+		left join SYS_SUBJECT on EDU_DOWNLOAD.SUBJECT_ID = SYS_SUBJECT.subject_id
+		<where>
+			1=1
+			<if test="e.fileName!=null and e.fileName!=''">
+				AND	<![CDATA[  EDU_DOWNLOAD.FILE_NAME LIKE CONCAT('%',#{e.fileName},'%')  ]]>
+			</if>
+			<if test="e.subjectId>0">
+				AND (EDU_DOWNLOAD.SUBJECT_ID=#{e.subjectId} or SYS_SUBJECT.parent_id = #{e.subjectId})
+			</if>
+			<if test="e.beginCreateTime!=null and e.beginCreateTime!=''">
+				AND EDU_DOWNLOAD.CREATE_TIME >= #{e.beginCreateTime}
+			</if>
+			<if test="e.endCreateTime!=null and e.endCreateTime!=''">
+				AND <![CDATA[EDU_DOWNLOAD.CREATE_TIME <= #{e.endCreateTime}]]>
+			</if>
+		</where>
+		ORDER BY EDU_DOWNLOAD.SORT DESC
+	</select>
+
+	<!-- 条件查询老师，公共使用 -->
+	<select id="queryDownloadList" parameterType="QueryDownloadFile" resultMap="DownloadResult">
+		SELECT
+		<include refid="edu_download_columns" />
+		FROM EDU_DOWNLOAD
+		WHERE 1=1
+		<if test="subjectId>0">
+			AND EDU_DOWNLOAD.SUBJECT_ID=#{subjectId}
+		</if>
+		<if test="fileId>0">
+			AND EDU_DOWNLOAD.FILE_ID !=#{fileId}
+		</if>
+		ORDER BY EDU_DOWNLOAD.SORT DESC
+		<if test="count>0">
+			LIMIT #{count}
+		</if>
+	</select>
+</mapper>

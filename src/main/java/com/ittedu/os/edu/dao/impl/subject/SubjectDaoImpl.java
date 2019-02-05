@@ -25,6 +25,9 @@ public class SubjectDaoImpl extends GenericDaoImpl implements SubjectDao {
 	public List<Subject> getSubjectList(QuerySubject query) {
 		return this.selectList("SubjectMapper.getSubjectList", query);
 	}
+	public List<Subject> getDownloadSubjectList(QuerySubject query) {
+		return this.selectList("SubjectMapper.getDownloadSubjectList", query);
+	}
 
 	public void updateSubjectParentId(Map<String, Object> map) {
 		this.update("SubjectMapper.updateSubjectParentId", map);

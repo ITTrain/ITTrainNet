@@ -1,5 +1,9 @@
 package com.ittedu.os.edu.service.impl.subject;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -7,10 +11,6 @@ import com.ittedu.os.edu.dao.subject.SubjectDao;
 import com.ittedu.os.edu.entity.subject.QuerySubject;
 import com.ittedu.os.edu.entity.subject.Subject;
 import com.ittedu.os.edu.service.subject.SubjectService;
-
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * 专业service实现
@@ -28,6 +28,10 @@ public class SubjectServiceImpl implements SubjectService {
 
 	public List<Subject> getSubjectList(QuerySubject query) {
 		return subjectDao.getSubjectList(query);
+	}
+
+	public List<Subject> getDownloadSubjectList(QuerySubject query) {
+		return subjectDao.getDownloadSubjectList(query);
 	}
 
 	public void updateSubjectParentId(int subjectId, int parentId) {

@@ -54,6 +54,20 @@
 		</if>
 		ORDER BY sort desc
 	</select>
+	<!-- 下载文件列表 -->
+	<select id="getDownloadSubjectList" parameterType="QuerySubject" resultMap="SubjectResult">
+		SELECT
+		<include refid="sys_subject_columns" />
+		FROM SYS_SUBJECT
+		WHERE SYS_SUBJECT.STATUS=3
+		<if test="parentId>-1">
+			AND SYS_SUBJECT.PARENT_ID = #{parentId}
+		</if>
+		<if test="subjectId!=null and subjectId!=-1">
+			AND SYS_SUBJECT.SUBJECT_ID=#{subjectId}
+		</if>
+		ORDER BY sort desc
+	</select>
 	<!-- 修改专业父ID -->
 	<update id="updateSubjectParentId" parameterType="java.util.Map">
 		UPDATE SYS_SUBJECT SET
