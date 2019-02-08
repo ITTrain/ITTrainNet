@@ -21,8 +21,8 @@
 						<em class="icon18 login-icon">&nbsp;</em><span class="vam ml5">ログイン</span>
 					</a>
 					|
-					<a href="javascript:lrFun(2)" title="新規登録">
-						</em><span class="vam ml5">新規登録</span>
+					<a href="javascript:lrFun(2)" title="登録">
+						</em><span class="vam ml5">登録</span>
 					</a>
 				</li>
 					<li class="mr10 undis" id="is-login-one"><a href="${ctx}/uc/letter" title="メッセージ" id="headerMsgCountId">

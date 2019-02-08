@@ -318,7 +318,7 @@ function queryUnReadNum(){
 */
 function lrFun(type) {
     var oBg = $('<div class="bMask"></div>').appendTo($("body")),
-        dialogEle = $('<div class="dialogWrap" style="position: absolute;"><div class="dialog-ele"><h4 class="d-s-head pr"><a href="javascript:void(0)" title="閉じる" class="dClose icon16 pa">&nbsp;</a><span id="d-s-head-tab" class="d-s-head-tab"><a href="javascript:void(0)" class="current">ログイン</a><a href="javascript:void(0)">新規登録</a></span></h4><div class="of"><div id="lrEleWrap" class="mt10 mb20 ml20"></div></div></div></div>').appendTo($("body")),
+        dialogEle = $('<div class="dialogWrap" style="position: absolute;"><div class="dialog-ele"><h4 class="d-s-head pr"><a href="javascript:void(0)" title="閉じる" class="dClose icon16 pa">&nbsp;</a><span id="d-s-head-tab" class="d-s-head-tab"><a href="javascript:void(0)" class="current">ログイン</a><a href="javascript:void(0)">登録</a></span></h4><div class="of"><div id="lrEleWrap" class="mt10 mb20 ml20"></div></div></div></div>').appendTo($("body")),
         rlEle = [
             '<div id="d-s-head-cont" class="lrWrap">'+
                 '<section class="dis e-login-ele">'+
@@ -338,7 +338,7 @@ function lrFun(type) {
                         '</ol>'+
                         /*'<section class="hLh30 of pl10"><span class="fr"><a href="/uc/register" class="c-master fsize12">没有账号？去注册→</a></span>'+*/
                         '<section class="hLh30 of pl10">'+
-                        '<span class="fl"><label class="hand c-999 vam"><input type="checkbox" style="vertical-align: -2px;" id="autoThirty">自動登録</label><a class="vam ml10 c-blue" title="" href="/front/passwordRecovery">パスワードを忘れた方</a></span></section>'+
+                        '<span class="fl"><label class="hand c-999 vam"><input type="checkbox" style="vertical-align: -2px;" id="autoThirty">自動登録</label><a class="vam ml10 c-blue" title="" href="'+baselocation+'/front/passwordRecovery">パスワードを忘れた方</a></span></section>'+
                         '<section class="mt20 tac">'+
                             '<a href="javascript:void(0)" title="ログイン" class="e-login-btn" onclick="dialogLogin('+type+')">ログイン</a>'+
                         '</section>'+
@@ -373,7 +373,7 @@ function lrFun(type) {
                                 '<p class="lr-tip-wrap"></p>'+
                             '</li>'+
                             '<li>'+
-                                '<input id="u-randomcode-reg" class="fl" style="width: 100px;" type="text" placeholder="検証コードを入力してください"  name="" value="" onkeyup="$(this).next().next().next().html(\'\');" maxlength="4">'+
+                                '<input id="u-randomcode-reg" class="fl" style="width: 100px;" type="text" placeholder="" name="" value="" onkeyup="$(this).next().next().next().html(\'\');" maxlength="4">'+
                                 '<a href="javascript:void(0)" title="" class="vam ml10 disIb fl"><img onclick=this.src="'+baselocation+'/ran/random?random=Math.random()" alt="検証コード，クリックして変更" src="'+baselocation+'/ran/random" width="86" height="40"></a>'+
                                 '<span class="c-999 fl ml10">霞んでしまう<br><a href="javascript:void(0)" class="js-verify-refresh c-green" onclick="$(this).parent().prev().find(\'img\').click()">変更</a></span>'+
                                 '<p class="lr-tip-wrap"><span class="c-red"></p>'+
@@ -381,7 +381,7 @@ function lrFun(type) {
                             '</li>'+
                         '</ol>'+
                         '<section class="mt20 tac">'+
-                            '<a href="javascript: void(0)" onclick="dialogRegister()" title="新規登録" class="e-login-btn">新規登録</a>'+
+                            '<a href="javascript: void(0)" onclick="dialogRegister()" title="登録" class="e-login-btn">登録</a>'+
                         '</section>'+
                     /*    '<section class="mt20 sf-lr-wrap tac">'+
                             '<h6 class="hLh20 mb15"><span class="c-666 fsize14">第三方快捷登录</span></h6>'+
