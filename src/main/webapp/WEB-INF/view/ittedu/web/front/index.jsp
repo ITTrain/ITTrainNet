@@ -98,7 +98,10 @@
 													<img width="50" height="50" class="picImg" src="${ctx }/static/inxweb/img/avatar-boy.gif" xsrc="${ctx }/static/inxweb/img/avatar-boy.gif">
 												</c:if>
 												<c:if test="${not empty comment.picImg }">
-													<img width="50" height="50" class="picImg" src="${ctx }/static/inxweb/img/avatar-boy.gif" xsrc="${ctx }${comment.picImg }">
+													<!-- 20190208 tang 访问工程外部资源的对应 start -->
+													<%-- <img width="50" height="50" class="picImg" src="${ctx }/static/inxweb/img/avatar-boy.gif" xsrc="${ctx }${comment.picImg }"> --%>
+													<img width="50" height="50" class="picImg" src="${ctx }/static/inxweb/img/avatar-boy.gif" xsrc="${comment.picImg }">
+													<!-- 20190208 tang 访问工程外部资源的对应 end -->
 												</c:if>
 											</div>
 											<section class="hLh20 of">

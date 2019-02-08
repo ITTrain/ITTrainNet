@@ -13,7 +13,10 @@ public class CommonConstants {
 	public static String contextPath = propertyUtil.getProperty("contextPath");
 	public static String staticServer = propertyUtil.getProperty("contextPath");
 	public static String uploadImageServer = propertyUtil.getProperty("contextPath");
-	public static String staticImage = propertyUtil.getProperty("contextPath");
+	//20190208 tang 访问工程外部图片的对应 start
+//	public static String staticImage = propertyUtil.getProperty("contextPath");
+	public static String staticImage = "";
+	//20190208 tang 访问工程外部图片的对应 end
 	public static String projectName = propertyUtil.getProperty("projectName");
 	public static final String MYDOMAIN = propertyUtil.getProperty("mydomain");
 
