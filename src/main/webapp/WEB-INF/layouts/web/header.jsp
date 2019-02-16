@@ -1,5 +1,43 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <%@ include file="/base.jsp"%>
+<!-- 20190216 tang add topbar start-->
+<!-- /global topbar begin-->
+<div style="width:100%;height:60px;background:#333; color:#333333;margin:-20px 0 0 0px;">
+	<div style="float:right;position:relative;right:3%">
+		<!-- / nav -->
+		<ul class="h-r-login">
+			<li class="undis" id="no-login">
+				<a href="javascript:lrFun(1)" title="ログイン">
+					<em class="icon18 login-icon">&nbsp;</em><span class="vam ml5">ログイン</span>
+				</a>
+				|
+				<a href="javascript:lrFun(2)" title="登録">
+					</em><span class="vam ml5">登録</span>
+				</a>
+			</li>
+			<li class="mr10 undis" id="is-login-one"><a href="${ctx}/uc/letter" title="メッセージ" id="headerMsgCountId">
+					<em class="icon18 news-icon">&nbsp;</em>
+				</a><q class="red-point" style="display: none">&nbsp;</q>
+			</li>
+			<li class="h-r-user undis" id="is-login-two"><a href="${ctx}/uc/index" title="">
+					<img src="${ctx }/static/inxweb/img/avatar-boy.gif" width="30" height="30" class="vam picImg" alt="">
+					<span class="vam disIb" id="userName"></span>
+				</a>
+				<a href="javascript:void(0)" title="ログアウト" onclick="exit();" class="ml5">ログアウト</a>
+			</li>
+			<!-- /未登录显示第1 li；登录后显示第2，3 li -->
+		</ul>
+		<aside class="h-r-search">
+			<form action="${ctx}/front/showcoulist" method="post">
+				<label class="h-r-s-box"><input type="text" placeholder="研修講座を入力" name="queryCourse.courseName" value="${queryCourse.courseName}">
+					<button type="submit" class="s-btn">
+						<em class="icon18">&nbsp;</em>
+					</button></label>
+			</form>
+		</aside>
+	</div>
+</div>
+<!-- 20190216 tang add topbar end-->
 <!-- /global header begin-->
 <header id="header">
 	<section class="container">
@@ -14,8 +52,9 @@
 					<li><a href="${ctx}${indexNavigate.url}" title="${indexNavigate.name}" <c:if test="${indexNavigate.newPage==0}">target="_blank"</c:if>>${indexNavigate.name}</a></li>
 				</c:forEach>
 			</ul>
+			<!--20190216 tang del start  -->
 			<!-- / nav -->
-			<ul class="h-r-login">
+			<%-- <ul class="h-r-login">
 				<li class="undis" id="no-login">
 					<a href="javascript:lrFun(1)" title="ログイン">
 						<em class="icon18 login-icon">&nbsp;</em><span class="vam ml5">ログイン</span>
@@ -33,8 +72,9 @@
 							<span class="vam disIb" id="userName"></span>
 						</a>
 						<a href="javascript:void(0)" title="ログアウト" onclick="exit();" class="ml5">ログアウト</a></li>
-				<!-- /未登录显示第1 li；登录后显示第2，3 li -->
-			</ul>
+				 --%>
+				 <!-- /未登录显示第1 li；登录后显示第2，3 li -->
+			<%-- </ul>
 			<aside class="h-r-search">
 				<form action="${ctx}/front/showcoulist" method="post">
 					<label class="h-r-s-box"><input type="text" placeholder="研修講座を入力" name="queryCourse.courseName" value="${queryCourse.courseName}">
@@ -42,7 +82,8 @@
 							<em class="icon18">&nbsp;</em>
 						</button></label>
 				</form>
-			</aside>
+			</aside> --%>
+			<!-- 20190216 tang del end -->
 		</div>
 		<aside class="mw-nav-btn">
 			<div class="mw-nav-icon"></div>
