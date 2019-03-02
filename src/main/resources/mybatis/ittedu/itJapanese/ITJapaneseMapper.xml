@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ITJapaneseMapper">
+	<resultMap id="ITJapaneseWordsResult" type="ITJapaneseWords">
+		<result property="word_id" column="WORD_ID" />
+		<result property="kana" column="KANA" />
+		<result property="kanji" column="KANJI" />
+		<result property="word_type" column="WORD_TYPE" />
+		<result property="english" column="ENGLISH" />
+		<result property="chinese" column="CHINESE" />
+		<result property="lesson" column="LESSON" />
+		<result property="subjectId" column="SUBJECT_ID" />
+	</resultMap>
+
+	<sql id="edu_japanese_words_columns">
+		EDU_JAPANESE_WORDS.WORD_ID,
+		EDU_JAPANESE_WORDS.LESSON,
+		EDU_JAPANESE_WORDS.KANA,
+		EDU_JAPANESE_WORDS.KANJI,
+		EDU_JAPANESE_WORDS.WORD_TYPE,
+		EDU_JAPANESE_WORDS.ENGLISH,
+		EDU_JAPANESE_WORDS.CHINESE,
+		EDU_JAPANESE_WORDS.TYPE1,
+		EDU_JAPANESE_WORDS.TYPE2,
+		EDU_JAPANESE_WORDS.SUBJECT_ID,
+		EDU_JAPANESE_WORDS.DISPLAY_FLG
+	</sql>
+	<!-- 根据条件获取Teacher列表 -->
+	<select id="queryITJapaneseWordsPage" resultMap="ITJapaneseWordsResult" parameterType="java.util.Map">
+		SELECT
+		<include refid="edu_japanese_words_columns" />
+		FROM EDU_JAPANESE_WORDS
+		left join SYS_SUBJECT on EDU_JAPANESE_WORDS.SUBJECT_ID = SYS_SUBJECT.subject_id
+		<where>
+			1=1
+			AND	EDU_JAPANESE_WORDS.DISPLAY_FLG = 0
+			<if test="e.subjectId>0">
+				AND (EDU_JAPANESE_WORDS.SUBJECT_ID=#{e.subjectId} or SYS_SUBJECT.parent_id = #{e.subjectId})
+			</if>
+		</where>
+		ORDER BY
+			EDU_JAPANESE_WORDS.LESSON ASC,
+			EDU_JAPANESE_WORDS.KANA ASC
+	</select>
+
+	<!-- 条件查询老师，公共使用 -->
+	<select id="queryJapaneseWords" parameterType="QueryITJapanese" resultMap="ITJapaneseWordsResult">
+		SELECT
+		<include refid="edu_japanese_words_columns" />
+		FROM EDU_JAPANESE_WORDS
+		WHERE 1=1
+		AND	EDU_JAPANESE_WORDS.DISPLAY_FLG = 0
+		<if test="subjectId>0">
+			AND EDU_JAPANESE_WORDS.SUBJECT_ID=#{subjectId}
+		</if>
+		ORDER BY
+			EDU_JAPANESE_WORDS.LESSON ASC,
+			EDU_JAPANESE_WORDS.KANA ASC
+		<if test="count>0">
+			LIMIT #{count}
+		</if>
+	</select>
+</mapper>

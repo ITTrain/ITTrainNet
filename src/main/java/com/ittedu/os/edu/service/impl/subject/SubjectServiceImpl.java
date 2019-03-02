@@ -34,6 +34,10 @@ public class SubjectServiceImpl implements SubjectService {
 		return subjectDao.getDownloadSubjectList(query);
 	}
 
+	public List<Subject> getITJapaneseSubjectList(QuerySubject query) {
+		return subjectDao.getITJapaneseSubjectList(query);
+	}
+
 	public void updateSubjectParentId(int subjectId, int parentId) {
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("subjectId", subjectId);

@@ -328,11 +328,11 @@ function lrFun(type) {
                     '<div>'+
                         '<ol class="e-login-options">'+
                             '<li>'+
-                                '<input id="u-email" type="text" placeholder="登録メールアドレスを入力してください"  name="" value="" onkeyup="$(this).next().html(\'\');">'+
+                                '<input id="u-email" type="text" placeholder="メールアドレス"  name="" value="" onkeyup="$(this).next().html(\'\');">'+
                                 '<p class="lr-tip-wrap"></p>'+
                             '</li>'+
                             '<li>'+
-                                '<input id="u-password" type="password" placeholder="パスワードを入力してください"  name="" value="" onkeyup="$(this).next().html(\'\');">'+
+                                '<input id="u-password" type="password" placeholder="パスワード"  name="" value="" onkeyup="$(this).next().html(\'\');">'+
                                 '<p class="lr-tip-wrap"></p>'+
                             '</li>'+
                         '</ol>'+
@@ -357,7 +357,7 @@ function lrFun(type) {
                     '<div>'+
                         '<ol class="e-login-options">'+
                             '<li>'+
-                                '<input id="u-email-reg" type="text" placeholder="登録メールアドレスを入力してください"  name="" value="" onkeyup="$(this).next().html(\'\');">'+
+                                '<input id="u-email-reg" type="text" placeholder="メールアドレス"  name="" value="" onkeyup="$(this).next().html(\'\');">'+
                                 '<p class="lr-tip-wrap"></p>'+
                             '</li>'+
 /*                            '<li>'+
@@ -365,11 +365,11 @@ function lrFun(type) {
 	                            '<p class="lr-tip-wrap"></p>'+
 	                        '</li>'+*/
                             '<li>'+
-                                '<input id="u-password-reg" type="password" placeholder="パスワードを入力してください"  name="" value="" onkeyup="$(this).next().html(\'\');">'+
+                                '<input id="u-password-reg" type="password" placeholder="パスワード"  name="" value="" onkeyup="$(this).next().html(\'\');">'+
                                 '<p class="lr-tip-wrap"></p>'+
                             '</li>'+
                             '<li>'+
-                                '<input id="u-passwordre-reg" type="password" placeholder="パスワードを再入力してください"  name="" value="" onkeyup="$(this).next().html(\'\');">'+
+                                '<input id="u-passwordre-reg" type="password" placeholder="パスワード確認"  name="" value="" onkeyup="$(this).next().html(\'\');">'+
                                 '<p class="lr-tip-wrap"></p>'+
                             '</li>'+
                             '<li>'+

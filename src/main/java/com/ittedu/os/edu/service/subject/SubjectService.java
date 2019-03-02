@@ -32,6 +32,12 @@ public interface SubjectService {
 	public List<Subject> getDownloadSubjectList(QuerySubject query);
 
 	/**
+	 * 查询IT日语列表
+	 * @return List<Subject>
+	 */
+	public List<Subject> getITJapaneseSubjectList(QuerySubject query);
+
+	/**
 	 * 修改专业父ID
 	 * @param subjectId 专业ID
 	 * @param parentId 专业父ID
