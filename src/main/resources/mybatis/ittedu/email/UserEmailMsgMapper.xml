@@ -101,9 +101,9 @@
 	<!-- 查询单个 -->
 	<select id="queryUserEmailMsgById" parameterType="java.lang.Long" resultMap="UserEmailMsgResult">
 		select <include refid="edu_Emailsend_history_columns"/>,
-		sys_user.login_name
+		SYS_USER.login_name
 		from EDU_EMAILSEND_HISTORY
-		left join sys_user on EDU_EMAILSEND_HISTORY.user_id =sys_user.user_id
+		left join SYS_USER on EDU_EMAILSEND_HISTORY.user_id =SYS_USER.user_id
 		where EDU_EMAILSEND_HISTORY.id=#{id}
 	</select>
 
@@ -128,9 +128,9 @@
     <select id="queryUserEmailList" parameterType="java.util.HashMap" resultMap="UserEmailMsgResult">
         select
         <include refid="edu_Emailsend_history_columns"/>,
-        sys_user.login_name
+        SYS_USER.login_name
         from EDU_EMAILSEND_HISTORY
-        left join sys_user on EDU_EMAILSEND_HISTORY.user_id =sys_user.user_id
+        left join SYS_USER on EDU_EMAILSEND_HISTORY.user_id =SYS_USER.user_id
         <where>
             <if test="email !=null and email !='' ">
                 EDU_EMAILSEND_HISTORY.email like CONCAT('%',#{e.email},'%')
