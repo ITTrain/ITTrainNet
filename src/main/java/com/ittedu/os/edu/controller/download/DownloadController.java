@@ -57,7 +57,7 @@ public class DownloadController extends BaseController {
 			List<Subject> subjectList = subjectService.getDownloadSubjectList(querySubject);
 			model.addObject("subjectList", subjectList);
 			// 页面传来的数据放到page中
-			page.setPageSize(8);
+			page.setPageSize(100);
 			// 查询老师
 			List<DownloadFile> downloadFileList = downloadService.queryDownloadListPage(queryDownloadFile, page);
 			model.addObject("downloadFileList", downloadFileList);
