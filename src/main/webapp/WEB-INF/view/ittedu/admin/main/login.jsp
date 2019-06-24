@@ -37,23 +37,23 @@
 	<div class="b-box">
 		<div id="container">
 			<div id="box">
-				<h2>网校后台管理系统</h2>
+				<h2>ITT管理システム</h2>
 				<form action="${ctx}/admin/main/login" method="POST" id="loginForm">
 					<p class="main">
-						<label>用户名: </label>
-						<input name="sysUser.loginName" onkeyup="enterSubmit(event)" value="${sysUser.loginName}" placeholder="输入用户名" />
-						<label>密码: </label>
-						<input type="password" onkeyup="enterSubmit(event)" name="sysUser.loginPwd" value="${sysUser.loginPwd}" placeholder="输入密码">
+						<label>ID:</label>
+						<input name="sysUser.loginName" onkeyup="enterSubmit(event)" value="${sysUser.loginName}" placeholder="" />
+						<label>パスワード:</label>
+						<input type="password" onkeyup="enterSubmit(event)" name="sysUser.loginPwd" value="${sysUser.loginPwd}" placeholder="">
 					</p>
 					<p class="main">
-						<label>验证码: </label>
-						<input name="randomCode" onkeyup="enterSubmit(event)" placeholder="验证码" style="width: 105px;"  maxlength="4"/>
+						<label>認証コード: </label>
+						<input name="randomCode" onkeyup="enterSubmit(event)" placeholder="右記数字入力" style="width: 105px;"  maxlength="4"/>
 						<span class="yzm-pic">
 							<img src="${ctx}/ran/random" alt="验证码，点击图片更换" onclick="this.src='${ctx}/ran/random?random='+Math.random();" />
 						</span>
 					</p>
 					<p class="space">
-						<input type="submit" value="登录" class="login" />
+						<input type="submit" value="ログイン" class="login" />
 						<span>${message}</span>
 					</p>
 				</form>

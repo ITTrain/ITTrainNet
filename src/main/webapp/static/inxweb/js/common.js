@@ -374,7 +374,7 @@ function lrFun(type) {
                             '</li>'+
                             '<li>'+
                                 '<input id="u-randomcode-reg" class="fl" style="width: 100px;" type="text" placeholder="" name="" value="" onkeyup="$(this).next().next().next().html(\'\');" maxlength="4">'+
-                                '<a href="javascript:void(0)" title="" class="vam ml10 disIb fl"><img onclick=this.src="'+baselocation+'/ran/random?random=Math.random()" alt="検証コード，クリックして変更" src="'+baselocation+'/ran/random" width="86" height="40"></a>'+
+                                '<a href="javascript:void(0)" title="" class="vam ml10 disIb fl"><img onclick="this.src=\'/ran/random?random=\'+Math.random()" alt="検証コード，クリックして変更" src="/ran/random" width="86" height="40"></a>'+
                                 '<span class="c-999 fl ml10">霞んでしまう<br><a href="javascript:void(0)" class="js-verify-refresh c-green" onclick="$(this).parent().prev().find(\'img\').click()">変更</a></span>'+
                                 '<p class="lr-tip-wrap"><span class="c-red"></p>'+
                                 '<p class="clear"></p>'+

@@ -13,10 +13,10 @@
 		<section class="hLh30 txtOf">
 			<span class="c-ccc fr">${courseStudyhistory.updateTimeFormat }</span>
 			<span class="c-333 fsize16 fl">${courseStudyhistory.showName}
-			</span> 
+			</span>
 		</section>
 		<section class="hLh20 txtOf">
-			<span class="c-999">播放了</span> <span class="c-master">“${courseStudyhistory.courseName }”</span>
+			 <span class="c-master">“${courseStudyhistory.courseName }”</span><span class="c-999">学習中</span>
 		</section>
-	</li> 
+	</li>
 </c:forEach>

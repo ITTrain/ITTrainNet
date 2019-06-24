@@ -199,7 +199,10 @@ public class WebFrontController extends BaseController {
     }
 
     public void changeColor(HttpServletRequest request,String colorfalg){
-    	String color="#ea562e";
+    	// tang 20190501 Start
+//    	String color="#ea562e";
+    	String color="#009ed9";
+    	// tang  20190501 end
     	if (colorfalg.equals("blue")) {
     		color="#009ed9";
 		}else if (colorfalg.equals("green")) {

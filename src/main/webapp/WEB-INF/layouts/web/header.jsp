@@ -2,7 +2,7 @@
 <%@ include file="/base.jsp"%>
 <!-- 20190216 tang add topbar start-->
 <!-- /global topbar begin-->
-<div style="width:100%;height:60px;background:#333; color:#333333;margin:-20px 0 0 0px;">
+<div style="width:100%;height:60px;background:#6180FE; color:#6180FE;margin:-20px 0 0 0px;">
 	<div style="float:right;position:relative;right:3%">
 		<!-- / nav -->
 		<ul class="h-r-login">
